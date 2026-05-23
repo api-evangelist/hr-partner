@@ -1,0 +1,14 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Attachment",
+  "type": "object",
+  "properties": {
+    "id": { "type": "string" },
+    "description": { "type": "string" },
+    "url": { "type": "string", "format": "uri" },
+    "module": { "type": "string" },
+    "module_id": { "type": "string" },
+    "size": { "type": "integer" },
+    "uploaded_date": { "type": "string", "format": "date-time" }
+  }
+}

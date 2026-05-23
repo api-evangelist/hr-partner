@@ -1,0 +1,52 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: HR Partner — Checklists
+  description: 'HR Partner — Checklists. Read onboarding and offboarding checklists and reminders.'
+  tags:
+    - HR Partner
+    - Checklists
+    - Onboarding
+    - Reminders
+  created: '2026-05-23'
+  modified: '2026-05-23'
+binds:
+  - namespace: env
+    keys:
+      HR_PARTNER_API_KEY: HR_PARTNER_API_KEY
+capability:
+  consumes:
+    - type: http
+      namespace: hr-partner-checklists
+      baseUri: https://api.hrpartner.io
+      description: HR Partner Checklists business capability.
+      resources:
+        - name: checklist
+          path: /checklist
+          operations:
+            - { name: listChecklists, method: GET, description: List Checklists, outputRawFormat: json, outputParameters: [{ name: result, type: array, value: '$.' }] }
+        - name: reminders
+          path: /reminders
+          operations:
+            - { name: listReminders, method: GET, description: List Reminders, outputRawFormat: json, outputParameters: [{ name: result, type: array, value: '$.' }] }
+        - name: reminder
+          path: /reminder/{id}
+          operations:
+            - { name: getReminder, method: GET, description: Get Reminder, outputRawFormat: json, outputParameters: [{ name: result, type: object, value: '$.' }] }
+            - { name: updateReminder, method: POST, description: Update Reminder, outputRawFormat: json, outputParameters: [{ name: result, type: object, value: '$.' }] }
+            - { name: deleteReminder, method: DELETE, description: Delete Reminder, outputRawFormat: json, outputParameters: [{ name: result, type: object, value: '$.' }] }
+      authentication:
+        type: header
+        header: x-api-key
+        value: '{{env.HR_PARTNER_API_KEY}}'
+  exposes:
+    - type: mcp
+      namespace: hr-partner-checklists-mcp
+      port: 9090
+      transport: http
+      description: MCP adapter for HR Partner Checklists.
+      tools:
+        - { name: list_checklists, description: List onboarding/offboarding checklists, call: hr-partner-checklists.listChecklists }
+        - { name: list_reminders, description: List user reminders, call: hr-partner-checklists.listReminders }
+        - { name: get_reminder, description: Get a reminder by id, call: hr-partner-checklists.getReminder }
+        - { name: update_reminder, description: Update a reminder by id, call: hr-partner-checklists.updateReminder }
+        - { name: delete_reminder, description: Delete a reminder by id, call: hr-partner-checklists.deleteReminder }

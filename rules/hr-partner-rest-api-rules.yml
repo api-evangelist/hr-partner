@@ -1,0 +1,108 @@
+rules:
+  info-title-required:
+    description: Info title must be present
+    severity: error
+    given: $.info
+    then: {field: title, function: truthy}
+  info-description-required:
+    description: Info description must be present
+    severity: error
+    given: $.info
+    then: {field: description, function: truthy}
+  info-contact-required:
+    description: Info contact must be present
+    severity: error
+    given: $.info
+    then: {field: contact, function: truthy}
+  operation-operationid-required:
+    description: Every operation must have an operationId
+    severity: error
+    given: $.paths[*][get,post,put,patch,delete]
+    then: {field: operationId, function: truthy}
+  operation-summary-required:
+    description: Every operation must have a summary
+    severity: error
+    given: $.paths[*][get,post,put,patch,delete]
+    then: {field: summary, function: truthy}
+  operation-description-required:
+    description: Every operation must have a description
+    severity: error
+    given: $.paths[*][get,post,put,patch,delete]
+    then: {field: description, function: truthy}
+  operation-tags-required:
+    description: Every operation must have at least one tag
+    severity: error
+    given: $.paths[*][get,post,put,patch,delete]
+    then: {field: tags, function: truthy}
+  operation-summary-title-case:
+    description: Operation summaries must be Title Case
+    severity: warn
+    given: $.paths[*][get,post,put,patch,delete].summary
+    then:
+      function: pattern
+      functionOptions:
+        match: '^([A-Z][a-z0-9]*)( [A-Z][a-z0-9]*)*$'
+  response-description-required:
+    description: Every response must have a description
+    severity: error
+    given: $.paths[*][get,post,put,patch,delete].responses[*]
+    then: {field: description, function: truthy}
+  response-200-required:
+    description: Every operation should declare a 200 response
+    severity: warn
+    given: $.paths[*][get,post]
+    then:
+      field: responses.200
+      function: truthy
+  servers-defined:
+    description: At least one server must be defined
+    severity: error
+    given: $
+    then:
+      field: servers
+      function: truthy
+  servers-base-url-hr-partner:
+    description: Production server must point at api.hrpartner.io
+    severity: error
+    given: $.servers[0]
+    then:
+      field: url
+      function: pattern
+      functionOptions:
+        match: '^https://api\.hrpartner\.io'
+  security-apikey-header:
+    description: API must declare the x-api-key apiKey header security scheme
+    severity: error
+    given: $.components.securitySchemes
+    then:
+      field: apiKeyHeader
+      function: truthy
+  no-empty-descriptions:
+    description: Descriptions must not be empty
+    severity: error
+    given: $..description
+    then: {function: truthy}
+  schema-types-required:
+    description: All schemas must declare a type
+    severity: error
+    given: $.components.schemas[*]
+    then: {field: type, function: truthy}
+  tag-description-required:
+    description: All top-level tags must have a description
+    severity: error
+    given: $.tags[*]
+    then: {field: description, function: truthy}
+  path-kebab-or-lower-case:
+    description: Paths should be lowercase and may use hyphens
+    severity: warn
+    given: $.paths[*]~
+    then:
+      function: pattern
+      functionOptions:
+        match: '^/[a-z0-9\-/{}]+$'
+  employee-code-path-param:
+    description: Employee-scoped paths must use employeeCode path parameter, not id
+    severity: warn
+    given: $.paths[/employee/{employeeCode}]
+    then:
+      function: truthy

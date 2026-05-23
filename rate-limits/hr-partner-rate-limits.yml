@@ -1,0 +1,43 @@
+specification: API Commons Rate Limits
+specificationVersion: '0.1'
+schema: https://raw.githubusercontent.com/api-evangelist/interface-research/main/schema/api-commons.yml#/$defs/RateLimits
+provider: HR Partner
+providerId: hr-partner
+created: '2026-05-23'
+modified: '2026-05-23'
+reconciled: true
+tags:
+  - Rate Limiting
+  - HR
+  - HRIS
+description: >-
+  HR Partner enforces per-API-key rate limits across all REST endpoints on
+  api.hrpartner.io. The documented baseline is 60 GET/POST requests per second
+  with a 900-requests-per-minute burst ceiling. Responses are subject to a
+  60-second timeout, and the provider recommends using server-side filters to
+  reduce payload size and avoid burst-limit exhaustion. HTTP-only requests are
+  redirected or ignored; HTTPS is required.
+sources:
+  - https://developer.hrpartner.io/
+  - https://developer.hrpartner.io/#rate-limits
+responseCodes:
+  rateLimitReached: 429
+  timeoutSeconds: 60
+limits:
+  - name: HR Partner REST API — per second
+    scope: api-key
+    metric: requests_per_second
+    limit: 60
+    timeFrame: second
+    appliesTo: All endpoints
+  - name: HR Partner REST API — burst per minute
+    scope: api-key
+    metric: requests_per_minute
+    limit: 900
+    timeFrame: minute
+    appliesTo: All endpoints
+recommendations:
+  - Use server-side filter query parameters (employee, department, date ranges) to reduce response size.
+  - Page through large list endpoints rather than retrieving full result sets.
+  - Backoff and retry on 429 responses; respect any retry hints from the gateway.
+  - Always use HTTPS; HTTP traffic is redirected or ignored.

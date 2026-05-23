@@ -1,0 +1,17 @@
+{
+  "id": "cl_300",
+  "name": "New Hire Onboarding",
+  "comments": "Day-1 setup and required reading.",
+  "status": "In Progress",
+  "assigned_at": "2026-05-15T08:00:00Z",
+  "completed_at": null,
+  "progress": 5,
+  "percdone": 50,
+  "employee": {
+    "code": "EMP042",
+    "first_names": "Priya",
+    "last_name": "Singh",
+    "full_name": "Priya Singh",
+    "department": "Engineering"
+  }
+}

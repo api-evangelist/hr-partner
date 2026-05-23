@@ -1,0 +1,15 @@
+{
+  "id": "lb_001",
+  "leave_type": "Annual Leave",
+  "balance": 18.5,
+  "accrued": 20.0,
+  "taken": 1.5,
+  "pending": 0.0,
+  "employee": {
+    "code": "EMP001",
+    "first_names": "Avery",
+    "last_name": "Chen",
+    "full_name": "Avery Chen",
+    "department": "Engineering"
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "id": "exp_911",
+  "description": "Conference ticket (APIDays Sydney)",
+  "amount": 1499.00,
+  "currency": "AUD",
+  "claim_date": "2026-05-12",
+  "expense_status": "Approved",
+  "employee": {
+    "code": "EMP001",
+    "first_names": "Avery",
+    "last_name": "Chen",
+    "full_name": "Avery Chen",
+    "department": "Engineering"
+  }
+}

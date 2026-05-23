@@ -1,0 +1,14 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Expense",
+  "type": "object",
+  "properties": {
+    "id": { "type": "string" },
+    "description": { "type": "string" },
+    "amount": { "type": "number" },
+    "currency": { "type": "string" },
+    "claim_date": { "type": "string", "format": "date" },
+    "expense_status": { "type": "string" },
+    "employee": { "$ref": "hr-partner-employee-ref-schema.json" }
+  }
+}

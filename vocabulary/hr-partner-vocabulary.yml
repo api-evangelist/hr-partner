@@ -1,0 +1,67 @@
+name: HR Partner Domain Vocabulary
+provider: HR Partner
+providerId: hr-partner
+description: Tag-derived vocabulary for the HR Partner REST API surface; sourced from openapi/ tags and capability namespaces.
+terms:
+  - term: Company
+    description: Company-level information for the HR Partner account.
+  - term: Employees
+    description: Employee records and the upsert lifecycle.
+  - term: Contacts
+    description: Employee contact details (phone, email, emergency).
+  - term: Addresses
+    description: Employee address records.
+  - term: Notes
+    description: Internal HR notes attached to employees.
+  - term: Education
+    description: Employee education and qualification history.
+  - term: Skills
+    description: Employee skill ratings and competencies.
+  - term: Training
+    description: Employee training and course completion records.
+  - term: Assets
+    description: Company assets issued to employees.
+  - term: Benefits
+    description: Employee benefit assignments.
+  - term: Dependents
+    description: Employee dependent records.
+  - term: Grievances
+    description: Employee grievance records.
+  - term: Positions
+    description: Employee position history and remuneration.
+  - term: Renewables
+    description: Renewable items such as certifications and licenses.
+  - term: Attachments
+    description: Attachments stored across modules.
+  - term: Leave Requests
+    description: Employee leave and PTO requests.
+  - term: Leave Balances
+    description: Leave entitlement balances and accruals.
+  - term: Absences
+    description: Employee absence records.
+  - term: Timesheets
+    description: Employee timesheets and timeclock entries.
+  - term: Projects
+    description: Projects and activities used by timesheets.
+  - term: Expenses
+    description: Employee expense claims.
+  - term: Job Listings
+    description: Open job listings published by the organization.
+  - term: Applicants
+    description: Recruitment applicants.
+  - term: Applications
+    description: Job applications tied to applicants and listings.
+  - term: Application Stage Tracking
+    description: Application stage history and tracking data.
+  - term: Reviews
+    description: Performance reviews and scoring.
+  - term: Goals
+    description: Performance and development goals.
+  - term: Checklists
+    description: Onboarding, offboarding, and other checklists.
+  - term: Reminders
+    description: User reminders with optional CRUD operations.
+  - term: Library
+    description: Document library files and categories.
+  - term: Lookups
+    description: System lookup definitions for configurable fields.

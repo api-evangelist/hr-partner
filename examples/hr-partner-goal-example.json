@@ -1,0 +1,21 @@
+{
+  "id": "goal_77",
+  "scope": "Individual",
+  "type": "Development",
+  "description": "Ship public webhooks for the HR Partner API",
+  "target_value": 1,
+  "can_exceed_target_value": false,
+  "current_value": 0.5,
+  "is_active": true,
+  "is_completed": false,
+  "is_archived": false,
+  "assigned_at": "2026-02-01T00:00:00Z",
+  "due_at": "2026-09-30T00:00:00Z",
+  "employee": {
+    "code": "EMP001",
+    "first_names": "Avery",
+    "last_name": "Chen",
+    "full_name": "Avery Chen",
+    "department": "Engineering"
+  }
+}

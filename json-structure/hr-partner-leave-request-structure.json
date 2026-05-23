@@ -1,0 +1,16 @@
+{
+  "$schema": "https://json-structure.org/draft/2020-12/schema",
+  "name": "LeaveRequest",
+  "type": "object",
+  "properties": {
+    "id": { "type": "string" },
+    "leave_type": { "type": "string" },
+    "description": { "type": "string" },
+    "start_date": { "type": "string" },
+    "end_date": { "type": "string" },
+    "duration": { "type": "number" },
+    "leave_status": { "type": "string" },
+    "comments": { "type": "string" },
+    "employee": { "type": "object" }
+  }
+}

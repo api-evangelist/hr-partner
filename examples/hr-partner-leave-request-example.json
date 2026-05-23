@@ -1,0 +1,17 @@
+{
+  "id": "lr_4501",
+  "leave_type": "Annual Leave",
+  "description": "Family holiday",
+  "start_date": "2026-06-15",
+  "end_date": "2026-06-26",
+  "duration": 10,
+  "leave_status": "Approved",
+  "comments": "Covered by Priya during absence.",
+  "employee": {
+    "code": "EMP001",
+    "first_names": "Avery",
+    "last_name": "Chen",
+    "full_name": "Avery Chen",
+    "department": "Engineering"
+  }
+}

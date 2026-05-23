@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Absence",
+  "type": "object",
+  "properties": {
+    "id": { "type": "string" },
+    "leave_type": { "type": "string" },
+    "absence_reason": { "type": "string" },
+    "description": { "type": "string" },
+    "absence_date": { "type": "string", "format": "date" },
+    "return_date": { "type": "string", "format": "date" },
+    "duration": { "type": "number" },
+    "physician": { "type": "string" },
+    "certificate_number": { "type": "string" },
+    "absence_status": { "type": "string" },
+    "comments": { "type": "string" },
+    "employee": { "$ref": "hr-partner-employee-ref-schema.json" }
+  }
+}

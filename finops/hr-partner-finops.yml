@@ -1,0 +1,75 @@
+specification: FinOps Framework
+specificationVersion: '1.0'
+schema: https://www.finops.org/framework/
+provider: HR Partner
+providerId: hr-partner
+created: '2026-05-23'
+modified: '2026-05-23'
+reconciled: false
+tags:
+  - FinOps
+  - FOCUS
+  - HR
+  - HRIS
+description: >-
+  FOCUS-aligned FinOps view for HR Partner: per-employee tiered subscription
+  with no separate metering of the public REST API. Charges roll up to a
+  monthly subscription fee per organization, plus optional implementation
+  sessions. Annual billing equates to 11 monthly charges instead of 12.
+sources:
+  - https://hrpartner.io/pricing.html
+  - https://developer.hrpartner.io/
+alignedWith:
+  framework: FinOps Foundation Framework
+  frameworkUrl: https://www.finops.org/framework/
+  dataSpec: FOCUS
+  dataSpecVersion: '1.3'
+  dataSpecUrl: https://focus.finops.org/focus-specification/v1-3/
+publisherName: HR Partner Software Pty Ltd
+serviceCategory: Human Resources Management (HRIS)
+billingModel:
+  pricingCategory: Tiered Subscription (per-employee)
+  billingFrequency: Monthly or Annual
+  billingCurrency: Multi-currency (selectable in pricing calculator)
+  chargeCategories:
+    - Purchase
+    - Usage
+    - Adjustment
+focusColumns:
+  ServiceName: HR Partner
+  ServiceCategory: Human Resources Management
+  ProviderName: HR Partner
+  PublisherName: HR Partner Software Pty Ltd
+  InvoiceIssuerName: HR Partner Software Pty Ltd
+  BillingCurrency: Variable
+  ChargeCategory: Purchase
+meters:
+  - name: subscription_fee
+    description: >-
+      Monthly subscription fee per organization, computed from selected plan
+      (Core/Premium/VIP) and total active employee count. Exact tier prices
+      are rendered client-side and not captured here.
+    unit: month
+    aggregation: max
+    dimensions:
+      - plan
+      - employee_count_tier
+      - currency
+      - billing_frequency
+  - name: implementation_session
+    description: >-
+      One-time implementation sessions included with each tier (3 for
+      Core/Premium, 5 for VIP). Additional sessions beyond the included
+      allotment are not publicly priced.
+    unit: session
+    aggregation: sum
+    dimensions:
+      - plan
+notes:
+  - The HR Partner REST API is not metered or billed as a separate product;
+    it is bundled with all paid tiers.
+  - Rate limits (60 req/sec, 900 req/min burst) are uniform across plans and
+    do not factor into billing.
+  - No public credit, refund, or discount programs are documented beyond the
+    annual-billing 11-month equivalence and the (time-limited) 50%-off first
+    12 months promotion observed during the pricing page review.

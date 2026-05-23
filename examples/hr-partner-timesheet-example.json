@@ -1,0 +1,13 @@
+{
+  "id": "ts_2201",
+  "week_commencing": "2026-05-18",
+  "total_hours": 38.5,
+  "timesheet_status": "Submitted",
+  "employee": {
+    "code": "EMP001",
+    "first_names": "Avery",
+    "last_name": "Chen",
+    "full_name": "Avery Chen",
+    "department": "Engineering"
+  }
+}

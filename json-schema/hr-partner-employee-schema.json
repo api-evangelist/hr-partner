@@ -1,0 +1,27 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Employee",
+  "type": "object",
+  "properties": {
+    "id": { "type": "string", "description": "Internal HR Partner employee id." },
+    "code": { "type": "string", "description": "Customer-controlled employee code; the primary key for upserts." },
+    "first_names": { "type": "string", "description": "Employee given names." },
+    "last_name": { "type": "string", "description": "Employee family name." },
+    "full_name": { "type": "string", "description": "Concatenated display name." },
+    "date_of_birth": { "type": "string", "format": "date" },
+    "gender_identity": { "type": "string" },
+    "department": { "type": "string" },
+    "location": { "type": "string" },
+    "position": { "type": "string" },
+    "employment_status": { "type": "string" },
+    "email": { "type": "string", "format": "email" },
+    "started_at": { "type": "string", "format": "date" },
+    "finished_at": { "type": "string", "format": "date" },
+    "avatar": { "type": "string", "format": "uri" },
+    "can_logon": { "type": "boolean" },
+    "portal_username": { "type": "string" },
+    "custom_data": { "type": "object" },
+    "tags": { "type": "array", "items": { "type": "string" } }
+  },
+  "required": ["code"]
+}

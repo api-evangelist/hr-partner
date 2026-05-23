@@ -1,0 +1,57 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: HR Partner — Onboarding Workflow
+  description: 'HR Partner — Onboarding Workflow. Composition capability that wires Employees, Checklists, Library, and Reminders into a single onboarding workflow surface for new-hire automation.'
+  tags:
+    - HR Partner
+    - Workflow
+    - Onboarding
+  created: '2026-05-23'
+  modified: '2026-05-23'
+binds:
+  - namespace: env
+    keys:
+      HR_PARTNER_API_KEY: HR_PARTNER_API_KEY
+capability:
+  consumes:
+    - type: http
+      namespace: hr-partner-onboarding-workflow
+      baseUri: https://api.hrpartner.io
+      description: Composite consumer covering onboarding-relevant HR Partner endpoints.
+      resources:
+        - name: employees
+          path: /employees
+          operations:
+            - { name: listEmployees, method: GET, description: List Employees, outputRawFormat: json, outputParameters: [{ name: result, type: array, value: '$.' }] }
+        - name: employee
+          path: /employee/{employeeCode}
+          operations:
+            - { name: upsertEmployee, method: POST, description: Create Or Update Employee, outputRawFormat: json, outputParameters: [{ name: result, type: object, value: '$.' }] }
+        - name: checklist
+          path: /checklist
+          operations:
+            - { name: listChecklists, method: GET, description: List Checklists, outputRawFormat: json, outputParameters: [{ name: result, type: array, value: '$.' }] }
+        - name: library-documents
+          path: /library/documents
+          operations:
+            - { name: listLibraryDocuments, method: GET, description: List Library Documents, outputRawFormat: json, outputParameters: [{ name: result, type: array, value: '$.' }] }
+        - name: reminders
+          path: /reminders
+          operations:
+            - { name: listReminders, method: GET, description: List Reminders, outputRawFormat: json, outputParameters: [{ name: result, type: array, value: '$.' }] }
+      authentication:
+        type: header
+        header: x-api-key
+        value: '{{env.HR_PARTNER_API_KEY}}'
+  exposes:
+    - type: mcp
+      namespace: hr-partner-onboarding-workflow-mcp
+      port: 9090
+      transport: http
+      description: MCP adapter exposing onboarding-workflow tools.
+      tools:
+        - { name: list_new_hires, description: List employees who recently started (filter on started_at downstream), call: hr-partner-onboarding-workflow.listEmployees }
+        - { name: upsert_employee_record, description: Create or update an employee record during onboarding, call: hr-partner-onboarding-workflow.upsertEmployee }
+        - { name: list_onboarding_checklists, description: List active onboarding checklists, call: hr-partner-onboarding-workflow.listChecklists }
+        - { name: list_onboarding_documents, description: List library documents available to new hires, call: hr-partner-onboarding-workflow.listLibraryDocuments }
+        - { name: list_open_reminders, description: List open reminders that may need follow-up for new hires, call: hr-partner-onboarding-workflow.listReminders }

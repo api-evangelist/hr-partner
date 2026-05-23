@@ -1,0 +1,14 @@
+{
+  "$schema": "https://json-structure.org/draft/2020-12/schema",
+  "name": "JobListing",
+  "type": "object",
+  "properties": {
+    "id": { "type": "string" },
+    "title": { "type": "string" },
+    "description": { "type": "string" },
+    "department": { "type": "string" },
+    "location": { "type": "string" },
+    "is_active": { "type": "boolean" },
+    "published_date": { "type": "string" }
+  }
+}

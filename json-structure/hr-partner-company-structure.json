@@ -1,0 +1,12 @@
+{
+  "$schema": "https://json-structure.org/draft/2020-12/schema",
+  "name": "Company",
+  "type": "object",
+  "properties": {
+    "id": { "type": "string" },
+    "name": { "type": "string" },
+    "country": { "type": "string" },
+    "timezone": { "type": "string" },
+    "currency": { "type": "string" }
+  }
+}

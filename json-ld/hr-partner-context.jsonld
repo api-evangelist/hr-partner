@@ -1,0 +1,33 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "schema": "https://schema.org/",
+    "hrp": "https://hrpartner.io/ns/",
+    "Employee": "schema:Person",
+    "JobListing": "schema:JobPosting",
+    "Company": "schema:Organization",
+    "code": "schema:identifier",
+    "first_names": "schema:givenName",
+    "last_name": "schema:familyName",
+    "full_name": "schema:name",
+    "email": "schema:email",
+    "date_of_birth": { "@id": "schema:birthDate", "@type": "xsd:date" },
+    "department": "schema:department",
+    "location": "schema:location",
+    "position": "schema:jobTitle",
+    "employment_status": "hrp:employmentStatus",
+    "started_at": { "@id": "hrp:startedAt", "@type": "xsd:date" },
+    "finished_at": { "@id": "hrp:finishedAt", "@type": "xsd:date" },
+    "leave_type": "hrp:leaveType",
+    "leave_status": "hrp:leaveStatus",
+    "balance": "hrp:leaveBalance",
+    "accrued": "hrp:leaveAccrued",
+    "taken": "hrp:leaveTaken",
+    "pending": "hrp:leavePending",
+    "review_type": "hrp:reviewType",
+    "review_status": "hrp:reviewStatus",
+    "score": "hrp:reviewScore",
+    "stage": "hrp:applicationStage"
+  }
+}

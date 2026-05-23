@@ -1,0 +1,17 @@
+{
+  "id": "rev_1101",
+  "review_type": "Annual",
+  "description": "FY26 annual performance review",
+  "review_date": "2026-04-30",
+  "reviewer": "Sam Lee",
+  "score": 4.3,
+  "review_status": "Completed",
+  "comments": "Exceeds expectations on technical leadership.",
+  "employee": {
+    "code": "EMP001",
+    "first_names": "Avery",
+    "last_name": "Chen",
+    "full_name": "Avery Chen",
+    "department": "Engineering"
+  }
+}

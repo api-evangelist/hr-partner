@@ -1,0 +1,48 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: HR Partner — Library
+  description: 'HR Partner — Library. Read the company document library, its categories, and system lookup definitions.'
+  tags:
+    - HR Partner
+    - Library
+    - Documents
+    - Lookups
+  created: '2026-05-23'
+  modified: '2026-05-23'
+binds:
+  - namespace: env
+    keys:
+      HR_PARTNER_API_KEY: HR_PARTNER_API_KEY
+capability:
+  consumes:
+    - type: http
+      namespace: hr-partner-library
+      baseUri: https://api.hrpartner.io
+      description: HR Partner Library business capability.
+      resources:
+        - name: library-documents
+          path: /library/documents
+          operations:
+            - { name: listLibraryDocuments, method: GET, description: List Library Documents, outputRawFormat: json, outputParameters: [{ name: result, type: array, value: '$.' }] }
+        - name: library-categories
+          path: /library/categories
+          operations:
+            - { name: listLibraryCategories, method: GET, description: List Library Categories, outputRawFormat: json, outputParameters: [{ name: result, type: array, value: '$.' }] }
+        - name: lookups
+          path: /lookups
+          operations:
+            - { name: listLookups, method: GET, description: List Lookups, outputRawFormat: json, outputParameters: [{ name: result, type: array, value: '$.' }] }
+      authentication:
+        type: header
+        header: x-api-key
+        value: '{{env.HR_PARTNER_API_KEY}}'
+  exposes:
+    - type: mcp
+      namespace: hr-partner-library-mcp
+      port: 9090
+      transport: http
+      description: MCP adapter for HR Partner Library.
+      tools:
+        - { name: list_library_documents, description: List library documents, call: hr-partner-library.listLibraryDocuments }
+        - { name: list_library_categories, description: List library categories, call: hr-partner-library.listLibraryCategories }
+        - { name: list_lookups, description: List system lookup definitions, call: hr-partner-library.listLookups }

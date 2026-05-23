@@ -1,0 +1,12 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Timesheet",
+  "type": "object",
+  "properties": {
+    "id": { "type": "string" },
+    "week_commencing": { "type": "string", "format": "date" },
+    "total_hours": { "type": "number" },
+    "timesheet_status": { "type": "string" },
+    "employee": { "$ref": "hr-partner-employee-ref-schema.json" }
+  }
+}

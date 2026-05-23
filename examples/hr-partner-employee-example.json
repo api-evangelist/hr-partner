@@ -1,0 +1,24 @@
+{
+  "id": "emp_001",
+  "code": "EMP001",
+  "first_names": "Avery",
+  "last_name": "Chen",
+  "full_name": "Avery Chen",
+  "date_of_birth": "1989-04-12",
+  "gender_identity": "Non-binary",
+  "department": "Engineering",
+  "location": "Sydney HQ",
+  "position": "Senior Engineer",
+  "employment_status": "Full-Time",
+  "email": "avery.chen@example.com",
+  "started_at": "2022-01-17",
+  "finished_at": null,
+  "avatar": "https://api.hrpartner.io/files/avatars/EMP001.png",
+  "can_logon": true,
+  "portal_username": "avery.chen",
+  "custom_data": {
+    "linkedin": "https://linkedin.com/in/example",
+    "team_lead": false
+  },
+  "tags": ["Senior", "On-Call", "Remote"]
+}

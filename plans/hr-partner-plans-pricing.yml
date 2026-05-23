@@ -1,0 +1,129 @@
+specification: API Commons Plans
+specificationVersion: '0.1'
+schema: https://raw.githubusercontent.com/api-evangelist/interface-research/main/schema/api-commons.yml#/$defs/Plans
+provider: HR Partner
+providerId: hr-partner
+created: '2026-05-23'
+modified: '2026-05-23'
+reconciled: false
+tags:
+  - HR
+  - HRIS
+  - SaaS
+  - Subscription
+description: >-
+  HR Partner publishes three subscription tiers — Core, Premium, and VIP —
+  with pricing driven by an interactive calculator keyed off employee count,
+  currency, and payment frequency. Exact per-tier monthly prices are rendered
+  client-side at https://hrpartner.io/pricing.html and are not exposed
+  statically in the page HTML, so only plan structure and feature scope is
+  captured here. API access is included with all paid tiers (the public REST
+  API requires an admin to provision an x-api-key from Setup → Configure →
+  Integrations). Annual subscriptions are billed as 11 months instead of 12,
+  and there are no long-term contracts.
+sources:
+  - https://hrpartner.io/pricing.html
+  - https://developer.hrpartner.io/
+plans:
+  - id: hr-partner-core
+    name: Core
+    type: subscription
+    description: >-
+      Core HR plan covering employee records, leave management, onboarding,
+      and the self-service employee portal. Up to 5 admin users. Includes 3
+      implementation sessions.
+    entries:
+      - label: Admin users
+        name: admin_users
+        type: quota
+        metric: user
+        limit: 5
+        timeFrame: account
+        unit: 1
+        userMultiplied: false
+      - label: Implementation sessions
+        name: implementation_sessions
+        type: quota
+        metric: session
+        limit: 3
+        timeFrame: onboarding
+        unit: 1
+        userMultiplied: false
+    elements:
+      - name: Employee records
+      - name: Leave management
+      - name: Onboarding checklists
+      - name: Self-service employee portal
+      - name: Public REST API access (via x-api-key)
+  - id: hr-partner-premium
+    name: Premium
+    type: subscription
+    description: >-
+      Premium plan adds recruitment, performance reviews, timesheets, and
+      electronic signatures on top of Core. Up to 10 admin users. Includes 3
+      implementation sessions.
+    entries:
+      - label: Admin users
+        name: admin_users
+        type: quota
+        metric: user
+        limit: 10
+        timeFrame: account
+        unit: 1
+        userMultiplied: false
+      - label: Implementation sessions
+        name: implementation_sessions
+        type: quota
+        metric: session
+        limit: 3
+        timeFrame: onboarding
+        unit: 1
+        userMultiplied: false
+    elements:
+      - name: Everything in Core
+      - name: Recruitment and applicant tracking
+      - name: Performance reviews and goals
+      - name: Timesheets
+      - name: Electronic signatures
+      - name: Public REST API access (via x-api-key)
+  - id: hr-partner-vip
+    name: VIP
+    type: subscription
+    description: >-
+      VIP plan adds priority support, a dedicated account manager, and custom
+      domain on top of Premium, with unlimited admin users and 5 implementation
+      sessions.
+    entries:
+      - label: Admin users
+        name: admin_users
+        type: quota
+        metric: user
+        limit: unlimited
+        timeFrame: account
+        unit: 1
+        userMultiplied: false
+      - label: Implementation sessions
+        name: implementation_sessions
+        type: quota
+        metric: session
+        limit: 5
+        timeFrame: onboarding
+        unit: 1
+        userMultiplied: false
+    elements:
+      - name: Everything in Premium
+      - name: Priority support
+      - name: Dedicated account manager
+      - name: Custom domain
+      - name: Public REST API access (via x-api-key)
+billing:
+  contracts: none
+  annualBilling: 11 months billed instead of 12
+  currencyOptions: Selectable in pricing calculator
+  trial: Free trial available (no credit card required)
+notes:
+  - Exact monthly prices per employee tier are calculated client-side by the
+    HR Partner pricing widget; values were not captured here to avoid
+    publishing invented or stale numbers.
+  - The HR Partner REST API itself is not metered as a separate paid product;
+    rate limits (60 req/sec, 900 req/min burst) apply across all tiers.

@@ -1,0 +1,14 @@
+{
+  "$schema": "https://json-structure.org/draft/2020-12/schema",
+  "name": "Attachment",
+  "type": "object",
+  "properties": {
+    "id": { "type": "string" },
+    "description": { "type": "string" },
+    "url": { "type": "string" },
+    "module": { "type": "string" },
+    "module_id": { "type": "string" },
+    "size": { "type": "integer" },
+    "uploaded_date": { "type": "string" }
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "id": "abs_3301",
+  "leave_type": "Sick Leave",
+  "absence_reason": "Flu",
+  "description": "Self-reported sick day",
+  "absence_date": "2026-05-04",
+  "return_date": "2026-05-06",
+  "duration": 2,
+  "physician": "Dr. M. Patel",
+  "certificate_number": "MC-2026-0504",
+  "absence_status": "Approved",
+  "comments": "Medical certificate provided.",
+  "employee": {
+    "code": "EMP001",
+    "first_names": "Avery",
+    "last_name": "Chen",
+    "full_name": "Avery Chen",
+    "department": "Engineering"
+  }
+}

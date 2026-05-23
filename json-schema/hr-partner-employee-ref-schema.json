@@ -1,0 +1,12 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "EmployeeRef",
+  "type": "object",
+  "properties": {
+    "code": { "type": "string" },
+    "first_names": { "type": "string" },
+    "last_name": { "type": "string" },
+    "full_name": { "type": "string" },
+    "department": { "type": "string" }
+  }
+}

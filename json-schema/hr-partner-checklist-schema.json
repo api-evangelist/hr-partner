@@ -1,0 +1,16 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Checklist",
+  "type": "object",
+  "properties": {
+    "id": { "type": "string" },
+    "name": { "type": "string" },
+    "comments": { "type": "string" },
+    "status": { "type": "string" },
+    "assigned_at": { "type": "string", "format": "date-time" },
+    "completed_at": { "type": "string", "format": "date-time" },
+    "progress": { "type": "number" },
+    "percdone": { "type": "number" },
+    "employee": { "$ref": "hr-partner-employee-ref-schema.json" }
+  }
+}

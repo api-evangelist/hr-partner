@@ -1,0 +1,12 @@
+{
+  "$schema": "https://json-structure.org/draft/2020-12/schema",
+  "name": "Timesheet",
+  "type": "object",
+  "properties": {
+    "id": { "type": "string" },
+    "week_commencing": { "type": "string" },
+    "total_hours": { "type": "number" },
+    "timesheet_status": { "type": "string" },
+    "employee": { "type": "object" }
+  }
+}

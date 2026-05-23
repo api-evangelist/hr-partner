@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-structure.org/draft/2020-12/schema",
+  "name": "Absence",
+  "type": "object",
+  "properties": {
+    "id": { "type": "string" },
+    "leave_type": { "type": "string" },
+    "absence_reason": { "type": "string" },
+    "description": { "type": "string" },
+    "absence_date": { "type": "string" },
+    "return_date": { "type": "string" },
+    "duration": { "type": "number" },
+    "physician": { "type": "string" },
+    "certificate_number": { "type": "string" },
+    "absence_status": { "type": "string" },
+    "comments": { "type": "string" },
+    "employee": { "type": "object" }
+  }
+}

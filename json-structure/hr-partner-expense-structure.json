@@ -1,0 +1,14 @@
+{
+  "$schema": "https://json-structure.org/draft/2020-12/schema",
+  "name": "Expense",
+  "type": "object",
+  "properties": {
+    "id": { "type": "string" },
+    "description": { "type": "string" },
+    "amount": { "type": "number" },
+    "currency": { "type": "string" },
+    "claim_date": { "type": "string" },
+    "expense_status": { "type": "string" },
+    "employee": { "type": "object" }
+  }
+}

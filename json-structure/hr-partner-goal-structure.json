@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-structure.org/draft/2020-12/schema",
+  "name": "Goal",
+  "type": "object",
+  "properties": {
+    "id": { "type": "string" },
+    "scope": { "type": "string" },
+    "type": { "type": "string" },
+    "description": { "type": "string" },
+    "target_value": { "type": "number" },
+    "can_exceed_target_value": { "type": "boolean" },
+    "current_value": { "type": "number" },
+    "is_active": { "type": "boolean" },
+    "is_completed": { "type": "boolean" },
+    "is_archived": { "type": "boolean" },
+    "assigned_at": { "type": "string" },
+    "due_at": { "type": "string" },
+    "employee": { "type": "object" }
+  }
+}

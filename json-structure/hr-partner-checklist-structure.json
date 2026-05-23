@@ -1,0 +1,16 @@
+{
+  "$schema": "https://json-structure.org/draft/2020-12/schema",
+  "name": "Checklist",
+  "type": "object",
+  "properties": {
+    "id": { "type": "string" },
+    "name": { "type": "string" },
+    "comments": { "type": "string" },
+    "status": { "type": "string" },
+    "assigned_at": { "type": "string" },
+    "completed_at": { "type": "string" },
+    "progress": { "type": "number" },
+    "percdone": { "type": "number" },
+    "employee": { "type": "object" }
+  }
+}

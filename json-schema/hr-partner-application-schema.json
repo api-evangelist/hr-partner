@@ -1,0 +1,13 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Application",
+  "type": "object",
+  "properties": {
+    "id": { "type": "string" },
+    "applicant_id": { "type": "string" },
+    "job_listing_id": { "type": "string" },
+    "stage": { "type": "string" },
+    "applied_at": { "type": "string", "format": "date-time" },
+    "status": { "type": "string" }
+  }
+}

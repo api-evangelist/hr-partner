@@ -1,0 +1,10 @@
+{
+  "id": "prj_18",
+  "name": "API Platform v2",
+  "description": "Re-platform the HR Partner public API onto a versioned gateway.",
+  "status": "Active",
+  "start_date": "2026-01-01",
+  "end_date": "2026-12-31",
+  "budget": 250000,
+  "manager": "Sam Lee"
+}

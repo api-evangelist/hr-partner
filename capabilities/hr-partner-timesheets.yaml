@@ -1,0 +1,52 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: HR Partner — Timesheets
+  description: 'HR Partner — Timesheets. Read and create timesheets and timeclock entries, plus list projects.'
+  tags:
+    - HR Partner
+    - Timesheets
+    - Projects
+  created: '2026-05-23'
+  modified: '2026-05-23'
+binds:
+  - namespace: env
+    keys:
+      HR_PARTNER_API_KEY: HR_PARTNER_API_KEY
+capability:
+  consumes:
+    - type: http
+      namespace: hr-partner-timesheets
+      baseUri: https://api.hrpartner.io
+      description: HR Partner Timesheets business capability.
+      resources:
+        - name: timesheets
+          path: /timesheets
+          operations:
+            - { name: listTimesheets, method: GET, description: List Timesheets, outputRawFormat: json, outputParameters: [{ name: result, type: array, value: '$.' }] }
+        - name: timesheet-by-id
+          path: /timesheet/{id}
+          operations:
+            - { name: getTimesheet, method: GET, description: Get Timesheet, outputRawFormat: json, outputParameters: [{ name: result, type: object, value: '$.' }] }
+        - name: timesheet
+          path: /timesheet
+          operations:
+            - { name: createTimesheetEntry, method: POST, description: Create Timesheet Entry, outputRawFormat: json, outputParameters: [{ name: result, type: object, value: '$.' }] }
+        - name: projects
+          path: /projects
+          operations:
+            - { name: listProjects, method: GET, description: List Projects, outputRawFormat: json, outputParameters: [{ name: result, type: array, value: '$.' }] }
+      authentication:
+        type: header
+        header: x-api-key
+        value: '{{env.HR_PARTNER_API_KEY}}'
+  exposes:
+    - type: mcp
+      namespace: hr-partner-timesheets-mcp
+      port: 9090
+      transport: http
+      description: MCP adapter for HR Partner Timesheets.
+      tools:
+        - { name: list_timesheets, description: List employee timesheets, call: hr-partner-timesheets.listTimesheets }
+        - { name: get_timesheet, description: Get a single timesheet by id, call: hr-partner-timesheets.getTimesheet }
+        - { name: create_timesheet_entry, description: Create a timesheet/timeclock entry, call: hr-partner-timesheets.createTimesheetEntry }
+        - { name: list_projects, description: List projects and activities, call: hr-partner-timesheets.listProjects }

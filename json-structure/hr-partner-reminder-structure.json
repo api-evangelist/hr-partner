@@ -1,0 +1,12 @@
+{
+  "$schema": "https://json-structure.org/draft/2020-12/schema",
+  "name": "Reminder",
+  "type": "object",
+  "properties": {
+    "id": { "type": "string" },
+    "title": { "type": "string" },
+    "body": { "type": "string" },
+    "due_at": { "type": "string" },
+    "is_completed": { "type": "boolean" }
+  }
+}

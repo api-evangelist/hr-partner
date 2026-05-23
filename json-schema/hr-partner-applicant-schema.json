@@ -1,0 +1,14 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Applicant",
+  "type": "object",
+  "properties": {
+    "id": { "type": "string" },
+    "first_names": { "type": "string" },
+    "last_name": { "type": "string" },
+    "email": { "type": "string", "format": "email" },
+    "phone": { "type": "string" },
+    "source": { "type": "string" },
+    "notes": { "type": "string" }
+  }
+}
