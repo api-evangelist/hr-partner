@@ -1,18 +1,14 @@
 aid: hr-partner
 name: HR Partner
 description: >-
-  HR Partner is a cloud-based human resources management SaaS platform from
-  HR Partner Software Pty Ltd (Australia), aimed at organizations of roughly
-  20 to 500 employees. The platform covers employee records, recruitment and
-  applicant tracking, onboarding and training checklists, leave requests and
-  accruals, an employee self-service portal, performance reviews and goals,
-  electronic signatures, expense claims, timesheets, document library,
-  organizational chart, company calendar, and HR reports. HR Partner exposes
-  a single public REST API at api.hrpartner.io, authenticated via per-account
-  API key (x-api-key header), with rate limits of 60 requests/second and a
-  900 requests-per-minute burst ceiling. The API is read-mostly with selected
-  write endpoints for employees, applicants, applications, timesheets, and
-  reminders, and is described as being in an early release phase.
+  HR Partner is a cloud-based human resources management SaaS platform from HR Partner Software Pty Ltd (Australia),
+  aimed at organizations of roughly 20 to 500 employees. The platform covers employee records, recruitment and applicant
+  tracking, onboarding and training checklists, leave requests and accruals, an employee self-service portal,
+  performance reviews and goals, electronic signatures, expense claims, timesheets, document library, organizational
+  chart, company calendar, and HR reports. HR Partner exposes a single public REST API at api.hrpartner.io,
+  authenticated via per-account API key (x-api-key header), with rate limits of 60 requests/second and a 900
+  requests-per-minute burst ceiling. The API is read-mostly with selected write endpoints for employees, applicants,
+  applications, timesheets, and reminders, and is described as being in an early release phase.
 image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
 url: https://raw.githubusercontent.com/api-evangelist/hr-partner/refs/heads/main/apis.yml
 humanURL: https://hrpartner.io
@@ -42,16 +38,12 @@ apis:
   - aid: hr-partner:rest-api
     name: HR Partner REST API
     description: >-
-      Public REST API for HR Partner, covering employee records and sub-modules
-      (contacts, addresses, notes, education, skills, training, assets, benefits,
-      dependents, grievances, positions, renewables, attachments), leave
-      management (requests, balances, absences), timesheets and projects,
-      expenses, recruitment (job listings, applicants, applications,
-      application-stage tracking, interviews), performance (reviews, goals),
-      checklists, reminders, document library, lookups, and company information.
-      Authentication is via API key passed in the x-api-key header. Rate limits
-      are 60 GET/POST requests per second and 900 requests per one-minute burst,
-      with HTTPS required.
+      Public REST API for HR Partner, covering employee records and sub-modules (contacts, addresses, notes, education,
+      skills, training, assets, benefits, dependents, grievances, positions, renewables, attachments), leave management
+      (requests, balances, absences), timesheets and projects, expenses, recruitment (job listings, applicants,
+      applications, application-stage tracking, interviews), performance (reviews, goals), checklists, reminders,
+      document library, lookups, and company information. Authentication is via API key passed in the x-api-key header.
+      Rate limits are 60 GET/POST requests per second and 900 requests per one-minute burst, with HTTPS required.
     humanURL: https://developer.hrpartner.io/
     baseURL: https://api.hrpartner.io
     image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
@@ -79,28 +71,6 @@ apis:
         url: openapi/hr-partner-rest-api-openapi.yml
       - type: SpectralRules
         url: rules/hr-partner-rest-api-rules.yml
-      - type: NaftikoCapability
-        url: capabilities/hr-partner-employees.yaml
-      - type: NaftikoCapability
-        url: capabilities/hr-partner-employee-records.yaml
-      - type: NaftikoCapability
-        url: capabilities/hr-partner-leave.yaml
-      - type: NaftikoCapability
-        url: capabilities/hr-partner-timesheets.yaml
-      - type: NaftikoCapability
-        url: capabilities/hr-partner-recruitment.yaml
-      - type: NaftikoCapability
-        url: capabilities/hr-partner-performance.yaml
-      - type: NaftikoCapability
-        url: capabilities/hr-partner-checklists.yaml
-      - type: NaftikoCapability
-        url: capabilities/hr-partner-expenses.yaml
-      - type: NaftikoCapability
-        url: capabilities/hr-partner-library.yaml
-      - type: NaftikoCapability
-        url: capabilities/hr-partner-company.yaml
-      - type: NaftikoCapability
-        url: capabilities/hr-partner-onboarding-workflow.yaml
     contact:
       - FN: HR Partner Developer
         email: developer@hrpartner.io

@@ -1,77 +1,90 @@
 # HR Partner (hr-partner)
 
-API Evangelist profile of [HR Partner](https://hrpartner.io), a cloud-based human resources management SaaS platform from HR Partner Software Pty Ltd (Australia), targeted at organizations of roughly 20 to 500 employees.
+HR Partner is a cloud-based human resources management SaaS platform from HR Partner Software Pty Ltd (Australia), aimed at organizations of roughly 20 to 500 employees. The platform covers employee records, recruitment and applicant tracking, onboarding and training checklists, leave requests and accruals, an employee self-service portal, performance reviews and goals, electronic signatures, expense claims, timesheets, document library, organizational chart, company calendar, and HR reports. HR Partner exposes a single public REST API at api.hrpartner.io, authenticated via per-account API key (x-api-key header), with rate limits of 60 requests/second and a 900 requests-per-minute burst ceiling. The API is read-mostly with selected write endpoints for employees, applicants, applications, timesheets, and reminders, and is described as being in an early release phase.
 
-> "HR Partner gives teams of 20-500 the tools to run HR properly, with transparent pricing, no contracts, and real human support." — hrpartner.io
+**APIs.json:** [https://raw.githubusercontent.com/api-evangelist/hr-partner/refs/heads/main/apis.yml](https://raw.githubusercontent.com/api-evangelist/hr-partner/refs/heads/main/apis.yml)
 
-This repo started as a generic stub for "HR partner" and was profiled as the SaaS company after verifying hrpartner.io.
+## Scope
 
-## Surface area
+- **Type:** Index
+- **Access:** 3rd-Party
 
-- **APIs documented**: 1 (HR Partner REST API)
-- **Base URL**: `https://api.hrpartner.io`
-- **Authentication**: API key in `x-api-key` request header (provisioned by an admin in Setup → Configure → Integrations)
-- **Rate limits**: 60 requests/second, 900 requests/minute burst, 60-second response timeout, HTTPS required
-- **Webhooks**: Not documented at developer.hrpartner.io as of this run
-- **Status**: Documentation notes the API is in an "early release phase with potential breaking changes"
+## Tags
 
-## Artifacts
+- HR
+- HRIS
+- Human Resources
+- Employee Records
+- Leave Management
+- Recruitment
+- Applicant Tracking
+- Onboarding
+- Performance Management
+- Timesheets
+- Expense Management
+- Document Library
+- eSignature
+- SaaS
+- Australia
 
-| Folder | Count | Notes |
-| --- | --- | --- |
-| `openapi/` | 1 | `hr-partner-rest-api-openapi.yml` — full OpenAPI 3.1 spec covering ~40 operations across 28 tagged resources |
-| `rules/` | 1 | Spectral rules enforcing title-case summaries, required `x-api-key` scheme, `api.hrpartner.io` server, etc. |
-| `capabilities/` | 11 | Per-domain Naftiko capabilities plus an onboarding-workflow composition |
-| `json-schema/` | 17 | JSON Schema for Employee, Leave Request/Balance, Absence, Timesheet, Applicant, Application, Job Listing, Review, Goal, Checklist, Expense, Attachment, Company, Project, Reminder, EmployeeRef |
-| `json-structure/` | 16 | JSON Structure parallels of the schemas |
-| `json-ld/` | 1 | `hr-partner-context.jsonld` mapping core entities to schema.org and `hrp:` namespace |
-| `examples/` | 17 | Hand-crafted illustrative payloads (Employee, Leave, Timesheet, Applicant, Application, Review, Goal, Checklist, Expense, Attachment, Company, Project, Reminder, etc.) |
-| `vocabulary/` | 1 | Tag-derived domain vocabulary |
-| `rate-limits/` | 1 | API Commons rate-limit profile |
-| `plans/` | 1 | API Commons plans profile capturing Core / Premium / VIP plan structure (exact monthly prices are rendered client-side and are not captured here) |
-| `finops/` | 1 | FOCUS-aligned FinOps view |
+## Timestamps
 
-## Naftiko capabilities
+- **Created:** 2026-05-11
+- **Modified:** 2026-05-23
 
-- `hr-partner-company.yaml`
-- `hr-partner-employees.yaml`
-- `hr-partner-employee-records.yaml` (contacts, addresses, notes, education, skills, training, assets, benefits, dependents, grievances, positions, renewables, attachments)
-- `hr-partner-leave.yaml` (leave requests, balances, absences)
-- `hr-partner-timesheets.yaml` (timesheets, timesheet entry create, projects)
-- `hr-partner-recruitment.yaml` (job listings, applicants, applications, application-stage tracking)
-- `hr-partner-performance.yaml` (reviews, goals)
-- `hr-partner-checklists.yaml` (checklists, reminders with update/delete)
-- `hr-partner-expenses.yaml`
-- `hr-partner-library.yaml` (library documents, library categories, lookups)
-- `hr-partner-onboarding-workflow.yaml` — composition wiring Employees + Checklists + Library + Reminders
+## APIs
 
-## Common properties
+### HR Partner REST API
 
-- **Website**: https://hrpartner.io
-- **Developer portal / docs**: https://developer.hrpartner.io
-- **Support**: https://help.hrpartner.io
-- **Blog**: https://blog.hrpartner.io
-- **Status page**: https://status.hrpartner.io (powered by Better Stack)
-- **GitHub org**: https://github.com/HR-Partner (27 public repos, mostly vendored Ruby gems — Padrino, DataMapper, plus a Slate fork for the API docs; no first-party SDK)
-- **Pricing**: https://hrpartner.io/pricing.html
+Public REST API for HR Partner, covering employee records and sub-modules (contacts, addresses, notes, education, skills, training, assets, benefits, dependents, grievances, positions, renewables, attachments), leave management (requests, balances, absences), timesheets and projects, expenses, recruitment (job listings, applicants, applications, application-stage tracking, interviews), performance (reviews, goals), checklists, reminders, document library, lookups, and company information. Authentication is via API key passed in the x-api-key header. Rate limits are 60 GET/POST requests per second and 900 requests per one-minute burst, with HTTPS required.
 
-## Notable findings
+- **Human URL:** [https://developer.hrpartner.io/](https://developer.hrpartner.io/)
+- **Base URL:** `https://api.hrpartner.io`
 
-- HR Partner Software Pty Ltd is based in Australia; the product is positioned for 20–500-employee teams.
-- The public REST API surface is broad (employees, sub-modules, leave, timesheets, recruitment, performance, checklists, reminders, library, lookups) but read-heavy; write endpoints are limited to employee upsert, timesheet entry creation, applicant/application create-or-update, and reminder update/delete.
-- The HR Partner GitHub org publishes a Slate-based fork that powers developer.hrpartner.io and many vendored Ruby dependencies, suggesting the platform is implemented on Padrino + DataMapper.
-- A blog at blog.hrpartner.io publishes roughly every 1–2 days (e.g., "New Zealand's Leave Laws Are Changing. Here's What Small Businesses Need to Know.", 2026-05-18).
-- The status page lists Application Server, Web Site, Marketing Blog, Documentation, Development Blog, Developer Portal, and API Service as services; all currently marked "All services are online" / not actively monitored at run time.
+#### Tags
 
-## Notable absences
+- HR
+- HRIS
+- Employee Records
+- Leave Management
+- Recruitment
+- Applicant Tracking
+- Performance Management
+- Timesheets
+- Expense Management
+- REST
 
-- No public OpenAPI/Swagger or AsyncAPI artifact published by HR Partner.
-- No documented webhook surface.
-- No first-party SDKs published — only Ruby/Node/cURL snippets in the developer portal.
-- No public per-tier pricing in static HTML (calculator-driven only).
-- No public changelog/release-notes URL discovered.
-- No RSS feed exposed on the blog.
+#### Properties
 
-## Index
+- [Documentation](https://developer.hrpartner.io/)
+- [API Reference](https://developer.hrpartner.io/)
+- [Authentication](https://developer.hrpartner.io/#authentication)
+- [Rate Limits](https://developer.hrpartner.io/#rate-limits)
+- [OpenAPI](openapi/hr-partner-rest-api-openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
+- [Postman Collection](collections/hr-partner-rest-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
+- [Open Collection](collections/hr-partner-rest-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+- [Spectral Rules](rules/hr-partner-rest-api-rules.yml)
 
-The machine-readable index of this profile lives in [`apis.yml`](apis.yml).
+## Common Properties
+
+- [Website](https://hrpartner.io)
+- [Documentation](https://developer.hrpartner.io/)
+- [Developer Portal](https://developer.hrpartner.io/)
+- [API Reference](https://developer.hrpartner.io/)
+- [Sign Up](https://hrpartner.io/sign-up)
+- [Pricing](https://hrpartner.io/pricing.html)
+- [Support](https://help.hrpartner.io)
+- [Blog](https://blog.hrpartner.io)
+- [Status Page](https://status.hrpartner.io)
+- [GitHub Organization](https://github.com/HR-Partner)
+- [LinkedIn](https://www.linkedin.com/company/hr-partner-software)
+- [Plans](plans/hr-partner-plans-pricing.yml)
+- [Rate Limits](rate-limits/hr-partner-rate-limits.yml)
+- [Fin Ops](finops/hr-partner-finops.yml)
+- [Vocabulary](vocabulary/hr-partner-vocabulary.yml)
+- [J S O N L D Context](json-ld/hr-partner-context.jsonld)
+
+## Maintainers
+
+**FN:** Kin Lane
+**Email:** kin@apievangelist.com

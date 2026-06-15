@@ -1,0 +1,5163 @@
+{
+  "item": [
+    {
+      "id": "813e64ed-9479-4d12-a1a5-43aaf869186a",
+      "name": "Company",
+      "description": {
+        "content": "Retrieve company-level information for the HR Partner account.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "e3d46874-8cd6-4bae-893e-e881e6cd8654",
+          "name": "Get Company Information",
+          "request": {
+            "name": "Get Company Information",
+            "description": {
+              "content": "Retrieve company-level information for the HR Partner account.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "company"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "96658203-79cf-4547-b4a1-a8f5ddd28b0a",
+              "name": "Company information.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "company"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"string\",\n  \"name\": \"string\",\n  \"country\": \"string\",\n  \"timezone\": \"string\",\n  \"currency\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "1a605c20-0b92-4c0b-a092-4842f6694b89",
+      "name": "Employees",
+      "description": {
+        "content": "Read, create, and update employee records.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "432e4de2-a27c-4cae-8dee-85759231c978",
+          "name": "List Employees",
+          "request": {
+            "name": "List Employees",
+            "description": {
+              "content": "Returns all employees in the HR Partner account with optional filtering.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "employees"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "search",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "department",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "location",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "group",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "position",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "employment_status",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "gender_identity",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "is_active",
+                  "value": "<boolean>"
+                },
+                {
+                  "disabled": false,
+                  "key": "is_terminated",
+                  "value": "<boolean>"
+                },
+                {
+                  "disabled": false,
+                  "key": "reports_to",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "dd4a9064-2d09-4510-a8dd-afb6c0d2f250",
+              "name": "List of employees.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "employees"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "search",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "department",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "location",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "group",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "position",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "employment_status",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "gender_identity",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "is_active",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "is_terminated",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "reports_to",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"id\": \"string\",\n    \"code\": \"string\",\n    \"first_names\": \"string\",\n    \"last_name\": \"string\",\n    \"full_name\": \"string\",\n    \"date_of_birth\": \"2007-01-21\",\n    \"gender_identity\": \"string\",\n    \"department\": \"string\",\n    \"location\": \"string\",\n    \"position\": \"string\",\n    \"employment_status\": \"string\",\n    \"email\": \"string\",\n    \"started_at\": \"1949-02-08\",\n    \"finished_at\": \"1982-06-16\",\n    \"avatar\": \"string\",\n    \"can_logon\": true,\n    \"portal_username\": \"string\",\n    \"custom_data\": {},\n    \"tags\": [\n      \"string\",\n      \"string\"\n    ]\n  },\n  {\n    \"id\": \"string\",\n    \"code\": \"string\",\n    \"first_names\": \"string\",\n    \"last_name\": \"string\",\n    \"full_name\": \"string\",\n    \"date_of_birth\": \"1956-07-18\",\n    \"gender_identity\": \"string\",\n    \"department\": \"string\",\n    \"location\": \"string\",\n    \"position\": \"string\",\n    \"employment_status\": \"string\",\n    \"email\": \"string\",\n    \"started_at\": \"1978-04-16\",\n    \"finished_at\": \"1963-06-20\",\n    \"avatar\": \"string\",\n    \"can_logon\": false,\n    \"portal_username\": \"string\",\n    \"custom_data\": {},\n    \"tags\": [\n      \"string\",\n      \"string\"\n    ]\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "b3048054-54f2-435b-860d-e61b90a96bc8",
+          "name": "Get Employee",
+          "request": {
+            "name": "Get Employee",
+            "description": {
+              "content": "Retrieve a single employee by code.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "employee",
+                ":employeeCode"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "employeeCode",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "1e6dae16-e3ea-43ab-b4f8-fa8f54e3fd0c",
+              "name": "A single employee.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "employee",
+                    ":employeeCode"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "employeeCode",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"string\",\n  \"code\": \"string\",\n  \"first_names\": \"string\",\n  \"last_name\": \"string\",\n  \"full_name\": \"string\",\n  \"date_of_birth\": \"1955-10-28\",\n  \"gender_identity\": \"string\",\n  \"department\": \"string\",\n  \"location\": \"string\",\n  \"position\": \"string\",\n  \"employment_status\": \"string\",\n  \"email\": \"string\",\n  \"started_at\": \"1948-05-25\",\n  \"finished_at\": \"1950-07-29\",\n  \"avatar\": \"string\",\n  \"can_logon\": true,\n  \"portal_username\": \"string\",\n  \"custom_data\": {},\n  \"tags\": [\n    \"string\",\n    \"string\"\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "61ccb042-6ef4-4a39-92aa-3029f4a0bcee",
+          "name": "Create Or Update Employee",
+          "request": {
+            "name": "Create Or Update Employee",
+            "description": {
+              "content": "Create a new employee or update an existing one by code.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "employee",
+                ":employeeCode"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "employeeCode",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"id\": \"<string>\",\n  \"code\": \"<string>\",\n  \"first_names\": \"<string>\",\n  \"last_name\": \"<string>\",\n  \"full_name\": \"<string>\",\n  \"date_of_birth\": \"<date>\",\n  \"gender_identity\": \"<string>\",\n  \"department\": \"<string>\",\n  \"location\": \"<string>\",\n  \"position\": \"<string>\",\n  \"employment_status\": \"<string>\",\n  \"email\": \"<string>\",\n  \"started_at\": \"<date>\",\n  \"finished_at\": \"<date>\",\n  \"avatar\": \"<string>\",\n  \"can_logon\": \"<boolean>\",\n  \"portal_username\": \"<string>\",\n  \"custom_data\": \"<object>\",\n  \"tags\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "cc7d09d1-7a0f-479b-b24f-3ba7080f7373",
+              "name": "Created or updated employee.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "employee",
+                    ":employeeCode"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "employeeCode",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"id\": \"<string>\",\n  \"code\": \"<string>\",\n  \"first_names\": \"<string>\",\n  \"last_name\": \"<string>\",\n  \"full_name\": \"<string>\",\n  \"date_of_birth\": \"<date>\",\n  \"gender_identity\": \"<string>\",\n  \"department\": \"<string>\",\n  \"location\": \"<string>\",\n  \"position\": \"<string>\",\n  \"employment_status\": \"<string>\",\n  \"email\": \"<string>\",\n  \"started_at\": \"<date>\",\n  \"finished_at\": \"<date>\",\n  \"avatar\": \"<string>\",\n  \"can_logon\": \"<boolean>\",\n  \"portal_username\": \"<string>\",\n  \"custom_data\": \"<object>\",\n  \"tags\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"string\",\n  \"code\": \"string\",\n  \"first_names\": \"string\",\n  \"last_name\": \"string\",\n  \"full_name\": \"string\",\n  \"date_of_birth\": \"1955-10-28\",\n  \"gender_identity\": \"string\",\n  \"department\": \"string\",\n  \"location\": \"string\",\n  \"position\": \"string\",\n  \"employment_status\": \"string\",\n  \"email\": \"string\",\n  \"started_at\": \"1948-05-25\",\n  \"finished_at\": \"1950-07-29\",\n  \"avatar\": \"string\",\n  \"can_logon\": true,\n  \"portal_username\": \"string\",\n  \"custom_data\": {},\n  \"tags\": [\n    \"string\",\n    \"string\"\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "82531d6b-3066-4f74-b011-512b3864bc0e",
+      "name": "Contacts",
+      "description": {
+        "content": "List employee contact details (phone, email, emergency).",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "5283c73f-0f60-493f-9f60-aa4e6f8478fe",
+          "name": "List Contacts",
+          "request": {
+            "name": "List Contacts",
+            "description": {
+              "content": "List employee contact details across the account.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "contacts"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "search",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "contact_type",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "is_primary",
+                  "value": "<boolean>"
+                },
+                {
+                  "disabled": false,
+                  "key": "is_public",
+                  "value": "<boolean>"
+                },
+                {
+                  "disabled": false,
+                  "key": "is_emergency",
+                  "value": "<boolean>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "38d3d4e3-2829-495e-90b5-a6d1d949399d",
+              "name": "List of contacts.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "contacts"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "search",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "contact_type",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "is_primary",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "is_public",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "is_emergency",
+                      "value": "<boolean>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"id\": \"string\",\n    \"type\": \"string\",\n    \"details\": \"string\",\n    \"is_primary\": true,\n    \"is_public\": false,\n    \"is_emergency\": true,\n    \"employee\": {\n      \"code\": \"string\",\n      \"first_names\": \"string\",\n      \"last_name\": \"string\",\n      \"full_name\": \"string\",\n      \"department\": \"string\"\n    }\n  },\n  {\n    \"id\": \"string\",\n    \"type\": \"string\",\n    \"details\": \"string\",\n    \"is_primary\": false,\n    \"is_public\": false,\n    \"is_emergency\": false,\n    \"employee\": {\n      \"code\": \"string\",\n      \"first_names\": \"string\",\n      \"last_name\": \"string\",\n      \"full_name\": \"string\",\n      \"department\": \"string\"\n    }\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "11558e6b-7593-453a-8afc-f2f66d470fbd",
+      "name": "Addresses",
+      "description": {
+        "content": "List employee address records.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "400ae60a-1b38-44b0-bf66-3010c08e4409",
+          "name": "List Addresses",
+          "request": {
+            "name": "List Addresses",
+            "description": {
+              "content": "List employee address records.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "addresses"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "search",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "address_type",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "location_search",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "8c3bf32b-650f-4dc7-adcc-ac748d016cd4",
+              "name": "List of addresses.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "addresses"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "search",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "address_type",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "location_search",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"id\": \"string\",\n    \"type\": \"string\",\n    \"address_1\": \"string\",\n    \"address_2\": \"string\",\n    \"suburb\": \"string\",\n    \"state\": \"string\",\n    \"post_code\": \"string\",\n    \"country\": \"string\",\n    \"employee\": {\n      \"code\": \"string\",\n      \"first_names\": \"string\",\n      \"last_name\": \"string\",\n      \"full_name\": \"string\",\n      \"department\": \"string\"\n    }\n  },\n  {\n    \"id\": \"string\",\n    \"type\": \"string\",\n    \"address_1\": \"string\",\n    \"address_2\": \"string\",\n    \"suburb\": \"string\",\n    \"state\": \"string\",\n    \"post_code\": \"string\",\n    \"country\": \"string\",\n    \"employee\": {\n      \"code\": \"string\",\n      \"first_names\": \"string\",\n      \"last_name\": \"string\",\n      \"full_name\": \"string\",\n      \"department\": \"string\"\n    }\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "9258c950-4113-4f63-9e16-92b7b3f49796",
+      "name": "Notes",
+      "description": {
+        "content": "Retrieve internal HR notes attached to employees.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "19f737b9-252b-4880-b48c-d9d9417fa1b0",
+          "name": "List Notes",
+          "request": {
+            "name": "List Notes",
+            "description": {
+              "content": "List internal HR notes attached to employees.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "notes"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "employee",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "department",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "note",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "created_date_from",
+                  "value": "<date>"
+                },
+                {
+                  "disabled": false,
+                  "key": "created_date_to",
+                  "value": "<date>"
+                },
+                {
+                  "disabled": false,
+                  "key": "updated_date_from",
+                  "value": "<date>"
+                },
+                {
+                  "disabled": false,
+                  "key": "updated_date_to",
+                  "value": "<date>"
+                },
+                {
+                  "disabled": false,
+                  "key": "tags",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "include_events",
+                  "value": "<boolean>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "7c08dffb-e9de-4670-87c2-6ca06d5d0a60",
+              "name": "List of notes.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "notes"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "employee",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "department",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "note",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "created_date_from",
+                      "value": "<date>"
+                    },
+                    {
+                      "key": "created_date_to",
+                      "value": "<date>"
+                    },
+                    {
+                      "key": "updated_date_from",
+                      "value": "<date>"
+                    },
+                    {
+                      "key": "updated_date_to",
+                      "value": "<date>"
+                    },
+                    {
+                      "key": "tags",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "include_events",
+                      "value": "<boolean>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"id\": \"string\",\n    \"note\": \"string\",\n    \"created_date\": \"1999-06-16T11:39:58.998Z\",\n    \"updated_date\": \"1951-01-10T08:12:13.036Z\",\n    \"employee\": {\n      \"code\": \"string\",\n      \"first_names\": \"string\",\n      \"last_name\": \"string\",\n      \"full_name\": \"string\",\n      \"department\": \"string\"\n    },\n    \"attachments\": [\n      {\n        \"id\": \"string\",\n        \"description\": \"string\",\n        \"url\": \"string\",\n        \"module\": \"string\",\n        \"module_id\": \"string\",\n        \"size\": 4391,\n        \"uploaded_date\": \"1984-08-30T19:48:02.836Z\"\n      },\n      {\n        \"id\": \"string\",\n        \"description\": \"string\",\n        \"url\": \"string\",\n        \"module\": \"string\",\n        \"module_id\": \"string\",\n        \"size\": 6362,\n        \"uploaded_date\": \"1974-04-29T01:28:41.197Z\"\n      }\n    ]\n  },\n  {\n    \"id\": \"string\",\n    \"note\": \"string\",\n    \"created_date\": \"1958-05-12T16:13:00.690Z\",\n    \"updated_date\": \"2011-02-05T17:25:13.360Z\",\n    \"employee\": {\n      \"code\": \"string\",\n      \"first_names\": \"string\",\n      \"last_name\": \"string\",\n      \"full_name\": \"string\",\n      \"department\": \"string\"\n    },\n    \"attachments\": [\n      {\n        \"id\": \"string\",\n        \"description\": \"string\",\n        \"url\": \"string\",\n        \"module\": \"string\",\n        \"module_id\": \"string\",\n        \"size\": 6124,\n        \"uploaded_date\": \"1953-03-16T10:45:55.601Z\"\n      },\n      {\n        \"id\": \"string\",\n        \"description\": \"string\",\n        \"url\": \"string\",\n        \"module\": \"string\",\n        \"module_id\": \"string\",\n        \"size\": 4798,\n        \"uploaded_date\": \"1993-08-26T18:19:59.095Z\"\n      }\n    ]\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "ada0c9cc-f504-46f2-8b94-81606726e363",
+      "name": "Education",
+      "description": {
+        "content": "Read employee education and qualification records.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "ee419e37-a793-41cc-8e22-0fd16ddd7a35",
+          "name": "List Education Records",
+          "request": {
+            "name": "List Education Records",
+            "description": {
+              "content": "List employee education records.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "education"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "employee",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "department",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "education_type",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "education_status",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "institution",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "57689022-83df-40e9-8f6b-5c30ca22578f",
+              "name": "List of education records.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "education"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "employee",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "department",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "education_type",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "education_status",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "institution",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"id\": \"string\",\n    \"institution\": \"string\",\n    \"commence_date\": \"1959-09-13\",\n    \"completion_date\": \"1967-02-02\",\n    \"education_type\": \"string\",\n    \"education_status\": \"string\",\n    \"comments\": \"string\",\n    \"employee\": {\n      \"code\": \"string\",\n      \"first_names\": \"string\",\n      \"last_name\": \"string\",\n      \"full_name\": \"string\",\n      \"department\": \"string\"\n    }\n  },\n  {\n    \"id\": \"string\",\n    \"institution\": \"string\",\n    \"commence_date\": \"1984-11-25\",\n    \"completion_date\": \"2008-08-30\",\n    \"education_type\": \"string\",\n    \"education_status\": \"string\",\n    \"comments\": \"string\",\n    \"employee\": {\n      \"code\": \"string\",\n      \"first_names\": \"string\",\n      \"last_name\": \"string\",\n      \"full_name\": \"string\",\n      \"department\": \"string\"\n    }\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "f445e57b-8373-495a-8ecf-57eeefd3b292",
+      "name": "Skills",
+      "description": {
+        "content": "Read employee skills and competency ratings.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "6455ccdd-cf78-4357-87ba-7a7e7fa1f3d0",
+          "name": "List Skills",
+          "request": {
+            "name": "List Skills",
+            "description": {
+              "content": "List employee skill ratings.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "skills"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "employee",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "department",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "skill_name",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "skill_rating",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "skill_rating_from",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "skill_rating_to",
+                  "value": "<integer>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "effb67a8-9f0d-46dc-a566-8f990511f350",
+              "name": "List of skills.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "skills"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "employee",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "department",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "skill_name",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "skill_rating",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "skill_rating_from",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "skill_rating_to",
+                      "value": "<integer>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"id\": \"string\",\n    \"skill_name\": \"string\",\n    \"skill_rating\": 8017,\n    \"comments\": \"string\",\n    \"employee\": {\n      \"code\": \"string\",\n      \"first_names\": \"string\",\n      \"last_name\": \"string\",\n      \"full_name\": \"string\",\n      \"department\": \"string\"\n    }\n  },\n  {\n    \"id\": \"string\",\n    \"skill_name\": \"string\",\n    \"skill_rating\": 6030,\n    \"comments\": \"string\",\n    \"employee\": {\n      \"code\": \"string\",\n      \"first_names\": \"string\",\n      \"last_name\": \"string\",\n      \"full_name\": \"string\",\n      \"department\": \"string\"\n    }\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "0f8a51c9-277a-4ee7-9d90-177589baf163",
+      "name": "Training",
+      "description": {
+        "content": "Read employee training and course completion records.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "466916e2-0d24-42eb-93ad-e9f582f5da57",
+          "name": "List Training Records",
+          "request": {
+            "name": "List Training Records",
+            "description": {
+              "content": "List employee training and course records.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "training"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "employee",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "training_type",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "course_name",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "institution",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "training_status",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "ec107350-6baf-43e6-916c-bec597b79201",
+              "name": "List of training records.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "training"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "employee",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "training_type",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "course_name",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "institution",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "training_status",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"id\": \"string\",\n    \"training_type\": \"string\",\n    \"course_name\": \"string\",\n    \"institution\": \"string\",\n    \"commence_date\": \"1949-06-07\",\n    \"completion_date\": \"1969-12-19\",\n    \"training_status\": \"string\",\n    \"cost\": 6828.720298453587,\n    \"reimbursement\": 932.2763495046881,\n    \"comments\": \"string\",\n    \"employee\": {\n      \"code\": \"string\",\n      \"first_names\": \"string\",\n      \"last_name\": \"string\",\n      \"full_name\": \"string\",\n      \"department\": \"string\"\n    }\n  },\n  {\n    \"id\": \"string\",\n    \"training_type\": \"string\",\n    \"course_name\": \"string\",\n    \"institution\": \"string\",\n    \"commence_date\": \"1963-02-10\",\n    \"completion_date\": \"1992-07-13\",\n    \"training_status\": \"string\",\n    \"cost\": 4894.563864519733,\n    \"reimbursement\": 9703.436717438504,\n    \"comments\": \"string\",\n    \"employee\": {\n      \"code\": \"string\",\n      \"first_names\": \"string\",\n      \"last_name\": \"string\",\n      \"full_name\": \"string\",\n      \"department\": \"string\"\n    }\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "98be6f6b-892b-49b9-a755-eeced4874aa9",
+      "name": "Assets",
+      "description": {
+        "content": "Read company assets issued to employees.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "39d3dd76-d8b6-44ac-8add-c947748f3727",
+          "name": "List Assets",
+          "request": {
+            "name": "List Assets",
+            "description": {
+              "content": "List company assets issued to employees.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "assets"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "dd086759-fc23-4a60-8b08-83cb9ae20be1",
+              "name": "List of assets.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "assets"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"id\": \"string\",\n    \"asset_type\": \"string\",\n    \"description\": \"string\",\n    \"asset_identifier\": \"string\",\n    \"serial_number\": \"string\",\n    \"out_date\": \"1998-10-01\",\n    \"in_date\": \"1968-04-27\",\n    \"employee\": {\n      \"code\": \"string\",\n      \"first_names\": \"string\",\n      \"last_name\": \"string\",\n      \"full_name\": \"string\",\n      \"department\": \"string\"\n    }\n  },\n  {\n    \"id\": \"string\",\n    \"asset_type\": \"string\",\n    \"description\": \"string\",\n    \"asset_identifier\": \"string\",\n    \"serial_number\": \"string\",\n    \"out_date\": \"1987-10-15\",\n    \"in_date\": \"2023-09-08\",\n    \"employee\": {\n      \"code\": \"string\",\n      \"first_names\": \"string\",\n      \"last_name\": \"string\",\n      \"full_name\": \"string\",\n      \"department\": \"string\"\n    }\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "e40b8f29-ce5b-47df-944a-bddb8fd5c183",
+      "name": "Benefits",
+      "description": {
+        "content": "Read employee benefit assignments.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "25c49997-62f1-452e-ab87-6a4e682184a8",
+          "name": "List Benefits",
+          "request": {
+            "name": "List Benefits",
+            "description": {
+              "content": "List employee benefit assignments.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "benefits"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "3e84fa62-d22e-47c3-a2cc-cae9dd4daf2a",
+              "name": "List of benefits.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "benefits"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"id\": \"string\",\n    \"description\": \"string\",\n    \"start_date\": \"1997-05-22\",\n    \"end_date\": \"2013-02-23\",\n    \"benefit_value\": 6207.947680085097,\n    \"benefit_value_period\": \"string\",\n    \"benefit_type\": \"string\",\n    \"benefit_provider\": \"string\",\n    \"benefit_status\": \"string\",\n    \"employee\": {\n      \"code\": \"string\",\n      \"first_names\": \"string\",\n      \"last_name\": \"string\",\n      \"full_name\": \"string\",\n      \"department\": \"string\"\n    }\n  },\n  {\n    \"id\": \"string\",\n    \"description\": \"string\",\n    \"start_date\": \"2008-07-11\",\n    \"end_date\": \"1953-09-02\",\n    \"benefit_value\": 4428.688933328908,\n    \"benefit_value_period\": \"string\",\n    \"benefit_type\": \"string\",\n    \"benefit_provider\": \"string\",\n    \"benefit_status\": \"string\",\n    \"employee\": {\n      \"code\": \"string\",\n      \"first_names\": \"string\",\n      \"last_name\": \"string\",\n      \"full_name\": \"string\",\n      \"department\": \"string\"\n    }\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "04cf645e-e4aa-45ab-9945-8593dfaad8b4",
+      "name": "Dependents",
+      "description": {
+        "content": "Read employee dependent records.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "7e39d863-334f-4f33-8e4a-9c1dacd37cef",
+          "name": "List Dependents",
+          "request": {
+            "name": "List Dependents",
+            "description": {
+              "content": "List employee dependent records.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "dependents"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "3a8cca39-8a7c-4545-ae40-6f774cb230ca",
+              "name": "List of dependents.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "dependents"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"id\": \"string\",\n    \"dependent_type\": \"string\",\n    \"name\": \"string\",\n    \"contact_details\": \"string\",\n    \"date_of_birth\": \"1983-04-04\",\n    \"employee\": {\n      \"code\": \"string\",\n      \"first_names\": \"string\",\n      \"last_name\": \"string\",\n      \"full_name\": \"string\",\n      \"department\": \"string\"\n    }\n  },\n  {\n    \"id\": \"string\",\n    \"dependent_type\": \"string\",\n    \"name\": \"string\",\n    \"contact_details\": \"string\",\n    \"date_of_birth\": \"2024-01-22\",\n    \"employee\": {\n      \"code\": \"string\",\n      \"first_names\": \"string\",\n      \"last_name\": \"string\",\n      \"full_name\": \"string\",\n      \"department\": \"string\"\n    }\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "206646a3-a6b3-4fb0-89b6-722305302448",
+      "name": "Grievances",
+      "description": {
+        "content": "Read employee grievance records.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "c04c59f9-db8a-45bc-b623-5b73282b4813",
+          "name": "List Grievances",
+          "request": {
+            "name": "List Grievances",
+            "description": {
+              "content": "List employee grievance records.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "grievances"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "11a13ba7-cb5e-4e8f-8b9f-2c8038691093",
+              "name": "List of grievances.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "grievances"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"id\": \"string\",\n    \"grievance_type\": \"string\",\n    \"description\": \"string\",\n    \"reported_date\": \"2002-03-08\",\n    \"actioned_by\": \"string\",\n    \"grievance_status\": \"string\",\n    \"employee\": {\n      \"code\": \"string\",\n      \"first_names\": \"string\",\n      \"last_name\": \"string\",\n      \"full_name\": \"string\",\n      \"department\": \"string\"\n    }\n  },\n  {\n    \"id\": \"string\",\n    \"grievance_type\": \"string\",\n    \"description\": \"string\",\n    \"reported_date\": \"2015-11-13\",\n    \"actioned_by\": \"string\",\n    \"grievance_status\": \"string\",\n    \"employee\": {\n      \"code\": \"string\",\n      \"first_names\": \"string\",\n      \"last_name\": \"string\",\n      \"full_name\": \"string\",\n      \"department\": \"string\"\n    }\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "9afda4da-d65f-496e-a466-53b9dacb73da",
+      "name": "Positions",
+      "description": {
+        "content": "Read employee position history and remuneration.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "824ae516-310b-4682-ac39-5e46f61c8bde",
+          "name": "List Positions",
+          "request": {
+            "name": "List Positions",
+            "description": {
+              "content": "List employee position history and remuneration.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "positions"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "dcc44d28-7bf7-4b62-b06c-4139e63b39d6",
+              "name": "List of positions.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "positions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"id\": \"string\",\n    \"position\": \"string\",\n    \"commence_date\": \"1953-10-21\",\n    \"completion_date\": \"2022-07-15\",\n    \"pay_level\": \"string\",\n    \"remuneration\": 2829.5924649322847,\n    \"remuneration_period\": \"string\",\n    \"employee\": {\n      \"code\": \"string\",\n      \"first_names\": \"string\",\n      \"last_name\": \"string\",\n      \"full_name\": \"string\",\n      \"department\": \"string\"\n    }\n  },\n  {\n    \"id\": \"string\",\n    \"position\": \"string\",\n    \"commence_date\": \"1977-12-12\",\n    \"completion_date\": \"1976-03-27\",\n    \"pay_level\": \"string\",\n    \"remuneration\": 4856.61925081356,\n    \"remuneration_period\": \"string\",\n    \"employee\": {\n      \"code\": \"string\",\n      \"first_names\": \"string\",\n      \"last_name\": \"string\",\n      \"full_name\": \"string\",\n      \"department\": \"string\"\n    }\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "93b167e9-501e-48e2-a972-1013d287c1a2",
+      "name": "Renewables",
+      "description": {
+        "content": "Read renewable items such as certifications and licenses.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "10a453ce-33d9-4a9e-bb8e-00e68866c077",
+          "name": "List Renewables",
+          "request": {
+            "name": "List Renewables",
+            "description": {
+              "content": "List renewable items such as certifications and licenses.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "renewables"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "78a9f5f7-6e08-42ef-8e93-a1c16dbea09a",
+              "name": "List of renewables.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "renewables"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"id\": \"string\",\n    \"renewable_type\": \"string\",\n    \"description\": \"string\",\n    \"issue_date\": \"1957-09-01\",\n    \"renewal_due\": \"2009-12-07\",\n    \"employee\": {\n      \"code\": \"string\",\n      \"first_names\": \"string\",\n      \"last_name\": \"string\",\n      \"full_name\": \"string\",\n      \"department\": \"string\"\n    }\n  },\n  {\n    \"id\": \"string\",\n    \"renewable_type\": \"string\",\n    \"description\": \"string\",\n    \"issue_date\": \"2013-01-13\",\n    \"renewal_due\": \"2006-10-17\",\n    \"employee\": {\n      \"code\": \"string\",\n      \"first_names\": \"string\",\n      \"last_name\": \"string\",\n      \"full_name\": \"string\",\n      \"department\": \"string\"\n    }\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "83e07ec7-d5d4-4ea0-8d17-47ab5164d85d",
+      "name": "Attachments",
+      "description": {
+        "content": "Read attachments stored against any HR Partner module.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "a7a7155d-ee61-4cd9-a33a-239d16a7e772",
+          "name": "List Attachments",
+          "request": {
+            "name": "List Attachments",
+            "description": {
+              "content": "List attachments stored against any HR Partner module.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "attachments"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "e1ca12a7-a3de-43ee-953c-97a10b99c4c8",
+              "name": "List of attachments.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "attachments"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"id\": \"string\",\n    \"description\": \"string\",\n    \"url\": \"string\",\n    \"module\": \"string\",\n    \"module_id\": \"string\",\n    \"size\": 9771,\n    \"uploaded_date\": \"1994-12-29T00:12:40.506Z\"\n  },\n  {\n    \"id\": \"string\",\n    \"description\": \"string\",\n    \"url\": \"string\",\n    \"module\": \"string\",\n    \"module_id\": \"string\",\n    \"size\": 8737,\n    \"uploaded_date\": \"1957-02-23T18:04:50.491Z\"\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "cfc3b236-2922-408e-a23e-abfaa51c141e",
+      "name": "Leave Requests",
+      "description": {
+        "content": "Read leave and PTO requests submitted by employees.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "88c37e10-b8b8-4b08-9594-a72faaf1a47e",
+          "name": "List Leave Requests",
+          "request": {
+            "name": "List Leave Requests",
+            "description": {
+              "content": "List employee leave and PTO requests.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "leave-requests"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "employee",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "leave_type",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "leave_status",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "start_date_from",
+                  "value": "<date>"
+                },
+                {
+                  "disabled": false,
+                  "key": "start_date_to",
+                  "value": "<date>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "c7e4b719-eed0-4284-bac2-b346b0e177fa",
+              "name": "List of leave requests.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "leave-requests"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "employee",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "leave_type",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "leave_status",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "start_date_from",
+                      "value": "<date>"
+                    },
+                    {
+                      "key": "start_date_to",
+                      "value": "<date>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"id\": \"string\",\n    \"leave_type\": \"string\",\n    \"description\": \"string\",\n    \"start_date\": \"1978-01-14\",\n    \"end_date\": \"1965-07-09\",\n    \"duration\": 2260.6387101941405,\n    \"leave_status\": \"string\",\n    \"comments\": \"string\",\n    \"employee\": {\n      \"code\": \"string\",\n      \"first_names\": \"string\",\n      \"last_name\": \"string\",\n      \"full_name\": \"string\",\n      \"department\": \"string\"\n    }\n  },\n  {\n    \"id\": \"string\",\n    \"leave_type\": \"string\",\n    \"description\": \"string\",\n    \"start_date\": \"1974-10-06\",\n    \"end_date\": \"2016-12-14\",\n    \"duration\": 4234.806328633359,\n    \"leave_status\": \"string\",\n    \"comments\": \"string\",\n    \"employee\": {\n      \"code\": \"string\",\n      \"first_names\": \"string\",\n      \"last_name\": \"string\",\n      \"full_name\": \"string\",\n      \"department\": \"string\"\n    }\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "1698b879-b4af-4995-9abe-9fe8fddb4403",
+          "name": "Get Leave Request",
+          "request": {
+            "name": "Get Leave Request",
+            "description": {
+              "content": "Retrieve a single leave request by id.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "leave-request",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "e6f5be3b-3260-45f6-900e-4c4d84644ff2",
+              "name": "A single leave request.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "leave-request",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"string\",\n  \"leave_type\": \"string\",\n  \"description\": \"string\",\n  \"start_date\": \"2011-02-28\",\n  \"end_date\": \"1987-07-09\",\n  \"duration\": 1700.080086249932,\n  \"leave_status\": \"string\",\n  \"comments\": \"string\",\n  \"employee\": {\n    \"code\": \"string\",\n    \"first_names\": \"string\",\n    \"last_name\": \"string\",\n    \"full_name\": \"string\",\n    \"department\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "ae2d7198-141c-4359-a73b-e3fa4695dfc5",
+      "name": "Leave Balances",
+      "description": {
+        "content": "Read leave entitlement balances and accruals.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "a3426dc5-b14b-4232-9974-f7ed1f036b6c",
+          "name": "List Leave Balances",
+          "request": {
+            "name": "List Leave Balances",
+            "description": {
+              "content": "List employee leave entitlement balances and accruals.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "leave-balances"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "employee",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "department",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "leave_type",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "0fca9aed-485f-42cb-9175-14df2e101574",
+              "name": "List of leave balances.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "leave-balances"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "employee",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "department",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "leave_type",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"id\": \"string\",\n    \"leave_type\": \"string\",\n    \"balance\": 5388.731015975619,\n    \"accrued\": 927.9493263145089,\n    \"taken\": 6126.840242016973,\n    \"pending\": 1412.4818636257464,\n    \"employee\": {\n      \"code\": \"string\",\n      \"first_names\": \"string\",\n      \"last_name\": \"string\",\n      \"full_name\": \"string\",\n      \"department\": \"string\"\n    }\n  },\n  {\n    \"id\": \"string\",\n    \"leave_type\": \"string\",\n    \"balance\": 2293.692010314714,\n    \"accrued\": 951.9881061334246,\n    \"taken\": 8457.517681539579,\n    \"pending\": 7929.587272017734,\n    \"employee\": {\n      \"code\": \"string\",\n      \"first_names\": \"string\",\n      \"last_name\": \"string\",\n      \"full_name\": \"string\",\n      \"department\": \"string\"\n    }\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "681c0be6-ebef-4402-bffc-d6c3c8922428",
+      "name": "Absences",
+      "description": {
+        "content": "Read employee absence records.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "42501a23-3c30-44d2-908d-227e278035ea",
+          "name": "List Absences",
+          "request": {
+            "name": "List Absences",
+            "description": {
+              "content": "List employee absence records.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "absences"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "employee",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "absence_reason",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "absence_status",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "absence_date_from",
+                  "value": "<date>"
+                },
+                {
+                  "disabled": false,
+                  "key": "absence_date_to",
+                  "value": "<date>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "7eb912bb-197f-40fb-b6a3-9dbcffb3be02",
+              "name": "List of absences.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "absences"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "employee",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "absence_reason",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "absence_status",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "absence_date_from",
+                      "value": "<date>"
+                    },
+                    {
+                      "key": "absence_date_to",
+                      "value": "<date>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"id\": \"string\",\n    \"leave_type\": \"string\",\n    \"absence_reason\": \"string\",\n    \"description\": \"string\",\n    \"absence_date\": \"1999-04-12\",\n    \"return_date\": \"2002-06-10\",\n    \"duration\": 9696.562523533526,\n    \"physician\": \"string\",\n    \"certificate_number\": \"string\",\n    \"absence_status\": \"string\",\n    \"employee\": {\n      \"code\": \"string\",\n      \"first_names\": \"string\",\n      \"last_name\": \"string\",\n      \"full_name\": \"string\",\n      \"department\": \"string\"\n    }\n  },\n  {\n    \"id\": \"string\",\n    \"leave_type\": \"string\",\n    \"absence_reason\": \"string\",\n    \"description\": \"string\",\n    \"absence_date\": \"1978-08-08\",\n    \"return_date\": \"2001-05-12\",\n    \"duration\": 9732.090082786815,\n    \"physician\": \"string\",\n    \"certificate_number\": \"string\",\n    \"absence_status\": \"string\",\n    \"employee\": {\n      \"code\": \"string\",\n      \"first_names\": \"string\",\n      \"last_name\": \"string\",\n      \"full_name\": \"string\",\n      \"department\": \"string\"\n    }\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "6ecd6f1f-9a25-44c0-b681-3b10f6cefd0f",
+      "name": "Timesheets",
+      "description": {
+        "content": "Read and create timesheets and timeclock entries.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "54926e92-d096-43c8-8236-d3d0f0b794d2",
+          "name": "List Timesheets",
+          "request": {
+            "name": "List Timesheets",
+            "description": {
+              "content": "List employee timesheets.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "timesheets"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "employee",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "department",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "week_commencing",
+                  "value": "<date>"
+                },
+                {
+                  "disabled": false,
+                  "key": "timesheet_status",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "ddb7e8ed-2c7e-41af-9127-139c52499dbe",
+              "name": "List of timesheets.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "timesheets"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "employee",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "department",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "week_commencing",
+                      "value": "<date>"
+                    },
+                    {
+                      "key": "timesheet_status",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"id\": \"string\",\n    \"week_commencing\": \"1955-02-09\",\n    \"total_hours\": 5258.793219155488,\n    \"timesheet_status\": \"string\",\n    \"employee\": {\n      \"code\": \"string\",\n      \"first_names\": \"string\",\n      \"last_name\": \"string\",\n      \"full_name\": \"string\",\n      \"department\": \"string\"\n    }\n  },\n  {\n    \"id\": \"string\",\n    \"week_commencing\": \"2001-02-02\",\n    \"total_hours\": 492.3145853891708,\n    \"timesheet_status\": \"string\",\n    \"employee\": {\n      \"code\": \"string\",\n      \"first_names\": \"string\",\n      \"last_name\": \"string\",\n      \"full_name\": \"string\",\n      \"department\": \"string\"\n    }\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "55835926-391f-4e01-8838-5289e2007cf0",
+          "name": "Get Timesheet",
+          "request": {
+            "name": "Get Timesheet",
+            "description": {
+              "content": "Retrieve a single timesheet by id.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "timesheet",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "33ab3c1c-1a8c-40b4-bd9d-b94093f1b36a",
+              "name": "A single timesheet.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "timesheet",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"string\",\n  \"week_commencing\": \"1957-02-04\",\n  \"total_hours\": 6238.300560871662,\n  \"timesheet_status\": \"string\",\n  \"employee\": {\n    \"code\": \"string\",\n    \"first_names\": \"string\",\n    \"last_name\": \"string\",\n    \"full_name\": \"string\",\n    \"department\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "53cc591e-e121-4d20-8b91-12847fc89c56",
+          "name": "Create Timesheet Entry",
+          "request": {
+            "name": "Create Timesheet Entry",
+            "description": {
+              "content": "Add a timesheet or timeclock entry for an employee.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "timesheet"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"employee_code\": \"<string>\",\n  \"entry_date\": \"<date>\",\n  \"hours\": \"<number>\",\n  \"project_code\": \"<string>\",\n  \"notes\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "f1952bb1-8d1f-4456-b87e-2e69da063abc",
+              "name": "Created timesheet entry.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "timesheet"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"employee_code\": \"<string>\",\n  \"entry_date\": \"<date>\",\n  \"hours\": \"<number>\",\n  \"project_code\": \"<string>\",\n  \"notes\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"string\",\n  \"week_commencing\": \"1957-02-04\",\n  \"total_hours\": 6238.300560871662,\n  \"timesheet_status\": \"string\",\n  \"employee\": {\n    \"code\": \"string\",\n    \"first_names\": \"string\",\n    \"last_name\": \"string\",\n    \"full_name\": \"string\",\n    \"department\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "d0379510-8366-4af5-90bb-a3d7dc611c50",
+      "name": "Projects",
+      "description": {
+        "content": "Read projects and activities used by timesheets.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "cd213e91-3da7-4ff0-ba6c-a27c13c03d12",
+          "name": "List Projects",
+          "request": {
+            "name": "List Projects",
+            "description": {
+              "content": "List projects and activities used by timesheets.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "projects"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "search",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "status",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "39fc7688-445a-4323-96f7-12a91e439fdb",
+              "name": "List of projects.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "projects"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "search",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "status",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"id\": \"string\",\n    \"name\": \"string\",\n    \"description\": \"string\",\n    \"status\": \"string\",\n    \"start_date\": \"2006-02-22\",\n    \"end_date\": \"1947-08-03\",\n    \"budget\": 5551.627558598202,\n    \"manager\": \"string\"\n  },\n  {\n    \"id\": \"string\",\n    \"name\": \"string\",\n    \"description\": \"string\",\n    \"status\": \"string\",\n    \"start_date\": \"1983-04-07\",\n    \"end_date\": \"1988-04-23\",\n    \"budget\": 172.90958022123326,\n    \"manager\": \"string\"\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "c7adfdf2-bbc0-477a-9190-cb08f0d769be",
+      "name": "Expenses",
+      "description": {
+        "content": "Read employee expense claims.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "fafcbb77-593e-4b65-85c5-7bfc06471328",
+          "name": "List Expense Claims",
+          "request": {
+            "name": "List Expense Claims",
+            "description": {
+              "content": "List employee expense claims.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "expenses"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "employee",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "expense_status",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "claim_date_from",
+                  "value": "<date>"
+                },
+                {
+                  "disabled": false,
+                  "key": "claim_date_to",
+                  "value": "<date>"
+                },
+                {
+                  "disabled": false,
+                  "key": "amount_from",
+                  "value": "<number>"
+                },
+                {
+                  "disabled": false,
+                  "key": "amount_to",
+                  "value": "<number>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "766f3278-4218-4563-a896-d2c9aae594d4",
+              "name": "List of expense claims.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "expenses"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "employee",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "expense_status",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "claim_date_from",
+                      "value": "<date>"
+                    },
+                    {
+                      "key": "claim_date_to",
+                      "value": "<date>"
+                    },
+                    {
+                      "key": "amount_from",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "amount_to",
+                      "value": "<number>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"id\": \"string\",\n    \"description\": \"string\",\n    \"amount\": 5230.6724828361175,\n    \"currency\": \"string\",\n    \"claim_date\": \"1987-09-17\",\n    \"expense_status\": \"string\",\n    \"employee\": {\n      \"code\": \"string\",\n      \"first_names\": \"string\",\n      \"last_name\": \"string\",\n      \"full_name\": \"string\",\n      \"department\": \"string\"\n    }\n  },\n  {\n    \"id\": \"string\",\n    \"description\": \"string\",\n    \"amount\": 1227.2308843185265,\n    \"currency\": \"string\",\n    \"claim_date\": \"1978-10-22\",\n    \"expense_status\": \"string\",\n    \"employee\": {\n      \"code\": \"string\",\n      \"first_names\": \"string\",\n      \"last_name\": \"string\",\n      \"full_name\": \"string\",\n      \"department\": \"string\"\n    }\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "c92077d6-c7fd-4e20-b33d-e6d207813280",
+      "name": "Job Listings",
+      "description": {
+        "content": "Read open job listings published by the organization.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "0954dce0-db29-4659-98c2-975ea56aa87e",
+          "name": "List Job Listings",
+          "request": {
+            "name": "List Job Listings",
+            "description": {
+              "content": "List open job listings published by the organization.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "job-listings"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "d639f574-b0f8-4530-aced-4ab7afd8781b",
+              "name": "List of job listings.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "job-listings"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"id\": \"string\",\n    \"title\": \"string\",\n    \"description\": \"string\",\n    \"department\": \"string\",\n    \"location\": \"string\",\n    \"is_active\": true,\n    \"published_date\": \"2022-02-15\"\n  },\n  {\n    \"id\": \"string\",\n    \"title\": \"string\",\n    \"description\": \"string\",\n    \"department\": \"string\",\n    \"location\": \"string\",\n    \"is_active\": false,\n    \"published_date\": \"1974-10-12\"\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "695c6570-7303-4075-89db-9dec5f08b59f",
+          "name": "Get Job Listing",
+          "request": {
+            "name": "Get Job Listing",
+            "description": {
+              "content": "Retrieve a single job listing by id.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "job-listings",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "01ed9435-8940-418e-9606-b9a1eeb70eda",
+              "name": "A single job listing.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "job-listings",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"string\",\n  \"title\": \"string\",\n  \"description\": \"string\",\n  \"department\": \"string\",\n  \"location\": \"string\",\n  \"is_active\": false,\n  \"published_date\": \"1982-02-14\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "1082f323-ddec-4990-8dbc-09a454bac4ed",
+      "name": "Applicants",
+      "description": {
+        "content": "Read, create, and update job applicants.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "c09ad21f-f7f2-472c-9695-b3e34f80becd",
+          "name": "List Applicants",
+          "request": {
+            "name": "List Applicants",
+            "description": {
+              "content": "List recruitment applicants.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "applicants"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "9a71bc3e-7efa-426d-ac1d-8bd486ed08e5",
+              "name": "List of applicants.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "applicants"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"id\": \"string\",\n    \"first_names\": \"string\",\n    \"last_name\": \"string\",\n    \"email\": \"string\",\n    \"phone\": \"string\",\n    \"source\": \"string\",\n    \"notes\": \"string\"\n  },\n  {\n    \"id\": \"string\",\n    \"first_names\": \"string\",\n    \"last_name\": \"string\",\n    \"email\": \"string\",\n    \"phone\": \"string\",\n    \"source\": \"string\",\n    \"notes\": \"string\"\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "676b3de5-8c1a-4444-877f-f9bf5f6a366b",
+          "name": "Create Applicant",
+          "request": {
+            "name": "Create Applicant",
+            "description": {
+              "content": "Create a new applicant.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "applicants"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"id\": \"<string>\",\n  \"first_names\": \"<string>\",\n  \"last_name\": \"<string>\",\n  \"email\": \"<string>\",\n  \"phone\": \"<string>\",\n  \"source\": \"<string>\",\n  \"notes\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "847ad0be-8018-4a49-afe6-c1f02208caf1",
+              "name": "Created applicant.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "applicants"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"id\": \"<string>\",\n  \"first_names\": \"<string>\",\n  \"last_name\": \"<string>\",\n  \"email\": \"<string>\",\n  \"phone\": \"<string>\",\n  \"source\": \"<string>\",\n  \"notes\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"string\",\n  \"first_names\": \"string\",\n  \"last_name\": \"string\",\n  \"email\": \"string\",\n  \"phone\": \"string\",\n  \"source\": \"string\",\n  \"notes\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "3ef8a787-8484-4e47-bdcc-b83c5b7418f3",
+          "name": "Get Applicant",
+          "request": {
+            "name": "Get Applicant",
+            "description": {
+              "content": "Retrieve a single applicant by id.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "applicants",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "d9f171fa-3d33-40c2-8209-e4f84623e67a",
+              "name": "A single applicant.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "applicants",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"string\",\n  \"first_names\": \"string\",\n  \"last_name\": \"string\",\n  \"email\": \"string\",\n  \"phone\": \"string\",\n  \"source\": \"string\",\n  \"notes\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "02a93b09-7ba4-44c3-8f11-fd8bf1588eae",
+          "name": "Update Applicant",
+          "request": {
+            "name": "Update Applicant",
+            "description": {
+              "content": "Update an existing applicant by id.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "applicants",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"id\": \"<string>\",\n  \"first_names\": \"<string>\",\n  \"last_name\": \"<string>\",\n  \"email\": \"<string>\",\n  \"phone\": \"<string>\",\n  \"source\": \"<string>\",\n  \"notes\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "14839161-063f-4d80-a0c3-33e93470b07a",
+              "name": "Updated applicant.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "applicants",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"id\": \"<string>\",\n  \"first_names\": \"<string>\",\n  \"last_name\": \"<string>\",\n  \"email\": \"<string>\",\n  \"phone\": \"<string>\",\n  \"source\": \"<string>\",\n  \"notes\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"string\",\n  \"first_names\": \"string\",\n  \"last_name\": \"string\",\n  \"email\": \"string\",\n  \"phone\": \"string\",\n  \"source\": \"string\",\n  \"notes\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "22b01598-0ef1-41e4-bf0f-9dc82376e77c",
+      "name": "Applications",
+      "description": {
+        "content": "Read, create, and update job applications and stage data.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "e0593a7f-7a24-4af3-8858-2b3c17acefdb",
+          "name": "List Applications",
+          "request": {
+            "name": "List Applications",
+            "description": {
+              "content": "List job applications.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "applications"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "d8c0ef5e-e09c-46c4-a8fa-acb4164f258e",
+              "name": "List of applications.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "applications"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"id\": \"string\",\n    \"applicant_id\": \"string\",\n    \"job_listing_id\": \"string\",\n    \"stage\": \"string\",\n    \"applied_at\": \"1965-06-30T07:53:56.077Z\",\n    \"status\": \"string\"\n  },\n  {\n    \"id\": \"string\",\n    \"applicant_id\": \"string\",\n    \"job_listing_id\": \"string\",\n    \"stage\": \"string\",\n    \"applied_at\": \"1990-11-29T13:04:21.362Z\",\n    \"status\": \"string\"\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "04342c55-26f6-4fa1-8791-73bdcb69ecef",
+          "name": "Create Application",
+          "request": {
+            "name": "Create Application",
+            "description": {
+              "content": "Create a new job application.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "applications"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"id\": \"<string>\",\n  \"applicant_id\": \"<string>\",\n  \"job_listing_id\": \"<string>\",\n  \"stage\": \"<string>\",\n  \"applied_at\": \"<dateTime>\",\n  \"status\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "8afd0b3c-7a43-487d-af97-fe7f3da81e63",
+              "name": "Created application.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "applications"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"id\": \"<string>\",\n  \"applicant_id\": \"<string>\",\n  \"job_listing_id\": \"<string>\",\n  \"stage\": \"<string>\",\n  \"applied_at\": \"<dateTime>\",\n  \"status\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"string\",\n  \"applicant_id\": \"string\",\n  \"job_listing_id\": \"string\",\n  \"stage\": \"string\",\n  \"applied_at\": \"1995-10-01T08:29:49.265Z\",\n  \"status\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "0605c8ee-df29-4567-8b78-0d0ed5998e1b",
+          "name": "Get Application",
+          "request": {
+            "name": "Get Application",
+            "description": {
+              "content": "Retrieve a single application by id.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "applications",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "79ac349e-a1b0-47c5-882f-36bb08e59470",
+              "name": "A single application.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "applications",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"string\",\n  \"applicant_id\": \"string\",\n  \"job_listing_id\": \"string\",\n  \"stage\": \"string\",\n  \"applied_at\": \"1995-10-01T08:29:49.265Z\",\n  \"status\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "7435341f-d077-429a-93bb-497c858e34d4",
+          "name": "Update Application",
+          "request": {
+            "name": "Update Application",
+            "description": {
+              "content": "Update an existing application by id.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "applications",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"id\": \"<string>\",\n  \"applicant_id\": \"<string>\",\n  \"job_listing_id\": \"<string>\",\n  \"stage\": \"<string>\",\n  \"applied_at\": \"<dateTime>\",\n  \"status\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "509cbbb2-db0f-4a2a-8afa-18c761c450e4",
+              "name": "Updated application.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "applications",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"id\": \"<string>\",\n  \"applicant_id\": \"<string>\",\n  \"job_listing_id\": \"<string>\",\n  \"stage\": \"<string>\",\n  \"applied_at\": \"<dateTime>\",\n  \"status\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"string\",\n  \"applicant_id\": \"string\",\n  \"job_listing_id\": \"string\",\n  \"stage\": \"string\",\n  \"applied_at\": \"1995-10-01T08:29:49.265Z\",\n  \"status\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "a56f8ba4-8bb5-4476-a578-90327f16944b",
+      "name": "Application Stage Tracking",
+      "description": {
+        "content": "Read application stage history and tracking data.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "714b9d02-f249-4183-a1f1-b35eec3162b2",
+          "name": "List Application Stage Tracking",
+          "request": {
+            "name": "List Application Stage Tracking",
+            "description": {
+              "content": "Read application stage history and tracking data.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "application-stage-tracking"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "98aa4dbb-84c4-4e1a-a4ce-fe4a151128ba",
+              "name": "List of application stage tracking entries.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "application-stage-tracking"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"id\": \"string\",\n    \"application_id\": \"string\",\n    \"stage\": \"string\",\n    \"entered_at\": \"2002-06-25T08:51:02.697Z\",\n    \"exited_at\": \"1981-04-17T02:40:30.372Z\",\n    \"comments\": \"string\"\n  },\n  {\n    \"id\": \"string\",\n    \"application_id\": \"string\",\n    \"stage\": \"string\",\n    \"entered_at\": \"1997-01-30T18:27:53.000Z\",\n    \"exited_at\": \"1964-07-21T19:38:05.341Z\",\n    \"comments\": \"string\"\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "76a3460b-73e2-4d83-b2a3-4debdca990a7",
+      "name": "Reviews",
+      "description": {
+        "content": "Read performance reviews and scoring.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "75e8eac1-a1d3-4d53-935b-60180e6ee348",
+          "name": "List Performance Reviews",
+          "request": {
+            "name": "List Performance Reviews",
+            "description": {
+              "content": "List performance reviews.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "reviews"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "employee",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "review_type",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "review_status",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "reviewer",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "13024d82-2b82-4edf-ba4d-a0256108552f",
+              "name": "List of reviews.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "reviews"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "employee",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "review_type",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "review_status",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "reviewer",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"id\": \"string\",\n    \"review_type\": \"string\",\n    \"description\": \"string\",\n    \"review_date\": \"1961-07-30\",\n    \"reviewer\": \"string\",\n    \"score\": 4910.43195015553,\n    \"review_status\": \"string\",\n    \"employee\": {\n      \"code\": \"string\",\n      \"first_names\": \"string\",\n      \"last_name\": \"string\",\n      \"full_name\": \"string\",\n      \"department\": \"string\"\n    }\n  },\n  {\n    \"id\": \"string\",\n    \"review_type\": \"string\",\n    \"description\": \"string\",\n    \"review_date\": \"1970-01-23\",\n    \"reviewer\": \"string\",\n    \"score\": 914.1086702004752,\n    \"review_status\": \"string\",\n    \"employee\": {\n      \"code\": \"string\",\n      \"first_names\": \"string\",\n      \"last_name\": \"string\",\n      \"full_name\": \"string\",\n      \"department\": \"string\"\n    }\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "a99f85ce-6885-4cc6-97b5-c56fb33cb8c7",
+      "name": "Goals",
+      "description": {
+        "content": "Read performance and development goals.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "3c890b8a-b52b-465b-823a-c02174efaecf",
+          "name": "List Goals",
+          "request": {
+            "name": "List Goals",
+            "description": {
+              "content": "List performance and development goals.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "goals"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "employee",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "goal_scope",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "goal_type",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "goal_is_active",
+                  "value": "<boolean>"
+                },
+                {
+                  "disabled": false,
+                  "key": "goal_is_completed",
+                  "value": "<boolean>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "9fa9f6e9-053a-4320-9e45-c6aa0849b230",
+              "name": "List of goals.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "goals"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "employee",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "goal_scope",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "goal_type",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "goal_is_active",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "goal_is_completed",
+                      "value": "<boolean>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"id\": \"string\",\n    \"scope\": \"string\",\n    \"type\": \"string\",\n    \"description\": \"string\",\n    \"target_value\": 8376.242009619742,\n    \"can_exceed_target_value\": true,\n    \"current_value\": 7399.488737894318,\n    \"is_active\": true,\n    \"is_completed\": false,\n    \"is_archived\": false,\n    \"assigned_at\": \"1968-01-28T22:48:02.280Z\",\n    \"due_at\": \"1994-07-23T20:34:46.856Z\",\n    \"employee\": {\n      \"code\": \"string\",\n      \"first_names\": \"string\",\n      \"last_name\": \"string\",\n      \"full_name\": \"string\",\n      \"department\": \"string\"\n    }\n  },\n  {\n    \"id\": \"string\",\n    \"scope\": \"string\",\n    \"type\": \"string\",\n    \"description\": \"string\",\n    \"target_value\": 1400.9837378850752,\n    \"can_exceed_target_value\": false,\n    \"current_value\": 4778.7976604123405,\n    \"is_active\": false,\n    \"is_completed\": false,\n    \"is_archived\": true,\n    \"assigned_at\": \"1990-01-22T13:26:58.914Z\",\n    \"due_at\": \"1983-04-14T14:19:43.389Z\",\n    \"employee\": {\n      \"code\": \"string\",\n      \"first_names\": \"string\",\n      \"last_name\": \"string\",\n      \"full_name\": \"string\",\n      \"department\": \"string\"\n    }\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "36a60529-2956-4424-9ece-1d2c0b081579",
+      "name": "Checklists",
+      "description": {
+        "content": "Read onboarding and offboarding checklists.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "49e748e9-cd01-445d-9351-192b13779d84",
+          "name": "List Checklists",
+          "request": {
+            "name": "List Checklists",
+            "description": {
+              "content": "List onboarding, offboarding, and other checklists.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "checklist"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "employee",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "checklist_status",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "checklist_template",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "show_details",
+                  "value": "<boolean>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "69bbad48-8417-4eb4-b392-e3e1b3b4e2b7",
+              "name": "List of checklists.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "checklist"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "employee",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "checklist_status",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "checklist_template",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "show_details",
+                      "value": "<boolean>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"id\": \"string\",\n    \"name\": \"string\",\n    \"comments\": \"string\",\n    \"status\": \"string\",\n    \"assigned_at\": \"1970-12-14T20:04:23.306Z\",\n    \"completed_at\": \"1994-05-12T03:21:08.137Z\",\n    \"progress\": 8516.88339467302,\n    \"percdone\": 5726.656247882119,\n    \"employee\": {\n      \"code\": \"string\",\n      \"first_names\": \"string\",\n      \"last_name\": \"string\",\n      \"full_name\": \"string\",\n      \"department\": \"string\"\n    }\n  },\n  {\n    \"id\": \"string\",\n    \"name\": \"string\",\n    \"comments\": \"string\",\n    \"status\": \"string\",\n    \"assigned_at\": \"1951-07-29T03:57:59.587Z\",\n    \"completed_at\": \"1979-06-08T11:53:17.194Z\",\n    \"progress\": 4566.9391265203085,\n    \"percdone\": 5493.200700297465,\n    \"employee\": {\n      \"code\": \"string\",\n      \"first_names\": \"string\",\n      \"last_name\": \"string\",\n      \"full_name\": \"string\",\n      \"department\": \"string\"\n    }\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "af9f47f8-2a13-44f6-884b-5a74245816c6",
+      "name": "Reminders",
+      "description": {
+        "content": "Read, update, and delete user reminders.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "9ef14dc3-33e6-410d-a91d-387861facafc",
+          "name": "List Reminders",
+          "request": {
+            "name": "List Reminders",
+            "description": {
+              "content": "List user reminders.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "reminders"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "b774015d-5edf-4c0f-8648-964ebb60e9a5",
+              "name": "List of reminders.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "reminders"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"id\": \"string\",\n    \"title\": \"string\",\n    \"body\": \"string\",\n    \"due_at\": \"1981-11-25T08:00:16.845Z\",\n    \"is_completed\": true\n  },\n  {\n    \"id\": \"string\",\n    \"title\": \"string\",\n    \"body\": \"string\",\n    \"due_at\": \"1951-03-28T14:36:07.523Z\",\n    \"is_completed\": true\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "6dacedfa-68ee-40f4-aaae-26e9a1779eda",
+          "name": "Get Reminder",
+          "request": {
+            "name": "Get Reminder",
+            "description": {
+              "content": "Retrieve a single reminder by id.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "reminder",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "7f71c9fd-d076-4523-bd79-da9d33119a82",
+              "name": "A single reminder.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "reminder",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"string\",\n  \"title\": \"string\",\n  \"body\": \"string\",\n  \"due_at\": \"1956-05-13T01:51:28.276Z\",\n  \"is_completed\": true\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "557b633e-d3bd-443b-aaf4-25b32039f7bc",
+          "name": "Update Reminder",
+          "request": {
+            "name": "Update Reminder",
+            "description": {
+              "content": "Update an existing reminder by id.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "reminder",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"id\": \"<string>\",\n  \"title\": \"<string>\",\n  \"body\": \"<string>\",\n  \"due_at\": \"<dateTime>\",\n  \"is_completed\": \"<boolean>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "9deb101b-98c6-4210-9917-70eccebd1359",
+              "name": "Updated reminder.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "reminder",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"id\": \"<string>\",\n  \"title\": \"<string>\",\n  \"body\": \"<string>\",\n  \"due_at\": \"<dateTime>\",\n  \"is_completed\": \"<boolean>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"string\",\n  \"title\": \"string\",\n  \"body\": \"string\",\n  \"due_at\": \"1956-05-13T01:51:28.276Z\",\n  \"is_completed\": true\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "2ba22af0-1c3b-49f0-8970-1ea2d1bce7c3",
+          "name": "Delete Reminder",
+          "request": {
+            "name": "Delete Reminder",
+            "description": {
+              "content": "Delete a reminder by id.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "reminder",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "13e4ec38-6fa3-448a-be7b-10b97c0a3ce5",
+              "name": "Reminder deleted.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "reminder",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-api-key",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "d9a317f3-1387-4127-b378-17dfecbb7d18",
+      "name": "Library",
+      "description": {
+        "content": "Read document library files and categories.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "0238f8c7-b948-4a3b-be76-57639370ac6a",
+          "name": "List Library Documents",
+          "request": {
+            "name": "List Library Documents",
+            "description": {
+              "content": "List documents in the company document library.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "library",
+                "documents"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "7309ca77-8e81-454b-bd0e-032e54206166",
+              "name": "List of library documents.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "library",
+                    "documents"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"id\": \"string\",\n    \"name\": \"string\",\n    \"category\": \"string\",\n    \"url\": \"string\",\n    \"uploaded_at\": \"1967-02-25T09:34:35.018Z\"\n  },\n  {\n    \"id\": \"string\",\n    \"name\": \"string\",\n    \"category\": \"string\",\n    \"url\": \"string\",\n    \"uploaded_at\": \"2009-09-20T06:37:05.314Z\"\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "dd055907-4b90-4440-a8a7-92397bdfe438",
+          "name": "List Library Categories",
+          "request": {
+            "name": "List Library Categories",
+            "description": {
+              "content": "List document categories in the company document library.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "library",
+                "categories"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "bb8deb83-dbbd-4097-9f0d-3c35064a20ac",
+              "name": "List of library categories.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "library",
+                    "categories"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"id\": \"string\",\n    \"name\": \"string\",\n    \"description\": \"string\"\n  },\n  {\n    \"id\": \"string\",\n    \"name\": \"string\",\n    \"description\": \"string\"\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "592068e1-7654-440a-8f91-fafd8035d2fd",
+      "name": "Lookups",
+      "description": {
+        "content": "Read system lookup definitions for configurable fields.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "dac6cd3a-69c5-44cd-abfd-f50ed4d9ea47",
+          "name": "List Lookups",
+          "request": {
+            "name": "List Lookups",
+            "description": {
+              "content": "List system lookup definitions for configurable fields.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "lookups"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "d818df6d-1595-4fd2-a2d9-fb9dc1762351",
+              "name": "List of lookup definitions.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "lookups"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"id\": \"string\",\n    \"name\": \"string\",\n    \"values\": [\n      \"string\",\n      \"string\"\n    ]\n  },\n  {\n    \"id\": \"string\",\n    \"name\": \"string\",\n    \"values\": [\n      \"string\",\n      \"string\"\n    ]\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.hrpartner.io",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "x-api-key"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "header"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "171ec59a-043a-4fcd-a44d-45766a6a954f",
+    "name": "HR Partner REST API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "HR Partner is a cloud-based human resources management SaaS platform from HR Partner Software Pty Ltd (Australia), aimed at organizations of roughly 20 to 500 employees. This OpenAPI describes the public HR Partner REST API exposed at https://api.hrpartner.io, covering company information, employee records and sub-modules (contacts, addresses, notes, education, skills, training, assets, benefits, dependents, grievances, positions, renewables, attachments), leave management (requests, balances, absences), timesheets and projects, expenses, recruitment (job listings, applicants, applications, application-stage tracking, interviews), performance (reviews, goals), checklists, reminders, document library, and lookups. Authentication is via API key passed in the x-api-key header.\n\nContact Support:\n Name: HR Partner Developer\n Email: developer@hrpartner.io",
+      "type": "text/plain"
+    }
+  }
+}

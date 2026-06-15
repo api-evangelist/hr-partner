@@ -1,0 +1,1332 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "HR Partner REST API",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "x-api-key",
+      "value": "{{x-api-key}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Company",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get Company Information",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.hrpartner.io/company"
+          },
+          "docs": "Retrieve company-level information for the HR Partner account."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Employees",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List Employees",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.hrpartner.io/employees",
+            "params": [
+              {
+                "name": "search",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "department",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "location",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "group",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "position",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "employment_status",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "gender_identity",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "is_active",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "is_terminated",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "reports_to",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Returns all employees in the HR Partner account with optional filtering."
+        },
+        {
+          "info": {
+            "name": "Get Employee",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.hrpartner.io/employee/:employeeCode",
+            "params": [
+              {
+                "name": "employeeCode",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Retrieve a single employee by code."
+        },
+        {
+          "info": {
+            "name": "Create Or Update Employee",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.hrpartner.io/employee/:employeeCode",
+            "params": [
+              {
+                "name": "employeeCode",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create a new employee or update an existing one by code."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Contacts",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List Contacts",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.hrpartner.io/contacts",
+            "params": [
+              {
+                "name": "search",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "contact_type",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "is_primary",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "is_public",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "is_emergency",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "List employee contact details across the account."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Addresses",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List Addresses",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.hrpartner.io/addresses",
+            "params": [
+              {
+                "name": "search",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "address_type",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "location_search",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "List employee address records."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Notes",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List Notes",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.hrpartner.io/notes",
+            "params": [
+              {
+                "name": "employee",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "department",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "note",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "created_date_from",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "created_date_to",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "updated_date_from",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "updated_date_to",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "tags",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "include_events",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "List internal HR notes attached to employees."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Education",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List Education Records",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.hrpartner.io/education",
+            "params": [
+              {
+                "name": "employee",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "department",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "education_type",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "education_status",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "institution",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "List employee education records."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Skills",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List Skills",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.hrpartner.io/skills",
+            "params": [
+              {
+                "name": "employee",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "department",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "skill_name",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "skill_rating",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "skill_rating_from",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "skill_rating_to",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "List employee skill ratings."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Training",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List Training Records",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.hrpartner.io/training",
+            "params": [
+              {
+                "name": "employee",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "training_type",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "course_name",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "institution",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "training_status",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "List employee training and course records."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Assets",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List Assets",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.hrpartner.io/assets"
+          },
+          "docs": "List company assets issued to employees."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Benefits",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List Benefits",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.hrpartner.io/benefits"
+          },
+          "docs": "List employee benefit assignments."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Dependents",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List Dependents",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.hrpartner.io/dependents"
+          },
+          "docs": "List employee dependent records."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Grievances",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List Grievances",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.hrpartner.io/grievances"
+          },
+          "docs": "List employee grievance records."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Positions",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List Positions",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.hrpartner.io/positions"
+          },
+          "docs": "List employee position history and remuneration."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Renewables",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List Renewables",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.hrpartner.io/renewables"
+          },
+          "docs": "List renewable items such as certifications and licenses."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Attachments",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List Attachments",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.hrpartner.io/attachments"
+          },
+          "docs": "List attachments stored against any HR Partner module."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Leave Requests",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List Leave Requests",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.hrpartner.io/leave-requests",
+            "params": [
+              {
+                "name": "employee",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "leave_type",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "leave_status",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "start_date_from",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "start_date_to",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "List employee leave and PTO requests."
+        },
+        {
+          "info": {
+            "name": "Get Leave Request",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.hrpartner.io/leave-request/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Retrieve a single leave request by id."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Leave Balances",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List Leave Balances",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.hrpartner.io/leave-balances",
+            "params": [
+              {
+                "name": "employee",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "department",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "leave_type",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "List employee leave entitlement balances and accruals."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Absences",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List Absences",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.hrpartner.io/absences",
+            "params": [
+              {
+                "name": "employee",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "absence_reason",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "absence_status",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "absence_date_from",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "absence_date_to",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "List employee absence records."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Timesheets",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List Timesheets",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.hrpartner.io/timesheets",
+            "params": [
+              {
+                "name": "employee",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "department",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "week_commencing",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "timesheet_status",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "List employee timesheets."
+        },
+        {
+          "info": {
+            "name": "Get Timesheet",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.hrpartner.io/timesheet/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Retrieve a single timesheet by id."
+        },
+        {
+          "info": {
+            "name": "Create Timesheet Entry",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.hrpartner.io/timesheet",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Add a timesheet or timeclock entry for an employee."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Projects",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List Projects",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.hrpartner.io/projects",
+            "params": [
+              {
+                "name": "search",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "status",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "List projects and activities used by timesheets."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Expenses",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List Expense Claims",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.hrpartner.io/expenses",
+            "params": [
+              {
+                "name": "employee",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "expense_status",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "claim_date_from",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "claim_date_to",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "amount_from",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "amount_to",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "List employee expense claims."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Job Listings",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List Job Listings",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.hrpartner.io/job-listings"
+          },
+          "docs": "List open job listings published by the organization."
+        },
+        {
+          "info": {
+            "name": "Get Job Listing",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.hrpartner.io/job-listings/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Retrieve a single job listing by id."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Applicants",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List Applicants",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.hrpartner.io/applicants"
+          },
+          "docs": "List recruitment applicants."
+        },
+        {
+          "info": {
+            "name": "Create Applicant",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.hrpartner.io/applicants",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create a new applicant."
+        },
+        {
+          "info": {
+            "name": "Get Applicant",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.hrpartner.io/applicants/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Retrieve a single applicant by id."
+        },
+        {
+          "info": {
+            "name": "Update Applicant",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.hrpartner.io/applicants/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Update an existing applicant by id."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Applications",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List Applications",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.hrpartner.io/applications"
+          },
+          "docs": "List job applications."
+        },
+        {
+          "info": {
+            "name": "Create Application",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.hrpartner.io/applications",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create a new job application."
+        },
+        {
+          "info": {
+            "name": "Get Application",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.hrpartner.io/applications/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Retrieve a single application by id."
+        },
+        {
+          "info": {
+            "name": "Update Application",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.hrpartner.io/applications/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Update an existing application by id."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Application Stage Tracking",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List Application Stage Tracking",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.hrpartner.io/application-stage-tracking"
+          },
+          "docs": "Read application stage history and tracking data."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Reviews",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List Performance Reviews",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.hrpartner.io/reviews",
+            "params": [
+              {
+                "name": "employee",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "review_type",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "review_status",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "reviewer",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "List performance reviews."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Goals",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List Goals",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.hrpartner.io/goals",
+            "params": [
+              {
+                "name": "employee",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "goal_scope",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "goal_type",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "goal_is_active",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "goal_is_completed",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "List performance and development goals."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Checklists",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List Checklists",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.hrpartner.io/checklist",
+            "params": [
+              {
+                "name": "employee",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "checklist_status",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "checklist_template",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "show_details",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "List onboarding, offboarding, and other checklists."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Reminders",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List Reminders",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.hrpartner.io/reminders"
+          },
+          "docs": "List user reminders."
+        },
+        {
+          "info": {
+            "name": "Get Reminder",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.hrpartner.io/reminder/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Retrieve a single reminder by id."
+        },
+        {
+          "info": {
+            "name": "Update Reminder",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.hrpartner.io/reminder/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Update an existing reminder by id."
+        },
+        {
+          "info": {
+            "name": "Delete Reminder",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://api.hrpartner.io/reminder/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Delete a reminder by id."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Library",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List Library Documents",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.hrpartner.io/library/documents"
+          },
+          "docs": "List documents in the company document library."
+        },
+        {
+          "info": {
+            "name": "List Library Categories",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.hrpartner.io/library/categories"
+          },
+          "docs": "List document categories in the company document library."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Lookups",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List Lookups",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.hrpartner.io/lookups"
+          },
+          "docs": "List system lookup definitions for configurable fields."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
