@@ -9,7 +9,7 @@ description: >-
   authenticated via per-account API key (x-api-key header), with rate limits of 60 requests/second and a 900
   requests-per-minute burst ceiling. The API is read-mostly with selected write endpoints for employees, applicants,
   applications, timesheets, and reminders, and is described as being in an early release phase.
-image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
 url: https://raw.githubusercontent.com/api-evangelist/hr-partner/refs/heads/main/apis.yml
 humanURL: https://hrpartner.io
 baseURL: https://api.hrpartner.io
@@ -46,7 +46,7 @@ apis:
       Rate limits are 60 GET/POST requests per second and 900 requests per one-minute burst, with HTTPS required.
     humanURL: https://developer.hrpartner.io/
     baseURL: https://api.hrpartner.io
-    image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
     tags:
       - HR
       - HRIS
