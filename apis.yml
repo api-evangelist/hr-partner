@@ -84,7 +84,7 @@ common:
     url: https://developer.hrpartner.io/
   - type: APIReference
     url: https://developer.hrpartner.io/
-  - type: SignUp
+  - type: Signup
     url: https://hrpartner.io/sign-up
   - type: Pricing
     url: https://hrpartner.io/pricing.html
