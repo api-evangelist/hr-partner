@@ -76,6 +76,10 @@ apis:
         email: developer@hrpartner.io
         url: https://developer.hrpartner.io/
 common:
+  - type: DomainSecurity
+    url: security/hr-partner-domain-security.yml
+  - type: Authentication
+    url: authentication/hr-partner-authentication.yml
   - type: Website
     url: https://hrpartner.io
   - type: Documentation

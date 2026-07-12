@@ -1,0 +1,15 @@
+generated: '2026-07-11'
+method: derived
+source: openapi/hr-partner-rest-api-openapi.yml
+summary:
+  types:
+  - apiKey
+  api_key_in:
+  - header
+schemes:
+- name: apiKeyHeader
+  type: apiKey
+  in: header
+  parameter: x-api-key
+  sources:
+  - openapi/hr-partner-rest-api-openapi.yml
