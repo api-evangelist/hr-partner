@@ -1,0 +1,124 @@
+openapi: 3.1.0
+info:
+  title: HR Partner REST Absences Leave Requests API
+  description: HR Partner is a cloud-based human resources management SaaS platform from HR Partner Software Pty Ltd (Australia), aimed at organizations of roughly 20 to 500 employees. This OpenAPI describes the public HR Partner REST API exposed at https://api.hrpartner.io, covering company information, employee records and sub-modules (contacts, addresses, notes, education, skills, training, assets, benefits, dependents, grievances, positions, renewables, attachments), leave management (requests, balances, absences), timesheets and projects, expenses, recruitment (job listings, applicants, applications, application-stage tracking, interviews), performance (reviews, goals), checklists, reminders, document library, and lookups. Authentication is via API key passed in the x-api-key header.
+  version: 1.0.0
+  termsOfService: https://hrpartner.io/terms-of-service
+  contact:
+    name: HR Partner Developer
+    url: https://developer.hrpartner.io/
+    email: developer@hrpartner.io
+  license:
+    name: Proprietary
+    url: https://hrpartner.io/terms-of-service
+servers:
+- url: https://api.hrpartner.io
+  description: HR Partner Production API
+security:
+- apiKeyHeader: []
+tags:
+- name: Leave Requests
+  description: Read leave and PTO requests submitted by employees.
+paths:
+  /leave-requests:
+    get:
+      tags:
+      - Leave Requests
+      operationId: listLeaveRequests
+      summary: List Leave Requests
+      description: List employee leave and PTO requests.
+      parameters:
+      - name: employee
+        in: query
+        schema:
+          type: string
+      - name: leave_type
+        in: query
+        schema:
+          type: string
+      - name: leave_status
+        in: query
+        schema:
+          type: string
+      - name: start_date_from
+        in: query
+        schema:
+          type: string
+          format: date
+      - name: start_date_to
+        in: query
+        schema:
+          type: string
+          format: date
+      responses:
+        '200':
+          description: List of leave requests.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/LeaveRequest'
+  /leave-request/{id}:
+    get:
+      tags:
+      - Leave Requests
+      operationId: getLeaveRequest
+      summary: Get Leave Request
+      description: Retrieve a single leave request by id.
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: A single leave request.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LeaveRequest'
+components:
+  schemas:
+    EmployeeRef:
+      type: object
+      properties:
+        code:
+          type: string
+        first_names:
+          type: string
+        last_name:
+          type: string
+        full_name:
+          type: string
+        department:
+          type: string
+    LeaveRequest:
+      type: object
+      properties:
+        id:
+          type: string
+        leave_type:
+          type: string
+        description:
+          type: string
+        start_date:
+          type: string
+          format: date
+        end_date:
+          type: string
+          format: date
+        duration:
+          type: number
+        leave_status:
+          type: string
+        comments:
+          type: string
+        employee:
+          $ref: '#/components/schemas/EmployeeRef'
+  securitySchemes:
+    apiKeyHeader:
+      type: apiKey
+      in: header
+      name: x-api-key

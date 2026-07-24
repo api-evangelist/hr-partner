@@ -1,0 +1,144 @@
+openapi: 3.1.0
+info:
+  title: HR Partner REST Absences Timesheets API
+  description: HR Partner is a cloud-based human resources management SaaS platform from HR Partner Software Pty Ltd (Australia), aimed at organizations of roughly 20 to 500 employees. This OpenAPI describes the public HR Partner REST API exposed at https://api.hrpartner.io, covering company information, employee records and sub-modules (contacts, addresses, notes, education, skills, training, assets, benefits, dependents, grievances, positions, renewables, attachments), leave management (requests, balances, absences), timesheets and projects, expenses, recruitment (job listings, applicants, applications, application-stage tracking, interviews), performance (reviews, goals), checklists, reminders, document library, and lookups. Authentication is via API key passed in the x-api-key header.
+  version: 1.0.0
+  termsOfService: https://hrpartner.io/terms-of-service
+  contact:
+    name: HR Partner Developer
+    url: https://developer.hrpartner.io/
+    email: developer@hrpartner.io
+  license:
+    name: Proprietary
+    url: https://hrpartner.io/terms-of-service
+servers:
+- url: https://api.hrpartner.io
+  description: HR Partner Production API
+security:
+- apiKeyHeader: []
+tags:
+- name: Timesheets
+  description: Read and create timesheets and timeclock entries.
+paths:
+  /timesheets:
+    get:
+      tags:
+      - Timesheets
+      operationId: listTimesheets
+      summary: List Timesheets
+      description: List employee timesheets.
+      parameters:
+      - name: employee
+        in: query
+        schema:
+          type: string
+      - name: department
+        in: query
+        schema:
+          type: string
+      - name: week_commencing
+        in: query
+        schema:
+          type: string
+          format: date
+      - name: timesheet_status
+        in: query
+        schema:
+          type: string
+      responses:
+        '200':
+          description: List of timesheets.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Timesheet'
+  /timesheet/{id}:
+    get:
+      tags:
+      - Timesheets
+      operationId: getTimesheet
+      summary: Get Timesheet
+      description: Retrieve a single timesheet by id.
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: A single timesheet.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Timesheet'
+  /timesheet:
+    post:
+      tags:
+      - Timesheets
+      operationId: createTimesheetEntry
+      summary: Create Timesheet Entry
+      description: Add a timesheet or timeclock entry for an employee.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/TimesheetEntry'
+      responses:
+        '200':
+          description: Created timesheet entry.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Timesheet'
+components:
+  schemas:
+    Timesheet:
+      type: object
+      properties:
+        id:
+          type: string
+        week_commencing:
+          type: string
+          format: date
+        total_hours:
+          type: number
+        timesheet_status:
+          type: string
+        employee:
+          $ref: '#/components/schemas/EmployeeRef'
+    TimesheetEntry:
+      type: object
+      properties:
+        employee_code:
+          type: string
+        entry_date:
+          type: string
+          format: date
+        hours:
+          type: number
+        project_code:
+          type: string
+        notes:
+          type: string
+    EmployeeRef:
+      type: object
+      properties:
+        code:
+          type: string
+        first_names:
+          type: string
+        last_name:
+          type: string
+        full_name:
+          type: string
+        department:
+          type: string
+  securitySchemes:
+    apiKeyHeader:
+      type: apiKey
+      in: header
+      name: x-api-key

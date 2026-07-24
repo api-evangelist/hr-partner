@@ -1,0 +1,79 @@
+openapi: 3.1.0
+info:
+  title: HR Partner REST Absences Assets API
+  description: HR Partner is a cloud-based human resources management SaaS platform from HR Partner Software Pty Ltd (Australia), aimed at organizations of roughly 20 to 500 employees. This OpenAPI describes the public HR Partner REST API exposed at https://api.hrpartner.io, covering company information, employee records and sub-modules (contacts, addresses, notes, education, skills, training, assets, benefits, dependents, grievances, positions, renewables, attachments), leave management (requests, balances, absences), timesheets and projects, expenses, recruitment (job listings, applicants, applications, application-stage tracking, interviews), performance (reviews, goals), checklists, reminders, document library, and lookups. Authentication is via API key passed in the x-api-key header.
+  version: 1.0.0
+  termsOfService: https://hrpartner.io/terms-of-service
+  contact:
+    name: HR Partner Developer
+    url: https://developer.hrpartner.io/
+    email: developer@hrpartner.io
+  license:
+    name: Proprietary
+    url: https://hrpartner.io/terms-of-service
+servers:
+- url: https://api.hrpartner.io
+  description: HR Partner Production API
+security:
+- apiKeyHeader: []
+tags:
+- name: Assets
+  description: Read company assets issued to employees.
+paths:
+  /assets:
+    get:
+      tags:
+      - Assets
+      operationId: listAssets
+      summary: List Assets
+      description: List company assets issued to employees.
+      responses:
+        '200':
+          description: List of assets.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Asset'
+components:
+  schemas:
+    Asset:
+      type: object
+      properties:
+        id:
+          type: string
+        asset_type:
+          type: string
+        description:
+          type: string
+        asset_identifier:
+          type: string
+        serial_number:
+          type: string
+        out_date:
+          type: string
+          format: date
+        in_date:
+          type: string
+          format: date
+        employee:
+          $ref: '#/components/schemas/EmployeeRef'
+    EmployeeRef:
+      type: object
+      properties:
+        code:
+          type: string
+        first_names:
+          type: string
+        last_name:
+          type: string
+        full_name:
+          type: string
+        department:
+          type: string
+  securitySchemes:
+    apiKeyHeader:
+      type: apiKey
+      in: header
+      name: x-api-key

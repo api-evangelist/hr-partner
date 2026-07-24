@@ -1,0 +1,119 @@
+openapi: 3.1.0
+info:
+  title: HR Partner REST Absences Reminders API
+  description: HR Partner is a cloud-based human resources management SaaS platform from HR Partner Software Pty Ltd (Australia), aimed at organizations of roughly 20 to 500 employees. This OpenAPI describes the public HR Partner REST API exposed at https://api.hrpartner.io, covering company information, employee records and sub-modules (contacts, addresses, notes, education, skills, training, assets, benefits, dependents, grievances, positions, renewables, attachments), leave management (requests, balances, absences), timesheets and projects, expenses, recruitment (job listings, applicants, applications, application-stage tracking, interviews), performance (reviews, goals), checklists, reminders, document library, and lookups. Authentication is via API key passed in the x-api-key header.
+  version: 1.0.0
+  termsOfService: https://hrpartner.io/terms-of-service
+  contact:
+    name: HR Partner Developer
+    url: https://developer.hrpartner.io/
+    email: developer@hrpartner.io
+  license:
+    name: Proprietary
+    url: https://hrpartner.io/terms-of-service
+servers:
+- url: https://api.hrpartner.io
+  description: HR Partner Production API
+security:
+- apiKeyHeader: []
+tags:
+- name: Reminders
+  description: Read, update, and delete user reminders.
+paths:
+  /reminders:
+    get:
+      tags:
+      - Reminders
+      operationId: listReminders
+      summary: List Reminders
+      description: List user reminders.
+      responses:
+        '200':
+          description: List of reminders.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Reminder'
+  /reminder/{id}:
+    get:
+      tags:
+      - Reminders
+      operationId: getReminder
+      summary: Get Reminder
+      description: Retrieve a single reminder by id.
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: A single reminder.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Reminder'
+    post:
+      tags:
+      - Reminders
+      operationId: updateReminder
+      summary: Update Reminder
+      description: Update an existing reminder by id.
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Reminder'
+      responses:
+        '200':
+          description: Updated reminder.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Reminder'
+    delete:
+      tags:
+      - Reminders
+      operationId: deleteReminder
+      summary: Delete Reminder
+      description: Delete a reminder by id.
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Reminder deleted.
+components:
+  schemas:
+    Reminder:
+      type: object
+      properties:
+        id:
+          type: string
+        title:
+          type: string
+        body:
+          type: string
+        due_at:
+          type: string
+          format: date-time
+        is_completed:
+          type: boolean
+  securitySchemes:
+    apiKeyHeader:
+      type: apiKey
+      in: header
+      name: x-api-key

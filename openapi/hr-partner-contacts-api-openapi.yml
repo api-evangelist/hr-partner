@@ -1,0 +1,96 @@
+openapi: 3.1.0
+info:
+  title: HR Partner REST Absences Contacts API
+  description: HR Partner is a cloud-based human resources management SaaS platform from HR Partner Software Pty Ltd (Australia), aimed at organizations of roughly 20 to 500 employees. This OpenAPI describes the public HR Partner REST API exposed at https://api.hrpartner.io, covering company information, employee records and sub-modules (contacts, addresses, notes, education, skills, training, assets, benefits, dependents, grievances, positions, renewables, attachments), leave management (requests, balances, absences), timesheets and projects, expenses, recruitment (job listings, applicants, applications, application-stage tracking, interviews), performance (reviews, goals), checklists, reminders, document library, and lookups. Authentication is via API key passed in the x-api-key header.
+  version: 1.0.0
+  termsOfService: https://hrpartner.io/terms-of-service
+  contact:
+    name: HR Partner Developer
+    url: https://developer.hrpartner.io/
+    email: developer@hrpartner.io
+  license:
+    name: Proprietary
+    url: https://hrpartner.io/terms-of-service
+servers:
+- url: https://api.hrpartner.io
+  description: HR Partner Production API
+security:
+- apiKeyHeader: []
+tags:
+- name: Contacts
+  description: List employee contact details (phone, email, emergency).
+paths:
+  /contacts:
+    get:
+      tags:
+      - Contacts
+      operationId: listContacts
+      summary: List Contacts
+      description: List employee contact details across the account.
+      parameters:
+      - name: search
+        in: query
+        schema:
+          type: string
+      - name: contact_type
+        in: query
+        schema:
+          type: string
+      - name: is_primary
+        in: query
+        schema:
+          type: boolean
+      - name: is_public
+        in: query
+        schema:
+          type: boolean
+      - name: is_emergency
+        in: query
+        schema:
+          type: boolean
+      responses:
+        '200':
+          description: List of contacts.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Contact'
+components:
+  schemas:
+    EmployeeRef:
+      type: object
+      properties:
+        code:
+          type: string
+        first_names:
+          type: string
+        last_name:
+          type: string
+        full_name:
+          type: string
+        department:
+          type: string
+    Contact:
+      type: object
+      properties:
+        id:
+          type: string
+        type:
+          type: string
+        details:
+          type: string
+        is_primary:
+          type: boolean
+        is_public:
+          type: boolean
+        is_emergency:
+          type: boolean
+        employee:
+          $ref: '#/components/schemas/EmployeeRef'
+  securitySchemes:
+    apiKeyHeader:
+      type: apiKey
+      in: header
+      name: x-api-key

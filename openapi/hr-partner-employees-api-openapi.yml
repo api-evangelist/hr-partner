@@ -1,0 +1,177 @@
+openapi: 3.1.0
+info:
+  title: HR Partner REST Absences Employees API
+  description: HR Partner is a cloud-based human resources management SaaS platform from HR Partner Software Pty Ltd (Australia), aimed at organizations of roughly 20 to 500 employees. This OpenAPI describes the public HR Partner REST API exposed at https://api.hrpartner.io, covering company information, employee records and sub-modules (contacts, addresses, notes, education, skills, training, assets, benefits, dependents, grievances, positions, renewables, attachments), leave management (requests, balances, absences), timesheets and projects, expenses, recruitment (job listings, applicants, applications, application-stage tracking, interviews), performance (reviews, goals), checklists, reminders, document library, and lookups. Authentication is via API key passed in the x-api-key header.
+  version: 1.0.0
+  termsOfService: https://hrpartner.io/terms-of-service
+  contact:
+    name: HR Partner Developer
+    url: https://developer.hrpartner.io/
+    email: developer@hrpartner.io
+  license:
+    name: Proprietary
+    url: https://hrpartner.io/terms-of-service
+servers:
+- url: https://api.hrpartner.io
+  description: HR Partner Production API
+security:
+- apiKeyHeader: []
+tags:
+- name: Employees
+  description: Read, create, and update employee records.
+paths:
+  /employees:
+    get:
+      tags:
+      - Employees
+      operationId: listEmployees
+      summary: List Employees
+      description: Returns all employees in the HR Partner account with optional filtering.
+      parameters:
+      - name: search
+        in: query
+        schema:
+          type: string
+      - name: department
+        in: query
+        schema:
+          type: string
+      - name: location
+        in: query
+        schema:
+          type: string
+      - name: group
+        in: query
+        schema:
+          type: string
+      - name: position
+        in: query
+        schema:
+          type: string
+      - name: employment_status
+        in: query
+        schema:
+          type: string
+      - name: gender_identity
+        in: query
+        schema:
+          type: string
+      - name: is_active
+        in: query
+        schema:
+          type: boolean
+      - name: is_terminated
+        in: query
+        schema:
+          type: boolean
+      - name: reports_to
+        in: query
+        schema:
+          type: string
+      responses:
+        '200':
+          description: List of employees.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Employee'
+  /employee/{employeeCode}:
+    get:
+      tags:
+      - Employees
+      operationId: getEmployee
+      summary: Get Employee
+      description: Retrieve a single employee by code.
+      parameters:
+      - name: employeeCode
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: A single employee.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Employee'
+    post:
+      tags:
+      - Employees
+      operationId: upsertEmployee
+      summary: Create Or Update Employee
+      description: Create a new employee or update an existing one by code.
+      parameters:
+      - name: employeeCode
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Employee'
+      responses:
+        '200':
+          description: Created or updated employee.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Employee'
+components:
+  schemas:
+    Employee:
+      type: object
+      properties:
+        id:
+          type: string
+        code:
+          type: string
+        first_names:
+          type: string
+        last_name:
+          type: string
+        full_name:
+          type: string
+        date_of_birth:
+          type: string
+          format: date
+        gender_identity:
+          type: string
+        department:
+          type: string
+        location:
+          type: string
+        position:
+          type: string
+        employment_status:
+          type: string
+        email:
+          type: string
+        started_at:
+          type: string
+          format: date
+        finished_at:
+          type: string
+          format: date
+        avatar:
+          type: string
+        can_logon:
+          type: boolean
+        portal_username:
+          type: string
+        custom_data:
+          type: object
+        tags:
+          type: array
+          items:
+            type: string
+  securitySchemes:
+    apiKeyHeader:
+      type: apiKey
+      in: header
+      name: x-api-key

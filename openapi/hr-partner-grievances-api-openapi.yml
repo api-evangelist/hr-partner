@@ -1,0 +1,76 @@
+openapi: 3.1.0
+info:
+  title: HR Partner REST Absences Grievances API
+  description: HR Partner is a cloud-based human resources management SaaS platform from HR Partner Software Pty Ltd (Australia), aimed at organizations of roughly 20 to 500 employees. This OpenAPI describes the public HR Partner REST API exposed at https://api.hrpartner.io, covering company information, employee records and sub-modules (contacts, addresses, notes, education, skills, training, assets, benefits, dependents, grievances, positions, renewables, attachments), leave management (requests, balances, absences), timesheets and projects, expenses, recruitment (job listings, applicants, applications, application-stage tracking, interviews), performance (reviews, goals), checklists, reminders, document library, and lookups. Authentication is via API key passed in the x-api-key header.
+  version: 1.0.0
+  termsOfService: https://hrpartner.io/terms-of-service
+  contact:
+    name: HR Partner Developer
+    url: https://developer.hrpartner.io/
+    email: developer@hrpartner.io
+  license:
+    name: Proprietary
+    url: https://hrpartner.io/terms-of-service
+servers:
+- url: https://api.hrpartner.io
+  description: HR Partner Production API
+security:
+- apiKeyHeader: []
+tags:
+- name: Grievances
+  description: Read employee grievance records.
+paths:
+  /grievances:
+    get:
+      tags:
+      - Grievances
+      operationId: listGrievances
+      summary: List Grievances
+      description: List employee grievance records.
+      responses:
+        '200':
+          description: List of grievances.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Grievance'
+components:
+  schemas:
+    Grievance:
+      type: object
+      properties:
+        id:
+          type: string
+        grievance_type:
+          type: string
+        description:
+          type: string
+        reported_date:
+          type: string
+          format: date
+        actioned_by:
+          type: string
+        grievance_status:
+          type: string
+        employee:
+          $ref: '#/components/schemas/EmployeeRef'
+    EmployeeRef:
+      type: object
+      properties:
+        code:
+          type: string
+        first_names:
+          type: string
+        last_name:
+          type: string
+        full_name:
+          type: string
+        department:
+          type: string
+  securitySchemes:
+    apiKeyHeader:
+      type: apiKey
+      in: header
+      name: x-api-key

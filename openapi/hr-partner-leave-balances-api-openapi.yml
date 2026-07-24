@@ -1,0 +1,88 @@
+openapi: 3.1.0
+info:
+  title: HR Partner REST Absences Leave Balances API
+  description: HR Partner is a cloud-based human resources management SaaS platform from HR Partner Software Pty Ltd (Australia), aimed at organizations of roughly 20 to 500 employees. This OpenAPI describes the public HR Partner REST API exposed at https://api.hrpartner.io, covering company information, employee records and sub-modules (contacts, addresses, notes, education, skills, training, assets, benefits, dependents, grievances, positions, renewables, attachments), leave management (requests, balances, absences), timesheets and projects, expenses, recruitment (job listings, applicants, applications, application-stage tracking, interviews), performance (reviews, goals), checklists, reminders, document library, and lookups. Authentication is via API key passed in the x-api-key header.
+  version: 1.0.0
+  termsOfService: https://hrpartner.io/terms-of-service
+  contact:
+    name: HR Partner Developer
+    url: https://developer.hrpartner.io/
+    email: developer@hrpartner.io
+  license:
+    name: Proprietary
+    url: https://hrpartner.io/terms-of-service
+servers:
+- url: https://api.hrpartner.io
+  description: HR Partner Production API
+security:
+- apiKeyHeader: []
+tags:
+- name: Leave Balances
+  description: Read leave entitlement balances and accruals.
+paths:
+  /leave-balances:
+    get:
+      tags:
+      - Leave Balances
+      operationId: listLeaveBalances
+      summary: List Leave Balances
+      description: List employee leave entitlement balances and accruals.
+      parameters:
+      - name: employee
+        in: query
+        schema:
+          type: string
+      - name: department
+        in: query
+        schema:
+          type: string
+      - name: leave_type
+        in: query
+        schema:
+          type: string
+      responses:
+        '200':
+          description: List of leave balances.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/LeaveBalance'
+components:
+  schemas:
+    LeaveBalance:
+      type: object
+      properties:
+        id:
+          type: string
+        leave_type:
+          type: string
+        balance:
+          type: number
+        accrued:
+          type: number
+        taken:
+          type: number
+        pending:
+          type: number
+        employee:
+          $ref: '#/components/schemas/EmployeeRef'
+    EmployeeRef:
+      type: object
+      properties:
+        code:
+          type: string
+        first_names:
+          type: string
+        last_name:
+          type: string
+        full_name:
+          type: string
+        department:
+          type: string
+  securitySchemes:
+    apiKeyHeader:
+      type: apiKey
+      in: header
+      name: x-api-key

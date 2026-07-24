@@ -1,0 +1,126 @@
+openapi: 3.1.0
+info:
+  title: HR Partner REST Absences Applicants API
+  description: HR Partner is a cloud-based human resources management SaaS platform from HR Partner Software Pty Ltd (Australia), aimed at organizations of roughly 20 to 500 employees. This OpenAPI describes the public HR Partner REST API exposed at https://api.hrpartner.io, covering company information, employee records and sub-modules (contacts, addresses, notes, education, skills, training, assets, benefits, dependents, grievances, positions, renewables, attachments), leave management (requests, balances, absences), timesheets and projects, expenses, recruitment (job listings, applicants, applications, application-stage tracking, interviews), performance (reviews, goals), checklists, reminders, document library, and lookups. Authentication is via API key passed in the x-api-key header.
+  version: 1.0.0
+  termsOfService: https://hrpartner.io/terms-of-service
+  contact:
+    name: HR Partner Developer
+    url: https://developer.hrpartner.io/
+    email: developer@hrpartner.io
+  license:
+    name: Proprietary
+    url: https://hrpartner.io/terms-of-service
+servers:
+- url: https://api.hrpartner.io
+  description: HR Partner Production API
+security:
+- apiKeyHeader: []
+tags:
+- name: Applicants
+  description: Read, create, and update job applicants.
+paths:
+  /applicants:
+    get:
+      tags:
+      - Applicants
+      operationId: listApplicants
+      summary: List Applicants
+      description: List recruitment applicants.
+      responses:
+        '200':
+          description: List of applicants.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Applicant'
+    post:
+      tags:
+      - Applicants
+      operationId: createApplicant
+      summary: Create Applicant
+      description: Create a new applicant.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Applicant'
+      responses:
+        '200':
+          description: Created applicant.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Applicant'
+  /applicants/{id}:
+    get:
+      tags:
+      - Applicants
+      operationId: getApplicant
+      summary: Get Applicant
+      description: Retrieve a single applicant by id.
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: A single applicant.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Applicant'
+    post:
+      tags:
+      - Applicants
+      operationId: updateApplicant
+      summary: Update Applicant
+      description: Update an existing applicant by id.
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Applicant'
+      responses:
+        '200':
+          description: Updated applicant.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Applicant'
+components:
+  schemas:
+    Applicant:
+      type: object
+      properties:
+        id:
+          type: string
+        first_names:
+          type: string
+        last_name:
+          type: string
+        email:
+          type: string
+        phone:
+          type: string
+        source:
+          type: string
+        notes:
+          type: string
+  securitySchemes:
+    apiKeyHeader:
+      type: apiKey
+      in: header
+      name: x-api-key

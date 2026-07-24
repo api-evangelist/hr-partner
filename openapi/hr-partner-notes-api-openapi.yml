@@ -1,0 +1,136 @@
+openapi: 3.1.0
+info:
+  title: HR Partner REST Absences Notes API
+  description: HR Partner is a cloud-based human resources management SaaS platform from HR Partner Software Pty Ltd (Australia), aimed at organizations of roughly 20 to 500 employees. This OpenAPI describes the public HR Partner REST API exposed at https://api.hrpartner.io, covering company information, employee records and sub-modules (contacts, addresses, notes, education, skills, training, assets, benefits, dependents, grievances, positions, renewables, attachments), leave management (requests, balances, absences), timesheets and projects, expenses, recruitment (job listings, applicants, applications, application-stage tracking, interviews), performance (reviews, goals), checklists, reminders, document library, and lookups. Authentication is via API key passed in the x-api-key header.
+  version: 1.0.0
+  termsOfService: https://hrpartner.io/terms-of-service
+  contact:
+    name: HR Partner Developer
+    url: https://developer.hrpartner.io/
+    email: developer@hrpartner.io
+  license:
+    name: Proprietary
+    url: https://hrpartner.io/terms-of-service
+servers:
+- url: https://api.hrpartner.io
+  description: HR Partner Production API
+security:
+- apiKeyHeader: []
+tags:
+- name: Notes
+  description: Retrieve internal HR notes attached to employees.
+paths:
+  /notes:
+    get:
+      tags:
+      - Notes
+      operationId: listNotes
+      summary: List Notes
+      description: List internal HR notes attached to employees.
+      parameters:
+      - name: employee
+        in: query
+        schema:
+          type: string
+      - name: department
+        in: query
+        schema:
+          type: string
+      - name: note
+        in: query
+        schema:
+          type: string
+      - name: created_date_from
+        in: query
+        schema:
+          type: string
+          format: date
+      - name: created_date_to
+        in: query
+        schema:
+          type: string
+          format: date
+      - name: updated_date_from
+        in: query
+        schema:
+          type: string
+          format: date
+      - name: updated_date_to
+        in: query
+        schema:
+          type: string
+          format: date
+      - name: tags
+        in: query
+        schema:
+          type: string
+      - name: include_events
+        in: query
+        schema:
+          type: boolean
+      responses:
+        '200':
+          description: List of notes.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Note'
+components:
+  schemas:
+    Attachment:
+      type: object
+      properties:
+        id:
+          type: string
+        description:
+          type: string
+        url:
+          type: string
+        module:
+          type: string
+        module_id:
+          type: string
+        size:
+          type: integer
+        uploaded_date:
+          type: string
+          format: date-time
+    EmployeeRef:
+      type: object
+      properties:
+        code:
+          type: string
+        first_names:
+          type: string
+        last_name:
+          type: string
+        full_name:
+          type: string
+        department:
+          type: string
+    Note:
+      type: object
+      properties:
+        id:
+          type: string
+        note:
+          type: string
+        created_date:
+          type: string
+          format: date-time
+        updated_date:
+          type: string
+          format: date-time
+        employee:
+          $ref: '#/components/schemas/EmployeeRef'
+        attachments:
+          type: array
+          items:
+            $ref: '#/components/schemas/Attachment'
+  securitySchemes:
+    apiKeyHeader:
+      type: apiKey
+      in: header
+      name: x-api-key

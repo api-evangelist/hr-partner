@@ -1,0 +1,79 @@
+openapi: 3.1.0
+info:
+  title: HR Partner REST Absences Positions API
+  description: HR Partner is a cloud-based human resources management SaaS platform from HR Partner Software Pty Ltd (Australia), aimed at organizations of roughly 20 to 500 employees. This OpenAPI describes the public HR Partner REST API exposed at https://api.hrpartner.io, covering company information, employee records and sub-modules (contacts, addresses, notes, education, skills, training, assets, benefits, dependents, grievances, positions, renewables, attachments), leave management (requests, balances, absences), timesheets and projects, expenses, recruitment (job listings, applicants, applications, application-stage tracking, interviews), performance (reviews, goals), checklists, reminders, document library, and lookups. Authentication is via API key passed in the x-api-key header.
+  version: 1.0.0
+  termsOfService: https://hrpartner.io/terms-of-service
+  contact:
+    name: HR Partner Developer
+    url: https://developer.hrpartner.io/
+    email: developer@hrpartner.io
+  license:
+    name: Proprietary
+    url: https://hrpartner.io/terms-of-service
+servers:
+- url: https://api.hrpartner.io
+  description: HR Partner Production API
+security:
+- apiKeyHeader: []
+tags:
+- name: Positions
+  description: Read employee position history and remuneration.
+paths:
+  /positions:
+    get:
+      tags:
+      - Positions
+      operationId: listPositions
+      summary: List Positions
+      description: List employee position history and remuneration.
+      responses:
+        '200':
+          description: List of positions.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Position'
+components:
+  schemas:
+    Position:
+      type: object
+      properties:
+        id:
+          type: string
+        position:
+          type: string
+        commence_date:
+          type: string
+          format: date
+        completion_date:
+          type: string
+          format: date
+        pay_level:
+          type: string
+        remuneration:
+          type: number
+        remuneration_period:
+          type: string
+        employee:
+          $ref: '#/components/schemas/EmployeeRef'
+    EmployeeRef:
+      type: object
+      properties:
+        code:
+          type: string
+        first_names:
+          type: string
+        last_name:
+          type: string
+        full_name:
+          type: string
+        department:
+          type: string
+  securitySchemes:
+    apiKeyHeader:
+      type: apiKey
+      in: header
+      name: x-api-key

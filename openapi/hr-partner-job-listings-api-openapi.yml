@@ -1,0 +1,83 @@
+openapi: 3.1.0
+info:
+  title: HR Partner REST Absences Job Listings API
+  description: HR Partner is a cloud-based human resources management SaaS platform from HR Partner Software Pty Ltd (Australia), aimed at organizations of roughly 20 to 500 employees. This OpenAPI describes the public HR Partner REST API exposed at https://api.hrpartner.io, covering company information, employee records and sub-modules (contacts, addresses, notes, education, skills, training, assets, benefits, dependents, grievances, positions, renewables, attachments), leave management (requests, balances, absences), timesheets and projects, expenses, recruitment (job listings, applicants, applications, application-stage tracking, interviews), performance (reviews, goals), checklists, reminders, document library, and lookups. Authentication is via API key passed in the x-api-key header.
+  version: 1.0.0
+  termsOfService: https://hrpartner.io/terms-of-service
+  contact:
+    name: HR Partner Developer
+    url: https://developer.hrpartner.io/
+    email: developer@hrpartner.io
+  license:
+    name: Proprietary
+    url: https://hrpartner.io/terms-of-service
+servers:
+- url: https://api.hrpartner.io
+  description: HR Partner Production API
+security:
+- apiKeyHeader: []
+tags:
+- name: Job Listings
+  description: Read open job listings published by the organization.
+paths:
+  /job-listings:
+    get:
+      tags:
+      - Job Listings
+      operationId: listJobListings
+      summary: List Job Listings
+      description: List open job listings published by the organization.
+      responses:
+        '200':
+          description: List of job listings.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/JobListing'
+  /job-listings/{id}:
+    get:
+      tags:
+      - Job Listings
+      operationId: getJobListing
+      summary: Get Job Listing
+      description: Retrieve a single job listing by id.
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: A single job listing.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/JobListing'
+components:
+  schemas:
+    JobListing:
+      type: object
+      properties:
+        id:
+          type: string
+        title:
+          type: string
+        description:
+          type: string
+        department:
+          type: string
+        location:
+          type: string
+        is_active:
+          type: boolean
+        published_date:
+          type: string
+          format: date
+  securitySchemes:
+    apiKeyHeader:
+      type: apiKey
+      in: header
+      name: x-api-key

@@ -1,0 +1,62 @@
+openapi: 3.1.0
+info:
+  title: HR Partner REST Absences Application Stage Tracking API
+  description: HR Partner is a cloud-based human resources management SaaS platform from HR Partner Software Pty Ltd (Australia), aimed at organizations of roughly 20 to 500 employees. This OpenAPI describes the public HR Partner REST API exposed at https://api.hrpartner.io, covering company information, employee records and sub-modules (contacts, addresses, notes, education, skills, training, assets, benefits, dependents, grievances, positions, renewables, attachments), leave management (requests, balances, absences), timesheets and projects, expenses, recruitment (job listings, applicants, applications, application-stage tracking, interviews), performance (reviews, goals), checklists, reminders, document library, and lookups. Authentication is via API key passed in the x-api-key header.
+  version: 1.0.0
+  termsOfService: https://hrpartner.io/terms-of-service
+  contact:
+    name: HR Partner Developer
+    url: https://developer.hrpartner.io/
+    email: developer@hrpartner.io
+  license:
+    name: Proprietary
+    url: https://hrpartner.io/terms-of-service
+servers:
+- url: https://api.hrpartner.io
+  description: HR Partner Production API
+security:
+- apiKeyHeader: []
+tags:
+- name: Application Stage Tracking
+  description: Read application stage history and tracking data.
+paths:
+  /application-stage-tracking:
+    get:
+      tags:
+      - Application Stage Tracking
+      operationId: listApplicationStageTracking
+      summary: List Application Stage Tracking
+      description: Read application stage history and tracking data.
+      responses:
+        '200':
+          description: List of application stage tracking entries.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/ApplicationStageTracking'
+components:
+  schemas:
+    ApplicationStageTracking:
+      type: object
+      properties:
+        id:
+          type: string
+        application_id:
+          type: string
+        stage:
+          type: string
+        entered_at:
+          type: string
+          format: date-time
+        exited_at:
+          type: string
+          format: date-time
+        comments:
+          type: string
+  securitySchemes:
+    apiKeyHeader:
+      type: apiKey
+      in: header
+      name: x-api-key

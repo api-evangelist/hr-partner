@@ -1,0 +1,75 @@
+openapi: 3.1.0
+info:
+  title: HR Partner REST Absences Renewables API
+  description: HR Partner is a cloud-based human resources management SaaS platform from HR Partner Software Pty Ltd (Australia), aimed at organizations of roughly 20 to 500 employees. This OpenAPI describes the public HR Partner REST API exposed at https://api.hrpartner.io, covering company information, employee records and sub-modules (contacts, addresses, notes, education, skills, training, assets, benefits, dependents, grievances, positions, renewables, attachments), leave management (requests, balances, absences), timesheets and projects, expenses, recruitment (job listings, applicants, applications, application-stage tracking, interviews), performance (reviews, goals), checklists, reminders, document library, and lookups. Authentication is via API key passed in the x-api-key header.
+  version: 1.0.0
+  termsOfService: https://hrpartner.io/terms-of-service
+  contact:
+    name: HR Partner Developer
+    url: https://developer.hrpartner.io/
+    email: developer@hrpartner.io
+  license:
+    name: Proprietary
+    url: https://hrpartner.io/terms-of-service
+servers:
+- url: https://api.hrpartner.io
+  description: HR Partner Production API
+security:
+- apiKeyHeader: []
+tags:
+- name: Renewables
+  description: Read renewable items such as certifications and licenses.
+paths:
+  /renewables:
+    get:
+      tags:
+      - Renewables
+      operationId: listRenewables
+      summary: List Renewables
+      description: List renewable items such as certifications and licenses.
+      responses:
+        '200':
+          description: List of renewables.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Renewable'
+components:
+  schemas:
+    EmployeeRef:
+      type: object
+      properties:
+        code:
+          type: string
+        first_names:
+          type: string
+        last_name:
+          type: string
+        full_name:
+          type: string
+        department:
+          type: string
+    Renewable:
+      type: object
+      properties:
+        id:
+          type: string
+        renewable_type:
+          type: string
+        description:
+          type: string
+        issue_date:
+          type: string
+          format: date
+        renewal_due:
+          type: string
+          format: date
+        employee:
+          $ref: '#/components/schemas/EmployeeRef'
+  securitySchemes:
+    apiKeyHeader:
+      type: apiKey
+      in: header
+      name: x-api-key
