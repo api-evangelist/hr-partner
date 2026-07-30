@@ -9,7 +9,20 @@ description: >-
   authenticated via per-account API key (x-api-key header), with rate limits of 60 requests/second and a 900
   requests-per-minute burst ceiling. The API is read-mostly with selected write endpoints for employees, applicants,
   applications, timesheets, and reminders, and is described as being in an early release phase.
-image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+accessModel:
+  pricing: paid
+  onboarding: self-serve
+  trial: false
+  try_now: false
+  public: false
+  label: Paid · Self-serve signup
+  confidence: high
+  source:
+  - plans
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/hr-partner.png
 url: https://raw.githubusercontent.com/api-evangelist/hr-partner/refs/heads/main/apis.yml
 humanURL: https://hrpartner.io
 baseURL: https://api.hrpartner.io
@@ -35,47 +48,629 @@ tags:
   - SaaS
   - Australia
 apis:
-  - aid: hr-partner:rest-api
-    name: HR Partner REST API
-    description: >-
-      Public REST API for HR Partner, covering employee records and sub-modules (contacts, addresses, notes, education,
-      skills, training, assets, benefits, dependents, grievances, positions, renewables, attachments), leave management
-      (requests, balances, absences), timesheets and projects, expenses, recruitment (job listings, applicants,
-      applications, application-stage tracking, interviews), performance (reviews, goals), checklists, reminders,
-      document library, lookups, and company information. Authentication is via API key passed in the x-api-key header.
-      Rate limits are 60 GET/POST requests per second and 900 requests per one-minute burst, with HTTPS required.
-    humanURL: https://developer.hrpartner.io/
-    baseURL: https://api.hrpartner.io
-    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
-    tags:
-      - HR
-      - HRIS
-      - Employee Records
-      - Leave Management
-      - Recruitment
-      - Applicant Tracking
-      - Performance Management
-      - Timesheets
-      - Expense Management
-      - REST
-    properties:
-      - type: Documentation
-        url: https://developer.hrpartner.io/
-      - type: APIReference
-        url: https://developer.hrpartner.io/
-      - type: Authentication
-        url: https://developer.hrpartner.io/#authentication
-      - type: RateLimits
-        url: https://developer.hrpartner.io/#rate-limits
-      - type: OpenAPI
-        url: openapi/hr-partner-rest-api-openapi.yml
-      - type: SpectralRules
-        url: rules/hr-partner-rest-api-rules.yml
-    contact:
-      - FN: HR Partner Developer
-        email: developer@hrpartner.io
-        url: https://developer.hrpartner.io/
+- aid: hr-partner:hr-partner-absences-api
+  name: HR Partner Absences API
+  description: Read employee absence records.
+  humanURL: https://developer.hrpartner.io/
+  baseURL: https://api.hrpartner.io
+  tags:
+  - Absences
+  properties:
+  - type: OpenAPI
+    url: openapi/hr-partner-absences-api-openapi.yml
+  - type: Documentation
+    url: https://developer.hrpartner.io/
+  - type: APIReference
+    url: https://developer.hrpartner.io/
+  - type: Authentication
+    url: https://developer.hrpartner.io/#authentication
+  - type: RateLimits
+    url: https://developer.hrpartner.io/#rate-limits
+  - type: SpectralRules
+    url: rules/hr-partner-rest-api-rules.yml
+- aid: hr-partner:hr-partner-addresses-api
+  name: HR Partner Addresses API
+  description: List employee address records.
+  humanURL: https://developer.hrpartner.io/
+  baseURL: https://api.hrpartner.io
+  tags:
+  - Addresses
+  properties:
+  - type: OpenAPI
+    url: openapi/hr-partner-addresses-api-openapi.yml
+  - type: Documentation
+    url: https://developer.hrpartner.io/
+  - type: APIReference
+    url: https://developer.hrpartner.io/
+  - type: Authentication
+    url: https://developer.hrpartner.io/#authentication
+  - type: RateLimits
+    url: https://developer.hrpartner.io/#rate-limits
+  - type: SpectralRules
+    url: rules/hr-partner-rest-api-rules.yml
+- aid: hr-partner:hr-partner-applicants-api
+  name: HR Partner Applicants API
+  description: Read, create, and update job applicants.
+  humanURL: https://developer.hrpartner.io/
+  baseURL: https://api.hrpartner.io
+  tags:
+  - Applicants
+  properties:
+  - type: OpenAPI
+    url: openapi/hr-partner-applicants-api-openapi.yml
+  - type: Documentation
+    url: https://developer.hrpartner.io/
+  - type: APIReference
+    url: https://developer.hrpartner.io/
+  - type: Authentication
+    url: https://developer.hrpartner.io/#authentication
+  - type: RateLimits
+    url: https://developer.hrpartner.io/#rate-limits
+  - type: SpectralRules
+    url: rules/hr-partner-rest-api-rules.yml
+- aid: hr-partner:hr-partner-application-stage-tracking-api
+  name: HR Partner Application Stage Tracking API
+  description: Read application stage history and tracking data.
+  humanURL: https://developer.hrpartner.io/
+  baseURL: https://api.hrpartner.io
+  tags:
+  - Application Stage Tracking
+  properties:
+  - type: OpenAPI
+    url: openapi/hr-partner-application-stage-tracking-api-openapi.yml
+  - type: Documentation
+    url: https://developer.hrpartner.io/
+  - type: APIReference
+    url: https://developer.hrpartner.io/
+  - type: Authentication
+    url: https://developer.hrpartner.io/#authentication
+  - type: RateLimits
+    url: https://developer.hrpartner.io/#rate-limits
+  - type: SpectralRules
+    url: rules/hr-partner-rest-api-rules.yml
+- aid: hr-partner:hr-partner-applications-api
+  name: HR Partner Applications API
+  description: Read, create, and update job applications and stage data.
+  humanURL: https://developer.hrpartner.io/
+  baseURL: https://api.hrpartner.io
+  tags:
+  - Applications
+  properties:
+  - type: OpenAPI
+    url: openapi/hr-partner-applications-api-openapi.yml
+  - type: Documentation
+    url: https://developer.hrpartner.io/
+  - type: APIReference
+    url: https://developer.hrpartner.io/
+  - type: Authentication
+    url: https://developer.hrpartner.io/#authentication
+  - type: RateLimits
+    url: https://developer.hrpartner.io/#rate-limits
+  - type: SpectralRules
+    url: rules/hr-partner-rest-api-rules.yml
+- aid: hr-partner:hr-partner-assets-api
+  name: HR Partner Assets API
+  description: Read company assets issued to employees.
+  humanURL: https://developer.hrpartner.io/
+  baseURL: https://api.hrpartner.io
+  tags:
+  - Assets
+  properties:
+  - type: OpenAPI
+    url: openapi/hr-partner-assets-api-openapi.yml
+  - type: Documentation
+    url: https://developer.hrpartner.io/
+  - type: APIReference
+    url: https://developer.hrpartner.io/
+  - type: Authentication
+    url: https://developer.hrpartner.io/#authentication
+  - type: RateLimits
+    url: https://developer.hrpartner.io/#rate-limits
+  - type: SpectralRules
+    url: rules/hr-partner-rest-api-rules.yml
+- aid: hr-partner:hr-partner-attachments-api
+  name: HR Partner Attachments API
+  description: Read attachments stored against any HR Partner module.
+  humanURL: https://developer.hrpartner.io/
+  baseURL: https://api.hrpartner.io
+  tags:
+  - Attachments
+  properties:
+  - type: OpenAPI
+    url: openapi/hr-partner-attachments-api-openapi.yml
+  - type: Documentation
+    url: https://developer.hrpartner.io/
+  - type: APIReference
+    url: https://developer.hrpartner.io/
+  - type: Authentication
+    url: https://developer.hrpartner.io/#authentication
+  - type: RateLimits
+    url: https://developer.hrpartner.io/#rate-limits
+  - type: SpectralRules
+    url: rules/hr-partner-rest-api-rules.yml
+- aid: hr-partner:hr-partner-benefits-api
+  name: HR Partner Benefits API
+  description: Read employee benefit assignments.
+  humanURL: https://developer.hrpartner.io/
+  baseURL: https://api.hrpartner.io
+  tags:
+  - Benefits
+  properties:
+  - type: OpenAPI
+    url: openapi/hr-partner-benefits-api-openapi.yml
+  - type: Documentation
+    url: https://developer.hrpartner.io/
+  - type: APIReference
+    url: https://developer.hrpartner.io/
+  - type: Authentication
+    url: https://developer.hrpartner.io/#authentication
+  - type: RateLimits
+    url: https://developer.hrpartner.io/#rate-limits
+  - type: SpectralRules
+    url: rules/hr-partner-rest-api-rules.yml
+- aid: hr-partner:hr-partner-checklists-api
+  name: HR Partner Checklists API
+  description: Read onboarding and offboarding checklists.
+  humanURL: https://developer.hrpartner.io/
+  baseURL: https://api.hrpartner.io
+  tags:
+  - Checklists
+  properties:
+  - type: OpenAPI
+    url: openapi/hr-partner-checklists-api-openapi.yml
+  - type: Documentation
+    url: https://developer.hrpartner.io/
+  - type: APIReference
+    url: https://developer.hrpartner.io/
+  - type: Authentication
+    url: https://developer.hrpartner.io/#authentication
+  - type: RateLimits
+    url: https://developer.hrpartner.io/#rate-limits
+  - type: SpectralRules
+    url: rules/hr-partner-rest-api-rules.yml
+- aid: hr-partner:hr-partner-company-api
+  name: HR Partner Company API
+  description: Retrieve company-level information for the HR Partner account.
+  humanURL: https://developer.hrpartner.io/
+  baseURL: https://api.hrpartner.io
+  tags:
+  - Company
+  properties:
+  - type: OpenAPI
+    url: openapi/hr-partner-company-api-openapi.yml
+  - type: Documentation
+    url: https://developer.hrpartner.io/
+  - type: APIReference
+    url: https://developer.hrpartner.io/
+  - type: Authentication
+    url: https://developer.hrpartner.io/#authentication
+  - type: RateLimits
+    url: https://developer.hrpartner.io/#rate-limits
+  - type: SpectralRules
+    url: rules/hr-partner-rest-api-rules.yml
+- aid: hr-partner:hr-partner-contacts-api
+  name: HR Partner Contacts API
+  description: List employee contact details (phone, email, emergency).
+  humanURL: https://developer.hrpartner.io/
+  baseURL: https://api.hrpartner.io
+  tags:
+  - Contacts
+  properties:
+  - type: OpenAPI
+    url: openapi/hr-partner-contacts-api-openapi.yml
+  - type: Documentation
+    url: https://developer.hrpartner.io/
+  - type: APIReference
+    url: https://developer.hrpartner.io/
+  - type: Authentication
+    url: https://developer.hrpartner.io/#authentication
+  - type: RateLimits
+    url: https://developer.hrpartner.io/#rate-limits
+  - type: SpectralRules
+    url: rules/hr-partner-rest-api-rules.yml
+- aid: hr-partner:hr-partner-dependents-api
+  name: HR Partner Dependents API
+  description: Read employee dependent records.
+  humanURL: https://developer.hrpartner.io/
+  baseURL: https://api.hrpartner.io
+  tags:
+  - Dependents
+  properties:
+  - type: OpenAPI
+    url: openapi/hr-partner-dependents-api-openapi.yml
+  - type: Documentation
+    url: https://developer.hrpartner.io/
+  - type: APIReference
+    url: https://developer.hrpartner.io/
+  - type: Authentication
+    url: https://developer.hrpartner.io/#authentication
+  - type: RateLimits
+    url: https://developer.hrpartner.io/#rate-limits
+  - type: SpectralRules
+    url: rules/hr-partner-rest-api-rules.yml
+- aid: hr-partner:hr-partner-education-api
+  name: HR Partner Education API
+  description: Read employee education and qualification records.
+  humanURL: https://developer.hrpartner.io/
+  baseURL: https://api.hrpartner.io
+  tags:
+  - Education
+  properties:
+  - type: OpenAPI
+    url: openapi/hr-partner-education-api-openapi.yml
+  - type: Documentation
+    url: https://developer.hrpartner.io/
+  - type: APIReference
+    url: https://developer.hrpartner.io/
+  - type: Authentication
+    url: https://developer.hrpartner.io/#authentication
+  - type: RateLimits
+    url: https://developer.hrpartner.io/#rate-limits
+  - type: SpectralRules
+    url: rules/hr-partner-rest-api-rules.yml
+- aid: hr-partner:hr-partner-employees-api
+  name: HR Partner Employees API
+  description: Read, create, and update employee records.
+  humanURL: https://developer.hrpartner.io/
+  baseURL: https://api.hrpartner.io
+  tags:
+  - Employees
+  properties:
+  - type: OpenAPI
+    url: openapi/hr-partner-employees-api-openapi.yml
+  - type: Documentation
+    url: https://developer.hrpartner.io/
+  - type: APIReference
+    url: https://developer.hrpartner.io/
+  - type: Authentication
+    url: https://developer.hrpartner.io/#authentication
+  - type: RateLimits
+    url: https://developer.hrpartner.io/#rate-limits
+  - type: SpectralRules
+    url: rules/hr-partner-rest-api-rules.yml
+- aid: hr-partner:hr-partner-expenses-api
+  name: HR Partner Expenses API
+  description: Read employee expense claims.
+  humanURL: https://developer.hrpartner.io/
+  baseURL: https://api.hrpartner.io
+  tags:
+  - Expenses
+  properties:
+  - type: OpenAPI
+    url: openapi/hr-partner-expenses-api-openapi.yml
+  - type: Documentation
+    url: https://developer.hrpartner.io/
+  - type: APIReference
+    url: https://developer.hrpartner.io/
+  - type: Authentication
+    url: https://developer.hrpartner.io/#authentication
+  - type: RateLimits
+    url: https://developer.hrpartner.io/#rate-limits
+  - type: SpectralRules
+    url: rules/hr-partner-rest-api-rules.yml
+- aid: hr-partner:hr-partner-goals-api
+  name: HR Partner Goals API
+  description: Read performance and development goals.
+  humanURL: https://developer.hrpartner.io/
+  baseURL: https://api.hrpartner.io
+  tags:
+  - Goals
+  properties:
+  - type: OpenAPI
+    url: openapi/hr-partner-goals-api-openapi.yml
+  - type: Documentation
+    url: https://developer.hrpartner.io/
+  - type: APIReference
+    url: https://developer.hrpartner.io/
+  - type: Authentication
+    url: https://developer.hrpartner.io/#authentication
+  - type: RateLimits
+    url: https://developer.hrpartner.io/#rate-limits
+  - type: SpectralRules
+    url: rules/hr-partner-rest-api-rules.yml
+- aid: hr-partner:hr-partner-grievances-api
+  name: HR Partner Grievances API
+  description: Read employee grievance records.
+  humanURL: https://developer.hrpartner.io/
+  baseURL: https://api.hrpartner.io
+  tags:
+  - Grievances
+  properties:
+  - type: OpenAPI
+    url: openapi/hr-partner-grievances-api-openapi.yml
+  - type: Documentation
+    url: https://developer.hrpartner.io/
+  - type: APIReference
+    url: https://developer.hrpartner.io/
+  - type: Authentication
+    url: https://developer.hrpartner.io/#authentication
+  - type: RateLimits
+    url: https://developer.hrpartner.io/#rate-limits
+  - type: SpectralRules
+    url: rules/hr-partner-rest-api-rules.yml
+- aid: hr-partner:hr-partner-job-listings-api
+  name: HR Partner Job Listings API
+  description: Read open job listings published by the organization.
+  humanURL: https://developer.hrpartner.io/
+  baseURL: https://api.hrpartner.io
+  tags:
+  - Job Listings
+  properties:
+  - type: OpenAPI
+    url: openapi/hr-partner-job-listings-api-openapi.yml
+  - type: Documentation
+    url: https://developer.hrpartner.io/
+  - type: APIReference
+    url: https://developer.hrpartner.io/
+  - type: Authentication
+    url: https://developer.hrpartner.io/#authentication
+  - type: RateLimits
+    url: https://developer.hrpartner.io/#rate-limits
+  - type: SpectralRules
+    url: rules/hr-partner-rest-api-rules.yml
+- aid: hr-partner:hr-partner-leave-balances-api
+  name: HR Partner Leave Balances API
+  description: Read leave entitlement balances and accruals.
+  humanURL: https://developer.hrpartner.io/
+  baseURL: https://api.hrpartner.io
+  tags:
+  - Leave Balances
+  properties:
+  - type: OpenAPI
+    url: openapi/hr-partner-leave-balances-api-openapi.yml
+  - type: Documentation
+    url: https://developer.hrpartner.io/
+  - type: APIReference
+    url: https://developer.hrpartner.io/
+  - type: Authentication
+    url: https://developer.hrpartner.io/#authentication
+  - type: RateLimits
+    url: https://developer.hrpartner.io/#rate-limits
+  - type: SpectralRules
+    url: rules/hr-partner-rest-api-rules.yml
+- aid: hr-partner:hr-partner-leave-requests-api
+  name: HR Partner Leave Requests API
+  description: Read leave and PTO requests submitted by employees.
+  humanURL: https://developer.hrpartner.io/
+  baseURL: https://api.hrpartner.io
+  tags:
+  - Leave Requests
+  properties:
+  - type: OpenAPI
+    url: openapi/hr-partner-leave-requests-api-openapi.yml
+  - type: Documentation
+    url: https://developer.hrpartner.io/
+  - type: APIReference
+    url: https://developer.hrpartner.io/
+  - type: Authentication
+    url: https://developer.hrpartner.io/#authentication
+  - type: RateLimits
+    url: https://developer.hrpartner.io/#rate-limits
+  - type: SpectralRules
+    url: rules/hr-partner-rest-api-rules.yml
+- aid: hr-partner:hr-partner-library-api
+  name: HR Partner Library API
+  description: Read document library files and categories.
+  humanURL: https://developer.hrpartner.io/
+  baseURL: https://api.hrpartner.io
+  tags:
+  - Library
+  properties:
+  - type: OpenAPI
+    url: openapi/hr-partner-library-api-openapi.yml
+  - type: Documentation
+    url: https://developer.hrpartner.io/
+  - type: APIReference
+    url: https://developer.hrpartner.io/
+  - type: Authentication
+    url: https://developer.hrpartner.io/#authentication
+  - type: RateLimits
+    url: https://developer.hrpartner.io/#rate-limits
+  - type: SpectralRules
+    url: rules/hr-partner-rest-api-rules.yml
+- aid: hr-partner:hr-partner-lookups-api
+  name: HR Partner Lookups API
+  description: Read system lookup definitions for configurable fields.
+  humanURL: https://developer.hrpartner.io/
+  baseURL: https://api.hrpartner.io
+  tags:
+  - Lookups
+  properties:
+  - type: OpenAPI
+    url: openapi/hr-partner-lookups-api-openapi.yml
+  - type: Documentation
+    url: https://developer.hrpartner.io/
+  - type: APIReference
+    url: https://developer.hrpartner.io/
+  - type: Authentication
+    url: https://developer.hrpartner.io/#authentication
+  - type: RateLimits
+    url: https://developer.hrpartner.io/#rate-limits
+  - type: SpectralRules
+    url: rules/hr-partner-rest-api-rules.yml
+- aid: hr-partner:hr-partner-notes-api
+  name: HR Partner Notes API
+  description: Retrieve internal HR notes attached to employees.
+  humanURL: https://developer.hrpartner.io/
+  baseURL: https://api.hrpartner.io
+  tags:
+  - Notes
+  properties:
+  - type: OpenAPI
+    url: openapi/hr-partner-notes-api-openapi.yml
+  - type: Documentation
+    url: https://developer.hrpartner.io/
+  - type: APIReference
+    url: https://developer.hrpartner.io/
+  - type: Authentication
+    url: https://developer.hrpartner.io/#authentication
+  - type: RateLimits
+    url: https://developer.hrpartner.io/#rate-limits
+  - type: SpectralRules
+    url: rules/hr-partner-rest-api-rules.yml
+- aid: hr-partner:hr-partner-positions-api
+  name: HR Partner Positions API
+  description: Read employee position history and remuneration.
+  humanURL: https://developer.hrpartner.io/
+  baseURL: https://api.hrpartner.io
+  tags:
+  - Positions
+  properties:
+  - type: OpenAPI
+    url: openapi/hr-partner-positions-api-openapi.yml
+  - type: Documentation
+    url: https://developer.hrpartner.io/
+  - type: APIReference
+    url: https://developer.hrpartner.io/
+  - type: Authentication
+    url: https://developer.hrpartner.io/#authentication
+  - type: RateLimits
+    url: https://developer.hrpartner.io/#rate-limits
+  - type: SpectralRules
+    url: rules/hr-partner-rest-api-rules.yml
+- aid: hr-partner:hr-partner-projects-api
+  name: HR Partner Projects API
+  description: Read projects and activities used by timesheets.
+  humanURL: https://developer.hrpartner.io/
+  baseURL: https://api.hrpartner.io
+  tags:
+  - Projects
+  properties:
+  - type: OpenAPI
+    url: openapi/hr-partner-projects-api-openapi.yml
+  - type: Documentation
+    url: https://developer.hrpartner.io/
+  - type: APIReference
+    url: https://developer.hrpartner.io/
+  - type: Authentication
+    url: https://developer.hrpartner.io/#authentication
+  - type: RateLimits
+    url: https://developer.hrpartner.io/#rate-limits
+  - type: SpectralRules
+    url: rules/hr-partner-rest-api-rules.yml
+- aid: hr-partner:hr-partner-reminders-api
+  name: HR Partner Reminders API
+  description: Read, update, and delete user reminders.
+  humanURL: https://developer.hrpartner.io/
+  baseURL: https://api.hrpartner.io
+  tags:
+  - Reminders
+  properties:
+  - type: OpenAPI
+    url: openapi/hr-partner-reminders-api-openapi.yml
+  - type: Documentation
+    url: https://developer.hrpartner.io/
+  - type: APIReference
+    url: https://developer.hrpartner.io/
+  - type: Authentication
+    url: https://developer.hrpartner.io/#authentication
+  - type: RateLimits
+    url: https://developer.hrpartner.io/#rate-limits
+  - type: SpectralRules
+    url: rules/hr-partner-rest-api-rules.yml
+- aid: hr-partner:hr-partner-renewables-api
+  name: HR Partner Renewables API
+  description: Read renewable items such as certifications and licenses.
+  humanURL: https://developer.hrpartner.io/
+  baseURL: https://api.hrpartner.io
+  tags:
+  - Renewables
+  properties:
+  - type: OpenAPI
+    url: openapi/hr-partner-renewables-api-openapi.yml
+  - type: Documentation
+    url: https://developer.hrpartner.io/
+  - type: APIReference
+    url: https://developer.hrpartner.io/
+  - type: Authentication
+    url: https://developer.hrpartner.io/#authentication
+  - type: RateLimits
+    url: https://developer.hrpartner.io/#rate-limits
+  - type: SpectralRules
+    url: rules/hr-partner-rest-api-rules.yml
+- aid: hr-partner:hr-partner-reviews-api
+  name: HR Partner Reviews API
+  description: Read performance reviews and scoring.
+  humanURL: https://developer.hrpartner.io/
+  baseURL: https://api.hrpartner.io
+  tags:
+  - Reviews
+  properties:
+  - type: OpenAPI
+    url: openapi/hr-partner-reviews-api-openapi.yml
+  - type: Documentation
+    url: https://developer.hrpartner.io/
+  - type: APIReference
+    url: https://developer.hrpartner.io/
+  - type: Authentication
+    url: https://developer.hrpartner.io/#authentication
+  - type: RateLimits
+    url: https://developer.hrpartner.io/#rate-limits
+  - type: SpectralRules
+    url: rules/hr-partner-rest-api-rules.yml
+- aid: hr-partner:hr-partner-skills-api
+  name: HR Partner Skills API
+  description: Read employee skills and competency ratings.
+  humanURL: https://developer.hrpartner.io/
+  baseURL: https://api.hrpartner.io
+  tags:
+  - Skills
+  properties:
+  - type: OpenAPI
+    url: openapi/hr-partner-skills-api-openapi.yml
+  - type: Documentation
+    url: https://developer.hrpartner.io/
+  - type: APIReference
+    url: https://developer.hrpartner.io/
+  - type: Authentication
+    url: https://developer.hrpartner.io/#authentication
+  - type: RateLimits
+    url: https://developer.hrpartner.io/#rate-limits
+  - type: SpectralRules
+    url: rules/hr-partner-rest-api-rules.yml
+- aid: hr-partner:hr-partner-timesheets-api
+  name: HR Partner Timesheets API
+  description: Read and create timesheets and timeclock entries.
+  humanURL: https://developer.hrpartner.io/
+  baseURL: https://api.hrpartner.io
+  tags:
+  - Timesheets
+  properties:
+  - type: OpenAPI
+    url: openapi/hr-partner-timesheets-api-openapi.yml
+  - type: Documentation
+    url: https://developer.hrpartner.io/
+  - type: APIReference
+    url: https://developer.hrpartner.io/
+  - type: Authentication
+    url: https://developer.hrpartner.io/#authentication
+  - type: RateLimits
+    url: https://developer.hrpartner.io/#rate-limits
+  - type: SpectralRules
+    url: rules/hr-partner-rest-api-rules.yml
+- aid: hr-partner:hr-partner-training-api
+  name: HR Partner Training API
+  description: Read employee training and course completion records.
+  humanURL: https://developer.hrpartner.io/
+  baseURL: https://api.hrpartner.io
+  tags:
+  - Training
+  properties:
+  - type: OpenAPI
+    url: openapi/hr-partner-training-api-openapi.yml
+  - type: Documentation
+    url: https://developer.hrpartner.io/
+  - type: APIReference
+    url: https://developer.hrpartner.io/
+  - type: Authentication
+    url: https://developer.hrpartner.io/#authentication
+  - type: RateLimits
+    url: https://developer.hrpartner.io/#rate-limits
+  - type: SpectralRules
+    url: rules/hr-partner-rest-api-rules.yml
 common:
+  - type: PostmanWorkspace
+    url: https://www.postman.com/kinlaneapi/hr-partner/overview
   - type: AgenticAccess
     url: agentic-access/hr-partner-agentic-access.yml
   - type: DomainSecurity
