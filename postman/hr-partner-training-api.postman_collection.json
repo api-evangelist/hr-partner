@@ -1,0 +1,166 @@
+{
+  "info": {
+    "_postman_id": "0fe6b758-9e65-47c6-a626-afb439415057",
+    "name": "HR Partner REST Absences Training API",
+    "description": "HR Partner is a cloud-based human resources management SaaS platform from HR Partner Software Pty Ltd (Australia), aimed at organizations of roughly 20 to 500 employees. This OpenAPI describes the public HR Partner REST API exposed at https://api.hrpartner.io, covering company information, employee records and sub-modules (contacts, addresses, notes, education, skills, training, assets, benefits, dependents, grievances, positions, renewables, attachments), leave management (requests, balances, absences), timesheets and projects, expenses, recruitment (job listings, applicants, applications, application-stage tracking, interviews), performance (reviews, goals), checklists, reminders, document library, and lookups. Authentication is via API key passed in the x-api-key header.\n\nContact Support:\n Name: HR Partner Developer\n Email: developer@hrpartner.io",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T01:58:29.000Z",
+    "updatedAt": "2026-07-28T01:58:29.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-0fe6b758-9e65-47c6-a626-afb439415057"
+  },
+  "item": [
+    {
+      "name": "training",
+      "item": [
+        {
+          "name": "List Training Records",
+          "id": "ae4e28eb-605d-431a-90f5-79f1897981fa",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/training?employee=<string>&training_type=<string>&course_name=<string>&institution=<string>&training_status=<string>",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "training"
+              ],
+              "query": [
+                {
+                  "key": "employee",
+                  "value": "<string>"
+                },
+                {
+                  "key": "training_type",
+                  "value": "<string>"
+                },
+                {
+                  "key": "course_name",
+                  "value": "<string>"
+                },
+                {
+                  "key": "institution",
+                  "value": "<string>"
+                },
+                {
+                  "key": "training_status",
+                  "value": "<string>"
+                }
+              ]
+            },
+            "description": "List employee training and course records."
+          },
+          "response": [
+            {
+              "id": "d7f27f73-96e3-4b3e-9ffc-d81faa51191f",
+              "name": "List of training records.",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "x-api-key",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/training?employee=<string>&training_type=<string>&course_name=<string>&institution=<string>&training_status=<string>",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "training"
+                  ],
+                  "query": [
+                    {
+                      "key": "employee",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "training_type",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "course_name",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "institution",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "training_status",
+                      "value": "<string>"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "[\n  {\n    \"id\": \"<string>\",\n    \"training_type\": \"<string>\",\n    \"course_name\": \"<string>\",\n    \"institution\": \"<string>\",\n    \"commence_date\": \"<date>\",\n    \"completion_date\": \"<date>\",\n    \"training_status\": \"<string>\",\n    \"cost\": \"<number>\",\n    \"reimbursement\": \"<number>\",\n    \"comments\": \"<string>\",\n    \"employee\": {\n      \"code\": \"<string>\",\n      \"first_names\": \"<string>\",\n      \"last_name\": \"<string>\",\n      \"full_name\": \"<string>\",\n      \"department\": \"<string>\"\n    }\n  },\n  {\n    \"id\": \"<string>\",\n    \"training_type\": \"<string>\",\n    \"course_name\": \"<string>\",\n    \"institution\": \"<string>\",\n    \"commence_date\": \"<date>\",\n    \"completion_date\": \"<date>\",\n    \"training_status\": \"<string>\",\n    \"cost\": \"<number>\",\n    \"reimbursement\": \"<number>\",\n    \"comments\": \"<string>\",\n    \"employee\": {\n      \"code\": \"<string>\",\n      \"first_names\": \"<string>\",\n      \"last_name\": \"<string>\",\n      \"full_name\": \"<string>\",\n      \"department\": \"<string>\"\n    }\n  }\n]",
+              "createdAt": "2026-07-28T01:58:29.000Z",
+              "updatedAt": "2026-07-28T01:58:29.000Z",
+              "uid": "35240-d7f27f73-96e3-4b3e-9ffc-d81faa51191f"
+            }
+          ],
+          "createdAt": "2026-07-28T01:58:29.000Z",
+          "updatedAt": "2026-07-28T01:58:29.000Z",
+          "uid": "35240-ae4e28eb-605d-431a-90f5-79f1897981fa"
+        }
+      ],
+      "id": "05886801-8ade-40a9-9bd5-78805d6b5ec1",
+      "createdAt": "2026-07-28T01:58:29.000Z",
+      "updatedAt": "2026-07-28T01:58:29.000Z",
+      "uid": "35240-05886801-8ade-40a9-9bd5-78805d6b5ec1"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "x-api-key",
+        "type": "string"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}",
+        "type": "string"
+      },
+      {
+        "key": "in",
+        "value": "header",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://api.hrpartner.io"
+    }
+  ]
+}

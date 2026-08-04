@@ -1,0 +1,122 @@
+{
+  "info": {
+    "_postman_id": "6af87189-3753-4f2b-bf12-95df906d28e1",
+    "name": "HR Partner REST Absences Assets API",
+    "description": "HR Partner is a cloud-based human resources management SaaS platform from HR Partner Software Pty Ltd (Australia), aimed at organizations of roughly 20 to 500 employees. This OpenAPI describes the public HR Partner REST API exposed at https://api.hrpartner.io, covering company information, employee records and sub-modules (contacts, addresses, notes, education, skills, training, assets, benefits, dependents, grievances, positions, renewables, attachments), leave management (requests, balances, absences), timesheets and projects, expenses, recruitment (job listings, applicants, applications, application-stage tracking, interviews), performance (reviews, goals), checklists, reminders, document library, and lookups. Authentication is via API key passed in the x-api-key header.\n\nContact Support:\n Name: HR Partner Developer\n Email: developer@hrpartner.io",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T01:57:17.000Z",
+    "updatedAt": "2026-07-28T01:57:17.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-6af87189-3753-4f2b-bf12-95df906d28e1"
+  },
+  "item": [
+    {
+      "name": "assets",
+      "item": [
+        {
+          "name": "List Assets",
+          "id": "a1d35ab2-5d08-4177-af97-5f630bc860c9",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/assets",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "assets"
+              ]
+            },
+            "description": "List company assets issued to employees."
+          },
+          "response": [
+            {
+              "id": "4ae6e516-b378-49e9-aa45-84cd732beb28",
+              "name": "List of assets.",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "x-api-key",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/assets",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "assets"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "[\n  {\n    \"id\": \"<string>\",\n    \"asset_type\": \"<string>\",\n    \"description\": \"<string>\",\n    \"asset_identifier\": \"<string>\",\n    \"serial_number\": \"<string>\",\n    \"out_date\": \"<date>\",\n    \"in_date\": \"<date>\",\n    \"employee\": {\n      \"code\": \"<string>\",\n      \"first_names\": \"<string>\",\n      \"last_name\": \"<string>\",\n      \"full_name\": \"<string>\",\n      \"department\": \"<string>\"\n    }\n  },\n  {\n    \"id\": \"<string>\",\n    \"asset_type\": \"<string>\",\n    \"description\": \"<string>\",\n    \"asset_identifier\": \"<string>\",\n    \"serial_number\": \"<string>\",\n    \"out_date\": \"<date>\",\n    \"in_date\": \"<date>\",\n    \"employee\": {\n      \"code\": \"<string>\",\n      \"first_names\": \"<string>\",\n      \"last_name\": \"<string>\",\n      \"full_name\": \"<string>\",\n      \"department\": \"<string>\"\n    }\n  }\n]",
+              "createdAt": "2026-07-28T01:57:17.000Z",
+              "updatedAt": "2026-07-28T01:57:17.000Z",
+              "uid": "35240-4ae6e516-b378-49e9-aa45-84cd732beb28"
+            }
+          ],
+          "createdAt": "2026-07-28T01:57:17.000Z",
+          "updatedAt": "2026-07-28T01:57:17.000Z",
+          "uid": "35240-a1d35ab2-5d08-4177-af97-5f630bc860c9"
+        }
+      ],
+      "id": "ef742e5a-d356-40d6-be15-cb430ab6621f",
+      "createdAt": "2026-07-28T01:57:17.000Z",
+      "updatedAt": "2026-07-28T01:57:17.000Z",
+      "uid": "35240-ef742e5a-d356-40d6-be15-cb430ab6621f"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "x-api-key",
+        "type": "string"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}",
+        "type": "string"
+      },
+      {
+        "key": "in",
+        "value": "header",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://api.hrpartner.io"
+    }
+  ]
+}

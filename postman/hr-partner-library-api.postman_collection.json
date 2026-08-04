@@ -1,0 +1,217 @@
+{
+  "info": {
+    "_postman_id": "54d212e0-4645-40b7-9ead-f561dff7409a",
+    "name": "HR Partner REST Absences Library API",
+    "description": "HR Partner is a cloud-based human resources management SaaS platform from HR Partner Software Pty Ltd (Australia), aimed at organizations of roughly 20 to 500 employees. This OpenAPI describes the public HR Partner REST API exposed at https://api.hrpartner.io, covering company information, employee records and sub-modules (contacts, addresses, notes, education, skills, training, assets, benefits, dependents, grievances, positions, renewables, attachments), leave management (requests, balances, absences), timesheets and projects, expenses, recruitment (job listings, applicants, applications, application-stage tracking, interviews), performance (reviews, goals), checklists, reminders, document library, and lookups. Authentication is via API key passed in the x-api-key header.\n\nContact Support:\n Name: HR Partner Developer\n Email: developer@hrpartner.io",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T01:57:33.000Z",
+    "updatedAt": "2026-07-28T01:57:33.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-54d212e0-4645-40b7-9ead-f561dff7409a"
+  },
+  "item": [
+    {
+      "name": "library",
+      "item": [
+        {
+          "name": "documents",
+          "item": [
+            {
+              "name": "List Library Documents",
+              "id": "9242874a-a600-413b-a371-6e2f59c58c4e",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/library/documents",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "library",
+                    "documents"
+                  ]
+                },
+                "description": "List documents in the company document library."
+              },
+              "response": [
+                {
+                  "id": "e1a1f902-600d-4117-baad-3cf9231e3b04",
+                  "name": "List of library documents.",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "x-api-key",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/library/documents",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "library",
+                        "documents"
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "[\n  {\n    \"id\": \"<string>\",\n    \"name\": \"<string>\",\n    \"category\": \"<string>\",\n    \"url\": \"<string>\",\n    \"uploaded_at\": \"<dateTime>\"\n  },\n  {\n    \"id\": \"<string>\",\n    \"name\": \"<string>\",\n    \"category\": \"<string>\",\n    \"url\": \"<string>\",\n    \"uploaded_at\": \"<dateTime>\"\n  }\n]",
+                  "createdAt": "2026-07-28T01:57:33.000Z",
+                  "updatedAt": "2026-07-28T01:57:33.000Z",
+                  "uid": "35240-e1a1f902-600d-4117-baad-3cf9231e3b04"
+                }
+              ],
+              "createdAt": "2026-07-28T01:57:33.000Z",
+              "updatedAt": "2026-07-28T01:57:33.000Z",
+              "uid": "35240-9242874a-a600-413b-a371-6e2f59c58c4e"
+            }
+          ],
+          "id": "1bdce58e-7c65-439d-a979-10c3b13e5cd8",
+          "createdAt": "2026-07-28T01:57:33.000Z",
+          "updatedAt": "2026-07-28T01:57:33.000Z",
+          "uid": "35240-1bdce58e-7c65-439d-a979-10c3b13e5cd8"
+        },
+        {
+          "name": "categories",
+          "item": [
+            {
+              "name": "List Library Categories",
+              "id": "f1490b0d-74fe-4197-aefa-228073a95479",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/library/categories",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "library",
+                    "categories"
+                  ]
+                },
+                "description": "List document categories in the company document library."
+              },
+              "response": [
+                {
+                  "id": "ffc2a8b3-1cb5-40ee-90b7-52f7967b7353",
+                  "name": "List of library categories.",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "x-api-key",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/library/categories",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "library",
+                        "categories"
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "[\n  {\n    \"id\": \"<string>\",\n    \"name\": \"<string>\",\n    \"description\": \"<string>\"\n  },\n  {\n    \"id\": \"<string>\",\n    \"name\": \"<string>\",\n    \"description\": \"<string>\"\n  }\n]",
+                  "createdAt": "2026-07-28T01:57:33.000Z",
+                  "updatedAt": "2026-07-28T01:57:33.000Z",
+                  "uid": "35240-ffc2a8b3-1cb5-40ee-90b7-52f7967b7353"
+                }
+              ],
+              "createdAt": "2026-07-28T01:57:33.000Z",
+              "updatedAt": "2026-07-28T01:57:33.000Z",
+              "uid": "35240-f1490b0d-74fe-4197-aefa-228073a95479"
+            }
+          ],
+          "id": "a53ad5bd-8d53-41fb-9cf4-e26e5569346f",
+          "createdAt": "2026-07-28T01:57:33.000Z",
+          "updatedAt": "2026-07-28T01:57:33.000Z",
+          "uid": "35240-a53ad5bd-8d53-41fb-9cf4-e26e5569346f"
+        }
+      ],
+      "id": "553d344e-ed62-403a-ba46-91f64f8a8250",
+      "createdAt": "2026-07-28T01:57:33.000Z",
+      "updatedAt": "2026-07-28T01:57:33.000Z",
+      "uid": "35240-553d344e-ed62-403a-ba46-91f64f8a8250"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "x-api-key",
+        "type": "string"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}",
+        "type": "string"
+      },
+      {
+        "key": "in",
+        "value": "header",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://api.hrpartner.io"
+    }
+  ]
+}

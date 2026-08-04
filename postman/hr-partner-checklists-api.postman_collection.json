@@ -1,0 +1,158 @@
+{
+  "info": {
+    "_postman_id": "909ab2db-5bb0-49dd-a1ed-c30fb1fdc085",
+    "name": "HR Partner REST Absences Checklists API",
+    "description": "HR Partner is a cloud-based human resources management SaaS platform from HR Partner Software Pty Ltd (Australia), aimed at organizations of roughly 20 to 500 employees. This OpenAPI describes the public HR Partner REST API exposed at https://api.hrpartner.io, covering company information, employee records and sub-modules (contacts, addresses, notes, education, skills, training, assets, benefits, dependents, grievances, positions, renewables, attachments), leave management (requests, balances, absences), timesheets and projects, expenses, recruitment (job listings, applicants, applications, application-stage tracking, interviews), performance (reviews, goals), checklists, reminders, document library, and lookups. Authentication is via API key passed in the x-api-key header.\n\nContact Support:\n Name: HR Partner Developer\n Email: developer@hrpartner.io",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T01:57:19.000Z",
+    "updatedAt": "2026-07-28T01:57:19.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-909ab2db-5bb0-49dd-a1ed-c30fb1fdc085"
+  },
+  "item": [
+    {
+      "name": "checklist",
+      "item": [
+        {
+          "name": "List Checklists",
+          "id": "577484d3-213d-446f-ba42-60203d09401f",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/checklist?employee=<string>&checklist_status=<string>&checklist_template=<string>&show_details=<boolean>",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "checklist"
+              ],
+              "query": [
+                {
+                  "key": "employee",
+                  "value": "<string>"
+                },
+                {
+                  "key": "checklist_status",
+                  "value": "<string>"
+                },
+                {
+                  "key": "checklist_template",
+                  "value": "<string>"
+                },
+                {
+                  "key": "show_details",
+                  "value": "<boolean>"
+                }
+              ]
+            },
+            "description": "List onboarding, offboarding, and other checklists."
+          },
+          "response": [
+            {
+              "id": "c8c6b734-96fa-4058-a89f-0aa18abc6997",
+              "name": "List of checklists.",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "x-api-key",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/checklist?employee=<string>&checklist_status=<string>&checklist_template=<string>&show_details=<boolean>",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "checklist"
+                  ],
+                  "query": [
+                    {
+                      "key": "employee",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "checklist_status",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "checklist_template",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "show_details",
+                      "value": "<boolean>"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "[\n  {\n    \"id\": \"<string>\",\n    \"name\": \"<string>\",\n    \"comments\": \"<string>\",\n    \"status\": \"<string>\",\n    \"assigned_at\": \"<dateTime>\",\n    \"completed_at\": \"<dateTime>\",\n    \"progress\": \"<number>\",\n    \"percdone\": \"<number>\",\n    \"employee\": {\n      \"code\": \"<string>\",\n      \"first_names\": \"<string>\",\n      \"last_name\": \"<string>\",\n      \"full_name\": \"<string>\",\n      \"department\": \"<string>\"\n    }\n  },\n  {\n    \"id\": \"<string>\",\n    \"name\": \"<string>\",\n    \"comments\": \"<string>\",\n    \"status\": \"<string>\",\n    \"assigned_at\": \"<dateTime>\",\n    \"completed_at\": \"<dateTime>\",\n    \"progress\": \"<number>\",\n    \"percdone\": \"<number>\",\n    \"employee\": {\n      \"code\": \"<string>\",\n      \"first_names\": \"<string>\",\n      \"last_name\": \"<string>\",\n      \"full_name\": \"<string>\",\n      \"department\": \"<string>\"\n    }\n  }\n]",
+              "createdAt": "2026-07-28T01:57:20.000Z",
+              "updatedAt": "2026-07-28T01:57:20.000Z",
+              "uid": "35240-c8c6b734-96fa-4058-a89f-0aa18abc6997"
+            }
+          ],
+          "createdAt": "2026-07-28T01:57:20.000Z",
+          "updatedAt": "2026-07-28T01:57:20.000Z",
+          "uid": "35240-577484d3-213d-446f-ba42-60203d09401f"
+        }
+      ],
+      "id": "d3227f7c-c162-4b81-8d48-81e209832b5e",
+      "createdAt": "2026-07-28T01:57:20.000Z",
+      "updatedAt": "2026-07-28T01:57:20.000Z",
+      "uid": "35240-d3227f7c-c162-4b81-8d48-81e209832b5e"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "x-api-key",
+        "type": "string"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}",
+        "type": "string"
+      },
+      {
+        "key": "in",
+        "value": "header",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://api.hrpartner.io"
+    }
+  ]
+}

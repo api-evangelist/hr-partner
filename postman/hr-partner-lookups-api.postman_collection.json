@@ -1,0 +1,122 @@
+{
+  "info": {
+    "_postman_id": "8d8a1e10-9927-47ec-a7be-e3efc661e5cb",
+    "name": "HR Partner REST Absences Lookups API",
+    "description": "HR Partner is a cloud-based human resources management SaaS platform from HR Partner Software Pty Ltd (Australia), aimed at organizations of roughly 20 to 500 employees. This OpenAPI describes the public HR Partner REST API exposed at https://api.hrpartner.io, covering company information, employee records and sub-modules (contacts, addresses, notes, education, skills, training, assets, benefits, dependents, grievances, positions, renewables, attachments), leave management (requests, balances, absences), timesheets and projects, expenses, recruitment (job listings, applicants, applications, application-stage tracking, interviews), performance (reviews, goals), checklists, reminders, document library, and lookups. Authentication is via API key passed in the x-api-key header.\n\nContact Support:\n Name: HR Partner Developer\n Email: developer@hrpartner.io",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T01:57:34.000Z",
+    "updatedAt": "2026-07-28T01:57:34.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-8d8a1e10-9927-47ec-a7be-e3efc661e5cb"
+  },
+  "item": [
+    {
+      "name": "lookups",
+      "item": [
+        {
+          "name": "List Lookups",
+          "id": "32025a8f-32b1-4f4e-b227-25f469546f09",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/lookups",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "lookups"
+              ]
+            },
+            "description": "List system lookup definitions for configurable fields."
+          },
+          "response": [
+            {
+              "id": "55681c17-022b-4320-af5e-92a44632c2ee",
+              "name": "List of lookup definitions.",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "x-api-key",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/lookups",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "lookups"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "[\n  {\n    \"id\": \"<string>\",\n    \"name\": \"<string>\",\n    \"values\": [\n      \"<string>\",\n      \"<string>\"\n    ]\n  },\n  {\n    \"id\": \"<string>\",\n    \"name\": \"<string>\",\n    \"values\": [\n      \"<string>\",\n      \"<string>\"\n    ]\n  }\n]",
+              "createdAt": "2026-07-28T01:57:34.000Z",
+              "updatedAt": "2026-07-28T01:57:34.000Z",
+              "uid": "35240-55681c17-022b-4320-af5e-92a44632c2ee"
+            }
+          ],
+          "createdAt": "2026-07-28T01:57:34.000Z",
+          "updatedAt": "2026-07-28T01:57:34.000Z",
+          "uid": "35240-32025a8f-32b1-4f4e-b227-25f469546f09"
+        }
+      ],
+      "id": "4b87fbbf-5d32-45f0-a3ea-2f05ea2dc6bd",
+      "createdAt": "2026-07-28T01:57:34.000Z",
+      "updatedAt": "2026-07-28T01:57:34.000Z",
+      "uid": "35240-4b87fbbf-5d32-45f0-a3ea-2f05ea2dc6bd"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "x-api-key",
+        "type": "string"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}",
+        "type": "string"
+      },
+      {
+        "key": "in",
+        "value": "header",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://api.hrpartner.io"
+    }
+  ]
+}

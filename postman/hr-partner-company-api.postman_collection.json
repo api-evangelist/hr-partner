@@ -1,0 +1,122 @@
+{
+  "info": {
+    "_postman_id": "ce95647a-a652-4b4c-a5ec-bc969929bbd8",
+    "name": "HR Partner REST Absences Company API",
+    "description": "HR Partner is a cloud-based human resources management SaaS platform from HR Partner Software Pty Ltd (Australia), aimed at organizations of roughly 20 to 500 employees. This OpenAPI describes the public HR Partner REST API exposed at https://api.hrpartner.io, covering company information, employee records and sub-modules (contacts, addresses, notes, education, skills, training, assets, benefits, dependents, grievances, positions, renewables, attachments), leave management (requests, balances, absences), timesheets and projects, expenses, recruitment (job listings, applicants, applications, application-stage tracking, interviews), performance (reviews, goals), checklists, reminders, document library, and lookups. Authentication is via API key passed in the x-api-key header.\n\nContact Support:\n Name: HR Partner Developer\n Email: developer@hrpartner.io",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T01:57:20.000Z",
+    "updatedAt": "2026-07-28T01:57:20.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-ce95647a-a652-4b4c-a5ec-bc969929bbd8"
+  },
+  "item": [
+    {
+      "name": "company",
+      "item": [
+        {
+          "name": "Get Company Information",
+          "id": "12763014-5dae-49a0-94ef-62734227dcbd",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/company",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "company"
+              ]
+            },
+            "description": "Retrieve company-level information for the HR Partner account."
+          },
+          "response": [
+            {
+              "id": "50fc8436-756d-4c48-ac37-2ba909f39378",
+              "name": "Company information.",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "x-api-key",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/company",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "company"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{\n  \"id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"country\": \"<string>\",\n  \"timezone\": \"<string>\",\n  \"currency\": \"<string>\"\n}",
+              "createdAt": "2026-07-28T01:57:21.000Z",
+              "updatedAt": "2026-07-28T01:57:21.000Z",
+              "uid": "35240-50fc8436-756d-4c48-ac37-2ba909f39378"
+            }
+          ],
+          "createdAt": "2026-07-28T01:57:21.000Z",
+          "updatedAt": "2026-07-28T01:57:21.000Z",
+          "uid": "35240-12763014-5dae-49a0-94ef-62734227dcbd"
+        }
+      ],
+      "id": "e34fac20-2458-4473-9fc4-f9c6622b1625",
+      "createdAt": "2026-07-28T01:57:21.000Z",
+      "updatedAt": "2026-07-28T01:57:21.000Z",
+      "uid": "35240-e34fac20-2458-4473-9fc4-f9c6622b1625"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "x-api-key",
+        "type": "string"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}",
+        "type": "string"
+      },
+      {
+        "key": "in",
+        "value": "header",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://api.hrpartner.io"
+    }
+  ]
+}

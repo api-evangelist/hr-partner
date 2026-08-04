@@ -1,0 +1,166 @@
+{
+  "info": {
+    "_postman_id": "4394ef1c-ed2e-4cc2-9a2b-6218c556bb38",
+    "name": "HR Partner REST Absences Goals API",
+    "description": "HR Partner is a cloud-based human resources management SaaS platform from HR Partner Software Pty Ltd (Australia), aimed at organizations of roughly 20 to 500 employees. This OpenAPI describes the public HR Partner REST API exposed at https://api.hrpartner.io, covering company information, employee records and sub-modules (contacts, addresses, notes, education, skills, training, assets, benefits, dependents, grievances, positions, renewables, attachments), leave management (requests, balances, absences), timesheets and projects, expenses, recruitment (job listings, applicants, applications, application-stage tracking, interviews), performance (reviews, goals), checklists, reminders, document library, and lookups. Authentication is via API key passed in the x-api-key header.\n\nContact Support:\n Name: HR Partner Developer\n Email: developer@hrpartner.io",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T01:57:28.000Z",
+    "updatedAt": "2026-07-28T01:57:28.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-4394ef1c-ed2e-4cc2-9a2b-6218c556bb38"
+  },
+  "item": [
+    {
+      "name": "goals",
+      "item": [
+        {
+          "name": "List Goals",
+          "id": "99e7a5dd-e0b9-4bf6-ac4f-6a88b8a4ca19",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/goals?employee=<string>&goal_scope=<string>&goal_type=<string>&goal_is_active=<boolean>&goal_is_completed=<boolean>",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "goals"
+              ],
+              "query": [
+                {
+                  "key": "employee",
+                  "value": "<string>"
+                },
+                {
+                  "key": "goal_scope",
+                  "value": "<string>"
+                },
+                {
+                  "key": "goal_type",
+                  "value": "<string>"
+                },
+                {
+                  "key": "goal_is_active",
+                  "value": "<boolean>"
+                },
+                {
+                  "key": "goal_is_completed",
+                  "value": "<boolean>"
+                }
+              ]
+            },
+            "description": "List performance and development goals."
+          },
+          "response": [
+            {
+              "id": "393fd1c8-d895-4c4a-9e73-b81b8a58eafa",
+              "name": "List of goals.",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "x-api-key",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/goals?employee=<string>&goal_scope=<string>&goal_type=<string>&goal_is_active=<boolean>&goal_is_completed=<boolean>",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "goals"
+                  ],
+                  "query": [
+                    {
+                      "key": "employee",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "goal_scope",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "goal_type",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "goal_is_active",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "goal_is_completed",
+                      "value": "<boolean>"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "[\n  {\n    \"id\": \"<string>\",\n    \"scope\": \"<string>\",\n    \"type\": \"<string>\",\n    \"description\": \"<string>\",\n    \"target_value\": \"<number>\",\n    \"can_exceed_target_value\": \"<boolean>\",\n    \"current_value\": \"<number>\",\n    \"is_active\": \"<boolean>\",\n    \"is_completed\": \"<boolean>\",\n    \"is_archived\": \"<boolean>\",\n    \"assigned_at\": \"<dateTime>\",\n    \"due_at\": \"<dateTime>\",\n    \"employee\": {\n      \"code\": \"<string>\",\n      \"first_names\": \"<string>\",\n      \"last_name\": \"<string>\",\n      \"full_name\": \"<string>\",\n      \"department\": \"<string>\"\n    }\n  },\n  {\n    \"id\": \"<string>\",\n    \"scope\": \"<string>\",\n    \"type\": \"<string>\",\n    \"description\": \"<string>\",\n    \"target_value\": \"<number>\",\n    \"can_exceed_target_value\": \"<boolean>\",\n    \"current_value\": \"<number>\",\n    \"is_active\": \"<boolean>\",\n    \"is_completed\": \"<boolean>\",\n    \"is_archived\": \"<boolean>\",\n    \"assigned_at\": \"<dateTime>\",\n    \"due_at\": \"<dateTime>\",\n    \"employee\": {\n      \"code\": \"<string>\",\n      \"first_names\": \"<string>\",\n      \"last_name\": \"<string>\",\n      \"full_name\": \"<string>\",\n      \"department\": \"<string>\"\n    }\n  }\n]",
+              "createdAt": "2026-07-28T01:57:28.000Z",
+              "updatedAt": "2026-07-28T01:57:28.000Z",
+              "uid": "35240-393fd1c8-d895-4c4a-9e73-b81b8a58eafa"
+            }
+          ],
+          "createdAt": "2026-07-28T01:57:28.000Z",
+          "updatedAt": "2026-07-28T01:57:28.000Z",
+          "uid": "35240-99e7a5dd-e0b9-4bf6-ac4f-6a88b8a4ca19"
+        }
+      ],
+      "id": "f87683c4-4e3f-41fe-a34e-411a05a3ef86",
+      "createdAt": "2026-07-28T01:57:28.000Z",
+      "updatedAt": "2026-07-28T01:57:28.000Z",
+      "uid": "35240-f87683c4-4e3f-41fe-a34e-411a05a3ef86"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "x-api-key",
+        "type": "string"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}",
+        "type": "string"
+      },
+      {
+        "key": "in",
+        "value": "header",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://api.hrpartner.io"
+    }
+  ]
+}

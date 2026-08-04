@@ -1,0 +1,418 @@
+{
+  "info": {
+    "_postman_id": "b80d46df-d1f7-42dd-94f3-ec92b08a1c3b",
+    "name": "HR Partner REST Absences Reminders API",
+    "description": "HR Partner is a cloud-based human resources management SaaS platform from HR Partner Software Pty Ltd (Australia), aimed at organizations of roughly 20 to 500 employees. This OpenAPI describes the public HR Partner REST API exposed at https://api.hrpartner.io, covering company information, employee records and sub-modules (contacts, addresses, notes, education, skills, training, assets, benefits, dependents, grievances, positions, renewables, attachments), leave management (requests, balances, absences), timesheets and projects, expenses, recruitment (job listings, applicants, applications, application-stage tracking, interviews), performance (reviews, goals), checklists, reminders, document library, and lookups. Authentication is via API key passed in the x-api-key header.\n\nContact Support:\n Name: HR Partner Developer\n Email: developer@hrpartner.io",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T01:58:20.000Z",
+    "updatedAt": "2026-07-28T01:58:20.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-b80d46df-d1f7-42dd-94f3-ec92b08a1c3b"
+  },
+  "item": [
+    {
+      "name": "reminders",
+      "item": [
+        {
+          "name": "List Reminders",
+          "id": "41926a5f-5a0f-4cf8-980d-0234f9dcc230",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/reminders",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "reminders"
+              ]
+            },
+            "description": "List user reminders."
+          },
+          "response": [
+            {
+              "id": "5e874297-6963-49c6-bea0-09aa940583eb",
+              "name": "List of reminders.",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "x-api-key",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/reminders",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "reminders"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "[\n  {\n    \"id\": \"<string>\",\n    \"title\": \"<string>\",\n    \"body\": \"<string>\",\n    \"due_at\": \"<dateTime>\",\n    \"is_completed\": \"<boolean>\"\n  },\n  {\n    \"id\": \"<string>\",\n    \"title\": \"<string>\",\n    \"body\": \"<string>\",\n    \"due_at\": \"<dateTime>\",\n    \"is_completed\": \"<boolean>\"\n  }\n]",
+              "createdAt": "2026-07-28T01:58:20.000Z",
+              "updatedAt": "2026-07-28T01:58:20.000Z",
+              "uid": "35240-5e874297-6963-49c6-bea0-09aa940583eb"
+            }
+          ],
+          "createdAt": "2026-07-28T01:58:20.000Z",
+          "updatedAt": "2026-07-28T01:58:20.000Z",
+          "uid": "35240-41926a5f-5a0f-4cf8-980d-0234f9dcc230"
+        }
+      ],
+      "id": "336446a7-0e2c-481e-939f-69386bbb2384",
+      "createdAt": "2026-07-28T01:58:20.000Z",
+      "updatedAt": "2026-07-28T01:58:20.000Z",
+      "uid": "35240-336446a7-0e2c-481e-939f-69386bbb2384"
+    },
+    {
+      "name": "reminder",
+      "item": [
+        {
+          "name": "{id}",
+          "item": [
+            {
+              "name": "Get Reminder",
+              "id": "576f64d0-1e58-4768-ac14-af7d2c59d941",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/reminder/:id",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "reminder",
+                    ":id"
+                  ],
+                  "variable": [
+                    {
+                      "id": "a511489d-acf8-4e0e-9e16-3dd0fa2f4db7",
+                      "key": "id",
+                      "value": "<string>",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "description": "Retrieve a single reminder by id."
+              },
+              "response": [
+                {
+                  "id": "a92b5e2c-f0f8-4db6-8ce8-b1c0667811cf",
+                  "name": "A single reminder.",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "x-api-key",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/reminder/:id",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "reminder",
+                        ":id"
+                      ],
+                      "variable": [
+                        {
+                          "key": "id"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n  \"id\": \"<string>\",\n  \"title\": \"<string>\",\n  \"body\": \"<string>\",\n  \"due_at\": \"<dateTime>\",\n  \"is_completed\": \"<boolean>\"\n}",
+                  "createdAt": "2026-07-28T01:58:20.000Z",
+                  "updatedAt": "2026-07-28T01:58:20.000Z",
+                  "uid": "35240-a92b5e2c-f0f8-4db6-8ce8-b1c0667811cf"
+                }
+              ],
+              "createdAt": "2026-07-28T01:58:20.000Z",
+              "updatedAt": "2026-07-28T01:58:20.000Z",
+              "uid": "35240-576f64d0-1e58-4768-ac14-af7d2c59d941"
+            },
+            {
+              "name": "Update Reminder",
+              "id": "cc43c0de-c9c3-4f3b-8d21-dc55420a809e",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"id\": \"<string>\",\n  \"title\": \"<string>\",\n  \"body\": \"<string>\",\n  \"due_at\": \"<dateTime>\",\n  \"is_completed\": \"<boolean>\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/reminder/:id",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "reminder",
+                    ":id"
+                  ],
+                  "variable": [
+                    {
+                      "id": "94d90330-f6d0-47ab-b101-2528a1c37b53",
+                      "key": "id",
+                      "value": "<string>",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "description": "Update an existing reminder by id."
+              },
+              "response": [
+                {
+                  "id": "652c8b50-850c-488e-9794-29c1f2d96849",
+                  "name": "Updated reminder.",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "x-api-key",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"id\": \"<string>\",\n  \"title\": \"<string>\",\n  \"body\": \"<string>\",\n  \"due_at\": \"<dateTime>\",\n  \"is_completed\": \"<boolean>\"\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/reminder/:id",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "reminder",
+                        ":id"
+                      ],
+                      "variable": [
+                        {
+                          "key": "id"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n  \"id\": \"<string>\",\n  \"title\": \"<string>\",\n  \"body\": \"<string>\",\n  \"due_at\": \"<dateTime>\",\n  \"is_completed\": \"<boolean>\"\n}",
+                  "createdAt": "2026-07-28T01:58:20.000Z",
+                  "updatedAt": "2026-07-28T01:58:20.000Z",
+                  "uid": "35240-652c8b50-850c-488e-9794-29c1f2d96849"
+                }
+              ],
+              "createdAt": "2026-07-28T01:58:20.000Z",
+              "updatedAt": "2026-07-28T01:58:20.000Z",
+              "uid": "35240-cc43c0de-c9c3-4f3b-8d21-dc55420a809e"
+            },
+            {
+              "name": "Delete Reminder",
+              "id": "8034f507-bb56-4fde-9c2e-1c2c3fa6361c",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "DELETE",
+                "header": [],
+                "url": {
+                  "raw": "{{baseUrl}}/reminder/:id",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "reminder",
+                    ":id"
+                  ],
+                  "variable": [
+                    {
+                      "id": "ab4614e0-6440-4ba7-be24-7ac96b608966",
+                      "key": "id",
+                      "value": "<string>",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "description": "Delete a reminder by id."
+              },
+              "response": [
+                {
+                  "id": "ca4a1786-d946-4e48-b612-d39e99933298",
+                  "name": "Reminder deleted.",
+                  "originalRequest": {
+                    "method": "DELETE",
+                    "header": [
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "x-api-key",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/reminder/:id",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "reminder",
+                        ":id"
+                      ],
+                      "variable": [
+                        {
+                          "key": "id"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "text",
+                  "header": [],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": null,
+                  "createdAt": "2026-07-28T01:58:20.000Z",
+                  "updatedAt": "2026-07-28T01:58:20.000Z",
+                  "uid": "35240-ca4a1786-d946-4e48-b612-d39e99933298"
+                }
+              ],
+              "createdAt": "2026-07-28T01:58:20.000Z",
+              "updatedAt": "2026-07-28T01:58:20.000Z",
+              "uid": "35240-8034f507-bb56-4fde-9c2e-1c2c3fa6361c"
+            }
+          ],
+          "id": "584bb96a-776e-4134-99ed-072ebafbe08b",
+          "createdAt": "2026-07-28T01:58:20.000Z",
+          "updatedAt": "2026-07-28T01:58:20.000Z",
+          "uid": "35240-584bb96a-776e-4134-99ed-072ebafbe08b"
+        }
+      ],
+      "id": "92ddfe74-b731-452b-91e1-db64a7d347ba",
+      "createdAt": "2026-07-28T01:58:20.000Z",
+      "updatedAt": "2026-07-28T01:58:20.000Z",
+      "uid": "35240-92ddfe74-b731-452b-91e1-db64a7d347ba"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "x-api-key",
+        "type": "string"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}",
+        "type": "string"
+      },
+      {
+        "key": "in",
+        "value": "header",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://api.hrpartner.io"
+    }
+  ]
+}

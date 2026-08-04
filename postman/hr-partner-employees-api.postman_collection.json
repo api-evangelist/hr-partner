@@ -1,0 +1,428 @@
+{
+  "info": {
+    "_postman_id": "09b63a6e-7a29-478f-b3ec-8882d2f2e875",
+    "name": "HR Partner REST Absences Employees API",
+    "description": "HR Partner is a cloud-based human resources management SaaS platform from HR Partner Software Pty Ltd (Australia), aimed at organizations of roughly 20 to 500 employees. This OpenAPI describes the public HR Partner REST API exposed at https://api.hrpartner.io, covering company information, employee records and sub-modules (contacts, addresses, notes, education, skills, training, assets, benefits, dependents, grievances, positions, renewables, attachments), leave management (requests, balances, absences), timesheets and projects, expenses, recruitment (job listings, applicants, applications, application-stage tracking, interviews), performance (reviews, goals), checklists, reminders, document library, and lookups. Authentication is via API key passed in the x-api-key header.\n\nContact Support:\n Name: HR Partner Developer\n Email: developer@hrpartner.io",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T01:57:26.000Z",
+    "updatedAt": "2026-07-28T01:57:26.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-09b63a6e-7a29-478f-b3ec-8882d2f2e875"
+  },
+  "item": [
+    {
+      "name": "employees",
+      "item": [
+        {
+          "name": "List Employees",
+          "id": "2f5a6869-fddf-402c-b202-b91371b3916d",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/employees?search=<string>&department=<string>&location=<string>&group=<string>&position=<string>&employment_status=<string>&gender_identity=<string>&is_active=<boolean>&is_terminated=<boolean>&reports_to=<string>",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "employees"
+              ],
+              "query": [
+                {
+                  "key": "search",
+                  "value": "<string>"
+                },
+                {
+                  "key": "department",
+                  "value": "<string>"
+                },
+                {
+                  "key": "location",
+                  "value": "<string>"
+                },
+                {
+                  "key": "group",
+                  "value": "<string>"
+                },
+                {
+                  "key": "position",
+                  "value": "<string>"
+                },
+                {
+                  "key": "employment_status",
+                  "value": "<string>"
+                },
+                {
+                  "key": "gender_identity",
+                  "value": "<string>"
+                },
+                {
+                  "key": "is_active",
+                  "value": "<boolean>"
+                },
+                {
+                  "key": "is_terminated",
+                  "value": "<boolean>"
+                },
+                {
+                  "key": "reports_to",
+                  "value": "<string>"
+                }
+              ]
+            },
+            "description": "Returns all employees in the HR Partner account with optional filtering."
+          },
+          "response": [
+            {
+              "id": "dc62aff1-62b0-4b20-a0a2-80b2942da38b",
+              "name": "List of employees.",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "x-api-key",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/employees?search=<string>&department=<string>&location=<string>&group=<string>&position=<string>&employment_status=<string>&gender_identity=<string>&is_active=<boolean>&is_terminated=<boolean>&reports_to=<string>",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "employees"
+                  ],
+                  "query": [
+                    {
+                      "key": "search",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "department",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "location",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "group",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "position",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "employment_status",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "gender_identity",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "is_active",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "is_terminated",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "reports_to",
+                      "value": "<string>"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "[\n  {\n    \"id\": \"<string>\",\n    \"code\": \"<string>\",\n    \"first_names\": \"<string>\",\n    \"last_name\": \"<string>\",\n    \"full_name\": \"<string>\",\n    \"date_of_birth\": \"<date>\",\n    \"gender_identity\": \"<string>\",\n    \"department\": \"<string>\",\n    \"location\": \"<string>\",\n    \"position\": \"<string>\",\n    \"employment_status\": \"<string>\",\n    \"email\": \"<string>\",\n    \"started_at\": \"<date>\",\n    \"finished_at\": \"<date>\",\n    \"avatar\": \"<string>\",\n    \"can_logon\": \"<boolean>\",\n    \"portal_username\": \"<string>\",\n    \"custom_data\": {},\n    \"tags\": [\n      \"<string>\",\n      \"<string>\"\n    ]\n  },\n  {\n    \"id\": \"<string>\",\n    \"code\": \"<string>\",\n    \"first_names\": \"<string>\",\n    \"last_name\": \"<string>\",\n    \"full_name\": \"<string>\",\n    \"date_of_birth\": \"<date>\",\n    \"gender_identity\": \"<string>\",\n    \"department\": \"<string>\",\n    \"location\": \"<string>\",\n    \"position\": \"<string>\",\n    \"employment_status\": \"<string>\",\n    \"email\": \"<string>\",\n    \"started_at\": \"<date>\",\n    \"finished_at\": \"<date>\",\n    \"avatar\": \"<string>\",\n    \"can_logon\": \"<boolean>\",\n    \"portal_username\": \"<string>\",\n    \"custom_data\": {},\n    \"tags\": [\n      \"<string>\",\n      \"<string>\"\n    ]\n  }\n]",
+              "createdAt": "2026-07-28T01:57:27.000Z",
+              "updatedAt": "2026-07-28T01:57:27.000Z",
+              "uid": "35240-dc62aff1-62b0-4b20-a0a2-80b2942da38b"
+            }
+          ],
+          "createdAt": "2026-07-28T01:57:27.000Z",
+          "updatedAt": "2026-07-28T01:57:27.000Z",
+          "uid": "35240-2f5a6869-fddf-402c-b202-b91371b3916d"
+        }
+      ],
+      "id": "7225dc96-ddf8-4898-8c0f-2ce6831944fd",
+      "createdAt": "2026-07-28T01:57:27.000Z",
+      "updatedAt": "2026-07-28T01:57:27.000Z",
+      "uid": "35240-7225dc96-ddf8-4898-8c0f-2ce6831944fd"
+    },
+    {
+      "name": "employee",
+      "item": [
+        {
+          "name": "{employeeCode}",
+          "item": [
+            {
+              "name": "Get Employee",
+              "id": "b92b7412-75f5-436a-a653-95e35d0e4855",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/employee/:employeeCode",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "employee",
+                    ":employeeCode"
+                  ],
+                  "variable": [
+                    {
+                      "id": "cabda0c0-4cbb-4ec3-9c2e-647b023d8dca",
+                      "key": "employeeCode",
+                      "value": "<string>",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "description": "Retrieve a single employee by code."
+              },
+              "response": [
+                {
+                  "id": "8491f445-4e82-4ed3-a07e-e1c738fe5642",
+                  "name": "A single employee.",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "x-api-key",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/employee/:employeeCode",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "employee",
+                        ":employeeCode"
+                      ],
+                      "variable": [
+                        {
+                          "key": "employeeCode"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n  \"id\": \"<string>\",\n  \"code\": \"<string>\",\n  \"first_names\": \"<string>\",\n  \"last_name\": \"<string>\",\n  \"full_name\": \"<string>\",\n  \"date_of_birth\": \"<date>\",\n  \"gender_identity\": \"<string>\",\n  \"department\": \"<string>\",\n  \"location\": \"<string>\",\n  \"position\": \"<string>\",\n  \"employment_status\": \"<string>\",\n  \"email\": \"<string>\",\n  \"started_at\": \"<date>\",\n  \"finished_at\": \"<date>\",\n  \"avatar\": \"<string>\",\n  \"can_logon\": \"<boolean>\",\n  \"portal_username\": \"<string>\",\n  \"custom_data\": {},\n  \"tags\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+                  "createdAt": "2026-07-28T01:57:27.000Z",
+                  "updatedAt": "2026-07-28T01:57:27.000Z",
+                  "uid": "35240-8491f445-4e82-4ed3-a07e-e1c738fe5642"
+                }
+              ],
+              "createdAt": "2026-07-28T01:57:27.000Z",
+              "updatedAt": "2026-07-28T01:57:27.000Z",
+              "uid": "35240-b92b7412-75f5-436a-a653-95e35d0e4855"
+            },
+            {
+              "name": "Create Or Update Employee",
+              "id": "943cad62-4541-4bec-89b6-580cd3633cea",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"id\": \"<string>\",\n  \"code\": \"<string>\",\n  \"first_names\": \"<string>\",\n  \"last_name\": \"<string>\",\n  \"full_name\": \"<string>\",\n  \"date_of_birth\": \"<date>\",\n  \"gender_identity\": \"<string>\",\n  \"department\": \"<string>\",\n  \"location\": \"<string>\",\n  \"position\": \"<string>\",\n  \"employment_status\": \"<string>\",\n  \"email\": \"<string>\",\n  \"started_at\": \"<date>\",\n  \"finished_at\": \"<date>\",\n  \"avatar\": \"<string>\",\n  \"can_logon\": \"<boolean>\",\n  \"portal_username\": \"<string>\",\n  \"custom_data\": {},\n  \"tags\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/employee/:employeeCode",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "employee",
+                    ":employeeCode"
+                  ],
+                  "variable": [
+                    {
+                      "id": "f4cd42b9-cdbb-4b49-8ab3-152328dcdfe8",
+                      "key": "employeeCode",
+                      "value": "<string>",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "description": "Create a new employee or update an existing one by code."
+              },
+              "response": [
+                {
+                  "id": "ecfc22f7-a404-4397-a570-ff0b85bce2a6",
+                  "name": "Created or updated employee.",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "x-api-key",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"id\": \"<string>\",\n  \"code\": \"<string>\",\n  \"first_names\": \"<string>\",\n  \"last_name\": \"<string>\",\n  \"full_name\": \"<string>\",\n  \"date_of_birth\": \"<date>\",\n  \"gender_identity\": \"<string>\",\n  \"department\": \"<string>\",\n  \"location\": \"<string>\",\n  \"position\": \"<string>\",\n  \"employment_status\": \"<string>\",\n  \"email\": \"<string>\",\n  \"started_at\": \"<date>\",\n  \"finished_at\": \"<date>\",\n  \"avatar\": \"<string>\",\n  \"can_logon\": \"<boolean>\",\n  \"portal_username\": \"<string>\",\n  \"custom_data\": {},\n  \"tags\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/employee/:employeeCode",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "employee",
+                        ":employeeCode"
+                      ],
+                      "variable": [
+                        {
+                          "key": "employeeCode"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n  \"id\": \"<string>\",\n  \"code\": \"<string>\",\n  \"first_names\": \"<string>\",\n  \"last_name\": \"<string>\",\n  \"full_name\": \"<string>\",\n  \"date_of_birth\": \"<date>\",\n  \"gender_identity\": \"<string>\",\n  \"department\": \"<string>\",\n  \"location\": \"<string>\",\n  \"position\": \"<string>\",\n  \"employment_status\": \"<string>\",\n  \"email\": \"<string>\",\n  \"started_at\": \"<date>\",\n  \"finished_at\": \"<date>\",\n  \"avatar\": \"<string>\",\n  \"can_logon\": \"<boolean>\",\n  \"portal_username\": \"<string>\",\n  \"custom_data\": {},\n  \"tags\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+                  "createdAt": "2026-07-28T01:57:27.000Z",
+                  "updatedAt": "2026-07-28T01:57:27.000Z",
+                  "uid": "35240-ecfc22f7-a404-4397-a570-ff0b85bce2a6"
+                }
+              ],
+              "createdAt": "2026-07-28T01:57:27.000Z",
+              "updatedAt": "2026-07-28T01:57:27.000Z",
+              "uid": "35240-943cad62-4541-4bec-89b6-580cd3633cea"
+            }
+          ],
+          "id": "b4878b18-fa7e-43e4-bc25-a77ca870299f",
+          "createdAt": "2026-07-28T01:57:27.000Z",
+          "updatedAt": "2026-07-28T01:57:27.000Z",
+          "uid": "35240-b4878b18-fa7e-43e4-bc25-a77ca870299f"
+        }
+      ],
+      "id": "d9d98cb0-d6f9-42f2-a394-f7546317463a",
+      "createdAt": "2026-07-28T01:57:27.000Z",
+      "updatedAt": "2026-07-28T01:57:27.000Z",
+      "uid": "35240-d9d98cb0-d6f9-42f2-a394-f7546317463a"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "x-api-key",
+        "type": "string"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}",
+        "type": "string"
+      },
+      {
+        "key": "in",
+        "value": "header",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://api.hrpartner.io"
+    }
+  ]
+}

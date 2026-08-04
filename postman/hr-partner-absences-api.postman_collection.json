@@ -1,0 +1,166 @@
+{
+  "info": {
+    "_postman_id": "3dde6f07-bdb0-4afc-8939-f665d2831270",
+    "name": "HR Partner REST Absences API",
+    "description": "HR Partner is a cloud-based human resources management SaaS platform from HR Partner Software Pty Ltd (Australia), aimed at organizations of roughly 20 to 500 employees. This OpenAPI describes the public HR Partner REST API exposed at https://api.hrpartner.io, covering company information, employee records and sub-modules (contacts, addresses, notes, education, skills, training, assets, benefits, dependents, grievances, positions, renewables, attachments), leave management (requests, balances, absences), timesheets and projects, expenses, recruitment (job listings, applicants, applications, application-stage tracking, interviews), performance (reviews, goals), checklists, reminders, document library, and lookups. Authentication is via API key passed in the x-api-key header.\n\nContact Support:\n Name: HR Partner Developer\n Email: developer@hrpartner.io",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T01:57:08.000Z",
+    "updatedAt": "2026-07-28T01:57:08.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-3dde6f07-bdb0-4afc-8939-f665d2831270"
+  },
+  "item": [
+    {
+      "name": "absences",
+      "item": [
+        {
+          "name": "List Absences",
+          "id": "02b5a31c-41c5-4155-9249-44b864065c48",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/absences?employee=<string>&absence_reason=<string>&absence_status=<string>&absence_date_from=<date>&absence_date_to=<date>",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "absences"
+              ],
+              "query": [
+                {
+                  "key": "employee",
+                  "value": "<string>"
+                },
+                {
+                  "key": "absence_reason",
+                  "value": "<string>"
+                },
+                {
+                  "key": "absence_status",
+                  "value": "<string>"
+                },
+                {
+                  "key": "absence_date_from",
+                  "value": "<date>"
+                },
+                {
+                  "key": "absence_date_to",
+                  "value": "<date>"
+                }
+              ]
+            },
+            "description": "List employee absence records."
+          },
+          "response": [
+            {
+              "id": "5a86a1f7-bb23-4e3c-b787-e6c3d2c1ad6d",
+              "name": "List of absences.",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "x-api-key",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/absences?employee=<string>&absence_reason=<string>&absence_status=<string>&absence_date_from=<date>&absence_date_to=<date>",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "absences"
+                  ],
+                  "query": [
+                    {
+                      "key": "employee",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "absence_reason",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "absence_status",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "absence_date_from",
+                      "value": "<date>"
+                    },
+                    {
+                      "key": "absence_date_to",
+                      "value": "<date>"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "[\n  {\n    \"id\": \"<string>\",\n    \"leave_type\": \"<string>\",\n    \"absence_reason\": \"<string>\",\n    \"description\": \"<string>\",\n    \"absence_date\": \"<date>\",\n    \"return_date\": \"<date>\",\n    \"duration\": \"<number>\",\n    \"physician\": \"<string>\",\n    \"certificate_number\": \"<string>\",\n    \"absence_status\": \"<string>\",\n    \"employee\": {\n      \"code\": \"<string>\",\n      \"first_names\": \"<string>\",\n      \"last_name\": \"<string>\",\n      \"full_name\": \"<string>\",\n      \"department\": \"<string>\"\n    }\n  },\n  {\n    \"id\": \"<string>\",\n    \"leave_type\": \"<string>\",\n    \"absence_reason\": \"<string>\",\n    \"description\": \"<string>\",\n    \"absence_date\": \"<date>\",\n    \"return_date\": \"<date>\",\n    \"duration\": \"<number>\",\n    \"physician\": \"<string>\",\n    \"certificate_number\": \"<string>\",\n    \"absence_status\": \"<string>\",\n    \"employee\": {\n      \"code\": \"<string>\",\n      \"first_names\": \"<string>\",\n      \"last_name\": \"<string>\",\n      \"full_name\": \"<string>\",\n      \"department\": \"<string>\"\n    }\n  }\n]",
+              "createdAt": "2026-07-28T01:57:09.000Z",
+              "updatedAt": "2026-07-28T01:57:09.000Z",
+              "uid": "35240-5a86a1f7-bb23-4e3c-b787-e6c3d2c1ad6d"
+            }
+          ],
+          "createdAt": "2026-07-28T01:57:09.000Z",
+          "updatedAt": "2026-07-28T01:57:09.000Z",
+          "uid": "35240-02b5a31c-41c5-4155-9249-44b864065c48"
+        }
+      ],
+      "id": "01fbe28c-bed8-4192-bb0b-336105a92474",
+      "createdAt": "2026-07-28T01:57:09.000Z",
+      "updatedAt": "2026-07-28T01:57:09.000Z",
+      "uid": "35240-01fbe28c-bed8-4192-bb0b-336105a92474"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "x-api-key",
+        "type": "string"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}",
+        "type": "string"
+      },
+      {
+        "key": "in",
+        "value": "header",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://api.hrpartner.io"
+    }
+  ]
+}

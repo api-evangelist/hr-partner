@@ -1,0 +1,219 @@
+{
+  "info": {
+    "_postman_id": "a8a4df1b-530e-45c3-b630-d44aa5e3ca48",
+    "name": "HR Partner REST Absences Job Listings API",
+    "description": "HR Partner is a cloud-based human resources management SaaS platform from HR Partner Software Pty Ltd (Australia), aimed at organizations of roughly 20 to 500 employees. This OpenAPI describes the public HR Partner REST API exposed at https://api.hrpartner.io, covering company information, employee records and sub-modules (contacts, addresses, notes, education, skills, training, assets, benefits, dependents, grievances, positions, renewables, attachments), leave management (requests, balances, absences), timesheets and projects, expenses, recruitment (job listings, applicants, applications, application-stage tracking, interviews), performance (reviews, goals), checklists, reminders, document library, and lookups. Authentication is via API key passed in the x-api-key header.\n\nContact Support:\n Name: HR Partner Developer\n Email: developer@hrpartner.io",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T01:57:30.000Z",
+    "updatedAt": "2026-07-28T01:57:30.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-a8a4df1b-530e-45c3-b630-d44aa5e3ca48"
+  },
+  "item": [
+    {
+      "name": "job-listings",
+      "item": [
+        {
+          "name": "{id}",
+          "item": [
+            {
+              "name": "Get Job Listing",
+              "id": "aa7e8712-cd2e-4f87-a3d3-1bd05da08405",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/job-listings/:id",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "job-listings",
+                    ":id"
+                  ],
+                  "variable": [
+                    {
+                      "id": "50ddcc5a-7698-40b5-b84c-3947444ab645",
+                      "key": "id",
+                      "value": "<string>",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "description": "Retrieve a single job listing by id."
+              },
+              "response": [
+                {
+                  "id": "2199083a-03f5-49fa-8ba6-e7c085187ade",
+                  "name": "A single job listing.",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "x-api-key",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/job-listings/:id",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "job-listings",
+                        ":id"
+                      ],
+                      "variable": [
+                        {
+                          "key": "id"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n  \"id\": \"<string>\",\n  \"title\": \"<string>\",\n  \"description\": \"<string>\",\n  \"department\": \"<string>\",\n  \"location\": \"<string>\",\n  \"is_active\": \"<boolean>\",\n  \"published_date\": \"<date>\"\n}",
+                  "createdAt": "2026-07-28T01:57:31.000Z",
+                  "updatedAt": "2026-07-28T01:57:31.000Z",
+                  "uid": "35240-2199083a-03f5-49fa-8ba6-e7c085187ade"
+                }
+              ],
+              "createdAt": "2026-07-28T01:57:31.000Z",
+              "updatedAt": "2026-07-28T01:57:31.000Z",
+              "uid": "35240-aa7e8712-cd2e-4f87-a3d3-1bd05da08405"
+            }
+          ],
+          "id": "92b81c07-5768-42a8-bef6-399c934bc2ca",
+          "createdAt": "2026-07-28T01:57:31.000Z",
+          "updatedAt": "2026-07-28T01:57:31.000Z",
+          "uid": "35240-92b81c07-5768-42a8-bef6-399c934bc2ca"
+        },
+        {
+          "name": "List Job Listings",
+          "id": "7166e09b-485c-411d-bd42-2be05bf73bc6",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/job-listings",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "job-listings"
+              ]
+            },
+            "description": "List open job listings published by the organization."
+          },
+          "response": [
+            {
+              "id": "259cb37e-fdb5-4f83-b45f-1bdfa7d4486d",
+              "name": "List of job listings.",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "x-api-key",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/job-listings",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "job-listings"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "[\n  {\n    \"id\": \"<string>\",\n    \"title\": \"<string>\",\n    \"description\": \"<string>\",\n    \"department\": \"<string>\",\n    \"location\": \"<string>\",\n    \"is_active\": \"<boolean>\",\n    \"published_date\": \"<date>\"\n  },\n  {\n    \"id\": \"<string>\",\n    \"title\": \"<string>\",\n    \"description\": \"<string>\",\n    \"department\": \"<string>\",\n    \"location\": \"<string>\",\n    \"is_active\": \"<boolean>\",\n    \"published_date\": \"<date>\"\n  }\n]",
+              "createdAt": "2026-07-28T01:57:31.000Z",
+              "updatedAt": "2026-07-28T01:57:31.000Z",
+              "uid": "35240-259cb37e-fdb5-4f83-b45f-1bdfa7d4486d"
+            }
+          ],
+          "createdAt": "2026-07-28T01:57:31.000Z",
+          "updatedAt": "2026-07-28T01:57:31.000Z",
+          "uid": "35240-7166e09b-485c-411d-bd42-2be05bf73bc6"
+        }
+      ],
+      "id": "fbfc8db4-43b1-44c4-87d8-7183f6e6576d",
+      "createdAt": "2026-07-28T01:57:31.000Z",
+      "updatedAt": "2026-07-28T01:57:31.000Z",
+      "uid": "35240-fbfc8db4-43b1-44c4-87d8-7183f6e6576d"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "x-api-key",
+        "type": "string"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}",
+        "type": "string"
+      },
+      {
+        "key": "in",
+        "value": "header",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://api.hrpartner.io"
+    }
+  ]
+}

@@ -1,0 +1,436 @@
+{
+  "info": {
+    "_postman_id": "b16dee9a-fdcd-4d77-be3d-f3c1c244fc31",
+    "name": "HR Partner REST Absences Applications API",
+    "description": "HR Partner is a cloud-based human resources management SaaS platform from HR Partner Software Pty Ltd (Australia), aimed at organizations of roughly 20 to 500 employees. This OpenAPI describes the public HR Partner REST API exposed at https://api.hrpartner.io, covering company information, employee records and sub-modules (contacts, addresses, notes, education, skills, training, assets, benefits, dependents, grievances, positions, renewables, attachments), leave management (requests, balances, absences), timesheets and projects, expenses, recruitment (job listings, applicants, applications, application-stage tracking, interviews), performance (reviews, goals), checklists, reminders, document library, and lookups. Authentication is via API key passed in the x-api-key header.\n\nContact Support:\n Name: HR Partner Developer\n Email: developer@hrpartner.io",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T01:57:14.000Z",
+    "updatedAt": "2026-07-28T01:57:14.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-b16dee9a-fdcd-4d77-be3d-f3c1c244fc31"
+  },
+  "item": [
+    {
+      "name": "applications",
+      "item": [
+        {
+          "name": "{id}",
+          "item": [
+            {
+              "name": "Get Application",
+              "id": "dab2f7d4-6014-4eba-98a2-f740f5c890e3",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/applications/:id",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "applications",
+                    ":id"
+                  ],
+                  "variable": [
+                    {
+                      "id": "a77374ba-5ad5-417d-aba1-c3ae37760867",
+                      "key": "id",
+                      "value": "<string>",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "description": "Retrieve a single application by id."
+              },
+              "response": [
+                {
+                  "id": "98c7300a-86fb-4940-941e-1b5d44c229f0",
+                  "name": "A single application.",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "x-api-key",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/applications/:id",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "applications",
+                        ":id"
+                      ],
+                      "variable": [
+                        {
+                          "key": "id"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n  \"id\": \"<string>\",\n  \"applicant_id\": \"<string>\",\n  \"job_listing_id\": \"<string>\",\n  \"stage\": \"<string>\",\n  \"applied_at\": \"<dateTime>\",\n  \"status\": \"<string>\"\n}",
+                  "createdAt": "2026-07-28T01:57:15.000Z",
+                  "updatedAt": "2026-07-28T01:57:15.000Z",
+                  "uid": "35240-98c7300a-86fb-4940-941e-1b5d44c229f0"
+                }
+              ],
+              "createdAt": "2026-07-28T01:57:15.000Z",
+              "updatedAt": "2026-07-28T01:57:15.000Z",
+              "uid": "35240-dab2f7d4-6014-4eba-98a2-f740f5c890e3"
+            },
+            {
+              "name": "Update Application",
+              "id": "70c181bc-030d-4ca3-bc11-ef25d119efbc",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"id\": \"<string>\",\n  \"applicant_id\": \"<string>\",\n  \"job_listing_id\": \"<string>\",\n  \"stage\": \"<string>\",\n  \"applied_at\": \"<dateTime>\",\n  \"status\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/applications/:id",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "applications",
+                    ":id"
+                  ],
+                  "variable": [
+                    {
+                      "id": "d130f994-6477-440d-9478-de740316ddd8",
+                      "key": "id",
+                      "value": "<string>",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "description": "Update an existing application by id."
+              },
+              "response": [
+                {
+                  "id": "48163a41-a013-48c8-a1d2-85b83be9c4b9",
+                  "name": "Updated application.",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "x-api-key",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"id\": \"<string>\",\n  \"applicant_id\": \"<string>\",\n  \"job_listing_id\": \"<string>\",\n  \"stage\": \"<string>\",\n  \"applied_at\": \"<dateTime>\",\n  \"status\": \"<string>\"\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/applications/:id",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "applications",
+                        ":id"
+                      ],
+                      "variable": [
+                        {
+                          "key": "id"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n  \"id\": \"<string>\",\n  \"applicant_id\": \"<string>\",\n  \"job_listing_id\": \"<string>\",\n  \"stage\": \"<string>\",\n  \"applied_at\": \"<dateTime>\",\n  \"status\": \"<string>\"\n}",
+                  "createdAt": "2026-07-28T01:57:15.000Z",
+                  "updatedAt": "2026-07-28T01:57:15.000Z",
+                  "uid": "35240-48163a41-a013-48c8-a1d2-85b83be9c4b9"
+                }
+              ],
+              "createdAt": "2026-07-28T01:57:15.000Z",
+              "updatedAt": "2026-07-28T01:57:15.000Z",
+              "uid": "35240-70c181bc-030d-4ca3-bc11-ef25d119efbc"
+            }
+          ],
+          "id": "1d7454f8-4adb-45fe-b0fc-14b155b0b30a",
+          "createdAt": "2026-07-28T01:57:15.000Z",
+          "updatedAt": "2026-07-28T01:57:15.000Z",
+          "uid": "35240-1d7454f8-4adb-45fe-b0fc-14b155b0b30a"
+        },
+        {
+          "name": "List Applications",
+          "id": "fe3cf0fa-dc45-4d26-8479-5d88e45eb099",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/applications",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "applications"
+              ]
+            },
+            "description": "List job applications."
+          },
+          "response": [
+            {
+              "id": "b17daac1-f866-4059-8050-0c05cb4c63f1",
+              "name": "List of applications.",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "x-api-key",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/applications",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "applications"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "[\n  {\n    \"id\": \"<string>\",\n    \"applicant_id\": \"<string>\",\n    \"job_listing_id\": \"<string>\",\n    \"stage\": \"<string>\",\n    \"applied_at\": \"<dateTime>\",\n    \"status\": \"<string>\"\n  },\n  {\n    \"id\": \"<string>\",\n    \"applicant_id\": \"<string>\",\n    \"job_listing_id\": \"<string>\",\n    \"stage\": \"<string>\",\n    \"applied_at\": \"<dateTime>\",\n    \"status\": \"<string>\"\n  }\n]",
+              "createdAt": "2026-07-28T01:57:15.000Z",
+              "updatedAt": "2026-07-28T01:57:15.000Z",
+              "uid": "35240-b17daac1-f866-4059-8050-0c05cb4c63f1"
+            }
+          ],
+          "createdAt": "2026-07-28T01:57:15.000Z",
+          "updatedAt": "2026-07-28T01:57:15.000Z",
+          "uid": "35240-fe3cf0fa-dc45-4d26-8479-5d88e45eb099"
+        },
+        {
+          "name": "Create Application",
+          "id": "397a726e-6495-4287-80e5-10d2dc2f58f8",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"id\": \"<string>\",\n  \"applicant_id\": \"<string>\",\n  \"job_listing_id\": \"<string>\",\n  \"stage\": \"<string>\",\n  \"applied_at\": \"<dateTime>\",\n  \"status\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "headerFamily": "json",
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/applications",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "applications"
+              ]
+            },
+            "description": "Create a new job application."
+          },
+          "response": [
+            {
+              "id": "aa1bc3e9-b0b0-4156-aad1-fe5f541f91dc",
+              "name": "Created application.",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "x-api-key",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"id\": \"<string>\",\n  \"applicant_id\": \"<string>\",\n  \"job_listing_id\": \"<string>\",\n  \"stage\": \"<string>\",\n  \"applied_at\": \"<dateTime>\",\n  \"status\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/applications",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "applications"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{\n  \"id\": \"<string>\",\n  \"applicant_id\": \"<string>\",\n  \"job_listing_id\": \"<string>\",\n  \"stage\": \"<string>\",\n  \"applied_at\": \"<dateTime>\",\n  \"status\": \"<string>\"\n}",
+              "createdAt": "2026-07-28T01:57:15.000Z",
+              "updatedAt": "2026-07-28T01:57:15.000Z",
+              "uid": "35240-aa1bc3e9-b0b0-4156-aad1-fe5f541f91dc"
+            }
+          ],
+          "createdAt": "2026-07-28T01:57:15.000Z",
+          "updatedAt": "2026-07-28T01:57:15.000Z",
+          "uid": "35240-397a726e-6495-4287-80e5-10d2dc2f58f8"
+        }
+      ],
+      "id": "196a5950-9fa9-4bde-92e3-69936f880cf5",
+      "createdAt": "2026-07-28T01:57:15.000Z",
+      "updatedAt": "2026-07-28T01:57:15.000Z",
+      "uid": "35240-196a5950-9fa9-4bde-92e3-69936f880cf5"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "x-api-key",
+        "type": "string"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}",
+        "type": "string"
+      },
+      {
+        "key": "in",
+        "value": "header",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://api.hrpartner.io"
+    }
+  ]
+}

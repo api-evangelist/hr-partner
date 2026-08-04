@@ -1,0 +1,122 @@
+{
+  "info": {
+    "_postman_id": "3b9283fe-f073-491d-9e96-f06b9c313474",
+    "name": "HR Partner REST Absences Grievances API",
+    "description": "HR Partner is a cloud-based human resources management SaaS platform from HR Partner Software Pty Ltd (Australia), aimed at organizations of roughly 20 to 500 employees. This OpenAPI describes the public HR Partner REST API exposed at https://api.hrpartner.io, covering company information, employee records and sub-modules (contacts, addresses, notes, education, skills, training, assets, benefits, dependents, grievances, positions, renewables, attachments), leave management (requests, balances, absences), timesheets and projects, expenses, recruitment (job listings, applicants, applications, application-stage tracking, interviews), performance (reviews, goals), checklists, reminders, document library, and lookups. Authentication is via API key passed in the x-api-key header.\n\nContact Support:\n Name: HR Partner Developer\n Email: developer@hrpartner.io",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T01:57:30.000Z",
+    "updatedAt": "2026-07-28T01:57:30.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-3b9283fe-f073-491d-9e96-f06b9c313474"
+  },
+  "item": [
+    {
+      "name": "grievances",
+      "item": [
+        {
+          "name": "List Grievances",
+          "id": "e201f635-4c6c-4338-ac4a-bbff80091d13",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/grievances",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "grievances"
+              ]
+            },
+            "description": "List employee grievance records."
+          },
+          "response": [
+            {
+              "id": "0a984ade-6c33-4de1-9dee-017161d38ff8",
+              "name": "List of grievances.",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "x-api-key",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/grievances",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "grievances"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "[\n  {\n    \"id\": \"<string>\",\n    \"grievance_type\": \"<string>\",\n    \"description\": \"<string>\",\n    \"reported_date\": \"<date>\",\n    \"actioned_by\": \"<string>\",\n    \"grievance_status\": \"<string>\",\n    \"employee\": {\n      \"code\": \"<string>\",\n      \"first_names\": \"<string>\",\n      \"last_name\": \"<string>\",\n      \"full_name\": \"<string>\",\n      \"department\": \"<string>\"\n    }\n  },\n  {\n    \"id\": \"<string>\",\n    \"grievance_type\": \"<string>\",\n    \"description\": \"<string>\",\n    \"reported_date\": \"<date>\",\n    \"actioned_by\": \"<string>\",\n    \"grievance_status\": \"<string>\",\n    \"employee\": {\n      \"code\": \"<string>\",\n      \"first_names\": \"<string>\",\n      \"last_name\": \"<string>\",\n      \"full_name\": \"<string>\",\n      \"department\": \"<string>\"\n    }\n  }\n]",
+              "createdAt": "2026-07-28T01:57:30.000Z",
+              "updatedAt": "2026-07-28T01:57:30.000Z",
+              "uid": "35240-0a984ade-6c33-4de1-9dee-017161d38ff8"
+            }
+          ],
+          "createdAt": "2026-07-28T01:57:30.000Z",
+          "updatedAt": "2026-07-28T01:57:30.000Z",
+          "uid": "35240-e201f635-4c6c-4338-ac4a-bbff80091d13"
+        }
+      ],
+      "id": "03d13b1d-373d-4b4a-8d9c-763cbe0c0e20",
+      "createdAt": "2026-07-28T01:57:30.000Z",
+      "updatedAt": "2026-07-28T01:57:30.000Z",
+      "uid": "35240-03d13b1d-373d-4b4a-8d9c-763cbe0c0e20"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "x-api-key",
+        "type": "string"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}",
+        "type": "string"
+      },
+      {
+        "key": "in",
+        "value": "header",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://api.hrpartner.io"
+    }
+  ]
+}
