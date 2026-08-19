@@ -1,0 +1,127 @@
+{
+  "item": [
+    {
+      "id": "5fcfe114-4c88-438b-b59a-b2129c7f928a",
+      "name": "Attachments",
+      "description": {
+        "content": "Read attachments stored against any HR Partner module.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "757adda1-fdc9-46d1-94d9-9e6410bb4f27",
+          "name": "List Attachments",
+          "request": {
+            "name": "List Attachments",
+            "description": {
+              "content": "List attachments stored against any HR Partner module.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "attachments"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "d3ba7f6f-fac7-4c41-8a58-f99c685d861e",
+              "name": "List of attachments.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "attachments"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"id\": \"string\",\n    \"description\": \"string\",\n    \"url\": \"string\",\n    \"module\": \"string\",\n    \"module_id\": \"string\",\n    \"size\": 347,\n    \"uploaded_date\": \"1953-01-02T06:02:48.176Z\"\n  },\n  {\n    \"id\": \"string\",\n    \"description\": \"string\",\n    \"url\": \"string\",\n    \"module\": \"string\",\n    \"module_id\": \"string\",\n    \"size\": 4901,\n    \"uploaded_date\": \"2011-05-04T03:24:12.896Z\"\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.hrpartner.io",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "x-api-key"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "header"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "f61c4dfd-7a33-4427-bded-a89362d29ff2",
+    "name": "HR Partner REST Absences Attachments API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "HR Partner is a cloud-based human resources management SaaS platform from HR Partner Software Pty Ltd (Australia), aimed at organizations of roughly 20 to 500 employees. This OpenAPI describes the public HR Partner REST API exposed at https://api.hrpartner.io, covering company information, employee records and sub-modules (contacts, addresses, notes, education, skills, training, assets, benefits, dependents, grievances, positions, renewables, attachments), leave management (requests, balances, absences), timesheets and projects, expenses, recruitment (job listings, applicants, applications, application-stage tracking, interviews), performance (reviews, goals), checklists, reminders, document library, and lookups. Authentication is via API key passed in the x-api-key header.\n\nContact Support:\n Name: HR Partner Developer\n Email: developer@hrpartner.io",
+      "type": "text/plain"
+    }
+  }
+}

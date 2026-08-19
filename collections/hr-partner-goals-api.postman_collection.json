@@ -1,0 +1,174 @@
+{
+  "item": [
+    {
+      "id": "ab8ab323-2985-4867-9329-768bb745cccd",
+      "name": "Goals",
+      "description": {
+        "content": "Read performance and development goals.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "d2622aa1-86f5-42de-ab35-1b995cd5ed82",
+          "name": "List Goals",
+          "request": {
+            "name": "List Goals",
+            "description": {
+              "content": "List performance and development goals.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "goals"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "employee",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "goal_scope",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "goal_type",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "goal_is_active",
+                  "value": "<boolean>"
+                },
+                {
+                  "disabled": false,
+                  "key": "goal_is_completed",
+                  "value": "<boolean>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "a79516a4-7748-40d6-a5a8-43450b7ec2bd",
+              "name": "List of goals.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "goals"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "employee",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "goal_scope",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "goal_type",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "goal_is_active",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "goal_is_completed",
+                      "value": "<boolean>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"id\": \"string\",\n    \"scope\": \"string\",\n    \"type\": \"string\",\n    \"description\": \"string\",\n    \"target_value\": 386.979677191287,\n    \"can_exceed_target_value\": false,\n    \"current_value\": 6085.107923906893,\n    \"is_active\": false,\n    \"is_completed\": true,\n    \"is_archived\": true,\n    \"assigned_at\": \"1969-12-09T14:09:43.857Z\",\n    \"due_at\": \"1973-11-17T19:20:55.677Z\",\n    \"employee\": {\n      \"code\": \"string\",\n      \"first_names\": \"string\",\n      \"last_name\": \"string\",\n      \"full_name\": \"string\",\n      \"department\": \"string\"\n    }\n  },\n  {\n    \"id\": \"string\",\n    \"scope\": \"string\",\n    \"type\": \"string\",\n    \"description\": \"string\",\n    \"target_value\": 1632.6641157884746,\n    \"can_exceed_target_value\": false,\n    \"current_value\": 5344.76955491943,\n    \"is_active\": true,\n    \"is_completed\": false,\n    \"is_archived\": true,\n    \"assigned_at\": \"1991-07-13T02:08:26.968Z\",\n    \"due_at\": \"1971-12-20T19:59:42.364Z\",\n    \"employee\": {\n      \"code\": \"string\",\n      \"first_names\": \"string\",\n      \"last_name\": \"string\",\n      \"full_name\": \"string\",\n      \"department\": \"string\"\n    }\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.hrpartner.io",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "x-api-key"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "header"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "90d45360-eece-4f9b-8d0f-8de5cc0e4139",
+    "name": "HR Partner REST Absences Goals API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "HR Partner is a cloud-based human resources management SaaS platform from HR Partner Software Pty Ltd (Australia), aimed at organizations of roughly 20 to 500 employees. This OpenAPI describes the public HR Partner REST API exposed at https://api.hrpartner.io, covering company information, employee records and sub-modules (contacts, addresses, notes, education, skills, training, assets, benefits, dependents, grievances, positions, renewables, attachments), leave management (requests, balances, absences), timesheets and projects, expenses, recruitment (job listings, applicants, applications, application-stage tracking, interviews), performance (reviews, goals), checklists, reminders, document library, and lookups. Authentication is via API key passed in the x-api-key header.\n\nContact Support:\n Name: HR Partner Developer\n Email: developer@hrpartner.io",
+      "type": "text/plain"
+    }
+  }
+}

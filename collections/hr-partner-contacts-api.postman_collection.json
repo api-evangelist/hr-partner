@@ -1,0 +1,174 @@
+{
+  "item": [
+    {
+      "id": "77b93238-a5c4-4c90-b841-4343c2196a05",
+      "name": "Contacts",
+      "description": {
+        "content": "List employee contact details (phone, email, emergency).",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "f665d584-9d75-49e5-b989-4c50aeca9e8d",
+          "name": "List Contacts",
+          "request": {
+            "name": "List Contacts",
+            "description": {
+              "content": "List employee contact details across the account.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "contacts"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "search",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "contact_type",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "is_primary",
+                  "value": "<boolean>"
+                },
+                {
+                  "disabled": false,
+                  "key": "is_public",
+                  "value": "<boolean>"
+                },
+                {
+                  "disabled": false,
+                  "key": "is_emergency",
+                  "value": "<boolean>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "cc81fb32-745f-4b79-9db7-f95864abf413",
+              "name": "List of contacts.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "contacts"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "search",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "contact_type",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "is_primary",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "is_public",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "is_emergency",
+                      "value": "<boolean>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"id\": \"string\",\n    \"type\": \"string\",\n    \"details\": \"string\",\n    \"is_primary\": false,\n    \"is_public\": true,\n    \"is_emergency\": true,\n    \"employee\": {\n      \"code\": \"string\",\n      \"first_names\": \"string\",\n      \"last_name\": \"string\",\n      \"full_name\": \"string\",\n      \"department\": \"string\"\n    }\n  },\n  {\n    \"id\": \"string\",\n    \"type\": \"string\",\n    \"details\": \"string\",\n    \"is_primary\": true,\n    \"is_public\": false,\n    \"is_emergency\": false,\n    \"employee\": {\n      \"code\": \"string\",\n      \"first_names\": \"string\",\n      \"last_name\": \"string\",\n      \"full_name\": \"string\",\n      \"department\": \"string\"\n    }\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.hrpartner.io",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "x-api-key"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "header"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "dff541a7-794a-43c8-8480-2d478ab404b6",
+    "name": "HR Partner REST Absences Contacts API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "HR Partner is a cloud-based human resources management SaaS platform from HR Partner Software Pty Ltd (Australia), aimed at organizations of roughly 20 to 500 employees. This OpenAPI describes the public HR Partner REST API exposed at https://api.hrpartner.io, covering company information, employee records and sub-modules (contacts, addresses, notes, education, skills, training, assets, benefits, dependents, grievances, positions, renewables, attachments), leave management (requests, balances, absences), timesheets and projects, expenses, recruitment (job listings, applicants, applications, application-stage tracking, interviews), performance (reviews, goals), checklists, reminders, document library, and lookups. Authentication is via API key passed in the x-api-key header.\n\nContact Support:\n Name: HR Partner Developer\n Email: developer@hrpartner.io",
+      "type": "text/plain"
+    }
+  }
+}

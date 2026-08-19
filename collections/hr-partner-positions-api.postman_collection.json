@@ -1,0 +1,127 @@
+{
+  "item": [
+    {
+      "id": "30e4ac5a-1cf6-461e-a496-ed927f9b1e0d",
+      "name": "Positions",
+      "description": {
+        "content": "Read employee position history and remuneration.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "0957f38c-ee11-4f17-8dba-602258c4c469",
+          "name": "List Positions",
+          "request": {
+            "name": "List Positions",
+            "description": {
+              "content": "List employee position history and remuneration.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "positions"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "a0f5926a-9b4c-43f4-ab4b-34f304c9bb93",
+              "name": "List of positions.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "positions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"id\": \"string\",\n    \"position\": \"string\",\n    \"commence_date\": \"2010-05-03\",\n    \"completion_date\": \"2009-08-24\",\n    \"pay_level\": \"string\",\n    \"remuneration\": 5240.399427703774,\n    \"remuneration_period\": \"string\",\n    \"employee\": {\n      \"code\": \"string\",\n      \"first_names\": \"string\",\n      \"last_name\": \"string\",\n      \"full_name\": \"string\",\n      \"department\": \"string\"\n    }\n  },\n  {\n    \"id\": \"string\",\n    \"position\": \"string\",\n    \"commence_date\": \"1974-12-10\",\n    \"completion_date\": \"2012-11-23\",\n    \"pay_level\": \"string\",\n    \"remuneration\": 7511.918774923764,\n    \"remuneration_period\": \"string\",\n    \"employee\": {\n      \"code\": \"string\",\n      \"first_names\": \"string\",\n      \"last_name\": \"string\",\n      \"full_name\": \"string\",\n      \"department\": \"string\"\n    }\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.hrpartner.io",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "x-api-key"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "header"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "6ac4a546-0a61-4201-a56e-50c9fecf25dd",
+    "name": "HR Partner REST Absences Positions API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "HR Partner is a cloud-based human resources management SaaS platform from HR Partner Software Pty Ltd (Australia), aimed at organizations of roughly 20 to 500 employees. This OpenAPI describes the public HR Partner REST API exposed at https://api.hrpartner.io, covering company information, employee records and sub-modules (contacts, addresses, notes, education, skills, training, assets, benefits, dependents, grievances, positions, renewables, attachments), leave management (requests, balances, absences), timesheets and projects, expenses, recruitment (job listings, applicants, applications, application-stage tracking, interviews), performance (reviews, goals), checklists, reminders, document library, and lookups. Authentication is via API key passed in the x-api-key header.\n\nContact Support:\n Name: HR Partner Developer\n Email: developer@hrpartner.io",
+      "type": "text/plain"
+    }
+  }
+}

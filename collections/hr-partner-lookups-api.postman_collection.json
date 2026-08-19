@@ -1,0 +1,127 @@
+{
+  "item": [
+    {
+      "id": "b8a9fe7a-d75a-4c48-b56d-9c4b01d237a2",
+      "name": "Lookups",
+      "description": {
+        "content": "Read system lookup definitions for configurable fields.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "336dba18-bf93-4e54-a57c-f3e9d9ad521a",
+          "name": "List Lookups",
+          "request": {
+            "name": "List Lookups",
+            "description": {
+              "content": "List system lookup definitions for configurable fields.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "lookups"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "6d153b70-6cff-49da-a705-82297d53ca0f",
+              "name": "List of lookup definitions.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "lookups"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"id\": \"string\",\n    \"name\": \"string\",\n    \"values\": [\n      \"string\",\n      \"string\"\n    ]\n  },\n  {\n    \"id\": \"string\",\n    \"name\": \"string\",\n    \"values\": [\n      \"string\",\n      \"string\"\n    ]\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.hrpartner.io",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "x-api-key"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "header"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "4ee056c2-89d8-452d-8439-566482f4dfbf",
+    "name": "HR Partner REST Absences Lookups API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "HR Partner is a cloud-based human resources management SaaS platform from HR Partner Software Pty Ltd (Australia), aimed at organizations of roughly 20 to 500 employees. This OpenAPI describes the public HR Partner REST API exposed at https://api.hrpartner.io, covering company information, employee records and sub-modules (contacts, addresses, notes, education, skills, training, assets, benefits, dependents, grievances, positions, renewables, attachments), leave management (requests, balances, absences), timesheets and projects, expenses, recruitment (job listings, applicants, applications, application-stage tracking, interviews), performance (reviews, goals), checklists, reminders, document library, and lookups. Authentication is via API key passed in the x-api-key header.\n\nContact Support:\n Name: HR Partner Developer\n Email: developer@hrpartner.io",
+      "type": "text/plain"
+    }
+  }
+}

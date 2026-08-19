@@ -1,0 +1,174 @@
+{
+  "item": [
+    {
+      "id": "6aad52b8-673f-4cdd-819f-859c27907a50",
+      "name": "Education",
+      "description": {
+        "content": "Read employee education and qualification records.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "897aca18-8b6c-4fb0-81d6-6fbd3efd2238",
+          "name": "List Education Records",
+          "request": {
+            "name": "List Education Records",
+            "description": {
+              "content": "List employee education records.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "education"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "employee",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "department",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "education_type",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "education_status",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "institution",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "f248a6f8-f593-47db-be07-9e5389d7a4c7",
+              "name": "List of education records.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "education"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "employee",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "department",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "education_type",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "education_status",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "institution",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"id\": \"string\",\n    \"institution\": \"string\",\n    \"commence_date\": \"1959-08-16\",\n    \"completion_date\": \"1999-12-21\",\n    \"education_type\": \"string\",\n    \"education_status\": \"string\",\n    \"comments\": \"string\",\n    \"employee\": {\n      \"code\": \"string\",\n      \"first_names\": \"string\",\n      \"last_name\": \"string\",\n      \"full_name\": \"string\",\n      \"department\": \"string\"\n    }\n  },\n  {\n    \"id\": \"string\",\n    \"institution\": \"string\",\n    \"commence_date\": \"2018-12-29\",\n    \"completion_date\": \"1993-07-31\",\n    \"education_type\": \"string\",\n    \"education_status\": \"string\",\n    \"comments\": \"string\",\n    \"employee\": {\n      \"code\": \"string\",\n      \"first_names\": \"string\",\n      \"last_name\": \"string\",\n      \"full_name\": \"string\",\n      \"department\": \"string\"\n    }\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.hrpartner.io",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "x-api-key"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "header"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "2398f306-3332-4e7a-9f47-ac916e73a14b",
+    "name": "HR Partner REST Absences Education API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "HR Partner is a cloud-based human resources management SaaS platform from HR Partner Software Pty Ltd (Australia), aimed at organizations of roughly 20 to 500 employees. This OpenAPI describes the public HR Partner REST API exposed at https://api.hrpartner.io, covering company information, employee records and sub-modules (contacts, addresses, notes, education, skills, training, assets, benefits, dependents, grievances, positions, renewables, attachments), leave management (requests, balances, absences), timesheets and projects, expenses, recruitment (job listings, applicants, applications, application-stage tracking, interviews), performance (reviews, goals), checklists, reminders, document library, and lookups. Authentication is via API key passed in the x-api-key header.\n\nContact Support:\n Name: HR Partner Developer\n Email: developer@hrpartner.io",
+      "type": "text/plain"
+    }
+  }
+}

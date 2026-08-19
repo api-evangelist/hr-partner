@@ -1,0 +1,64 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "HR Partner REST Absences Training API",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "x-api-key",
+      "value": "{{x-api-key}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Training",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List Training Records",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.hrpartner.io/training",
+            "params": [
+              {
+                "name": "employee",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "training_type",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "course_name",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "institution",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "training_status",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "List employee training and course records."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

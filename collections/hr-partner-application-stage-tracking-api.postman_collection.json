@@ -1,0 +1,127 @@
+{
+  "item": [
+    {
+      "id": "d16d1791-890a-4267-ab37-2a130364362b",
+      "name": "Application Stage Tracking",
+      "description": {
+        "content": "Read application stage history and tracking data.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "f060573d-900d-495d-af6c-7d51e5c1348e",
+          "name": "List Application Stage Tracking",
+          "request": {
+            "name": "List Application Stage Tracking",
+            "description": {
+              "content": "Read application stage history and tracking data.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "application-stage-tracking"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "00a6f3f1-07e9-48bd-92c5-a26f33eea473",
+              "name": "List of application stage tracking entries.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "application-stage-tracking"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"id\": \"string\",\n    \"application_id\": \"string\",\n    \"stage\": \"string\",\n    \"entered_at\": \"2002-04-02T13:55:24.730Z\",\n    \"exited_at\": \"2014-06-27T03:39:42.774Z\",\n    \"comments\": \"string\"\n  },\n  {\n    \"id\": \"string\",\n    \"application_id\": \"string\",\n    \"stage\": \"string\",\n    \"entered_at\": \"2001-06-26T12:09:31.761Z\",\n    \"exited_at\": \"2004-01-26T04:28:54.235Z\",\n    \"comments\": \"string\"\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.hrpartner.io",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "x-api-key"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "header"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "3eecdc61-8e0a-455e-8ae3-8b9bfa0e8f60",
+    "name": "HR Partner REST Absences Application Stage Tracking API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "HR Partner is a cloud-based human resources management SaaS platform from HR Partner Software Pty Ltd (Australia), aimed at organizations of roughly 20 to 500 employees. This OpenAPI describes the public HR Partner REST API exposed at https://api.hrpartner.io, covering company information, employee records and sub-modules (contacts, addresses, notes, education, skills, training, assets, benefits, dependents, grievances, positions, renewables, attachments), leave management (requests, balances, absences), timesheets and projects, expenses, recruitment (job listings, applicants, applications, application-stage tracking, interviews), performance (reviews, goals), checklists, reminders, document library, and lookups. Authentication is via API key passed in the x-api-key header.\n\nContact Support:\n Name: HR Partner Developer\n Email: developer@hrpartner.io",
+      "type": "text/plain"
+    }
+  }
+}

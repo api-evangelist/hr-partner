@@ -1,0 +1,37 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "HR Partner REST Absences Company API",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "x-api-key",
+      "value": "{{x-api-key}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Company",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get Company Information",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.hrpartner.io/company"
+          },
+          "docs": "Retrieve company-level information for the HR Partner account."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

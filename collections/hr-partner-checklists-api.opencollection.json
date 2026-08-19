@@ -1,0 +1,59 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "HR Partner REST Absences Checklists API",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "x-api-key",
+      "value": "{{x-api-key}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Checklists",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List Checklists",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.hrpartner.io/checklist",
+            "params": [
+              {
+                "name": "employee",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "checklist_status",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "checklist_template",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "show_details",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "List onboarding, offboarding, and other checklists."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

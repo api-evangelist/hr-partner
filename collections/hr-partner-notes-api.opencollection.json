@@ -1,0 +1,84 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "HR Partner REST Absences Notes API",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "x-api-key",
+      "value": "{{x-api-key}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Notes",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List Notes",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.hrpartner.io/notes",
+            "params": [
+              {
+                "name": "employee",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "department",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "note",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "created_date_from",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "created_date_to",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "updated_date_from",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "updated_date_to",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "tags",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "include_events",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "List internal HR notes attached to employees."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

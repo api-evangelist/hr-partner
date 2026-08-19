@@ -1,0 +1,165 @@
+{
+  "item": [
+    {
+      "id": "d17e98a8-639c-45c1-b984-6967ae0e0b62",
+      "name": "Checklists",
+      "description": {
+        "content": "Read onboarding and offboarding checklists.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "3acf0222-bcd7-446c-bb5a-d6ddfc9033e4",
+          "name": "List Checklists",
+          "request": {
+            "name": "List Checklists",
+            "description": {
+              "content": "List onboarding, offboarding, and other checklists.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "checklist"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "employee",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "checklist_status",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "checklist_template",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "show_details",
+                  "value": "<boolean>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "b746ac00-6c40-4a9b-b99b-28e57e355790",
+              "name": "List of checklists.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "checklist"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "employee",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "checklist_status",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "checklist_template",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "show_details",
+                      "value": "<boolean>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"id\": \"string\",\n    \"name\": \"string\",\n    \"comments\": \"string\",\n    \"status\": \"string\",\n    \"assigned_at\": \"1979-05-24T17:32:43.430Z\",\n    \"completed_at\": \"1994-02-15T02:09:32.368Z\",\n    \"progress\": 3067.3449700865085,\n    \"percdone\": 9989.593462925715,\n    \"employee\": {\n      \"code\": \"string\",\n      \"first_names\": \"string\",\n      \"last_name\": \"string\",\n      \"full_name\": \"string\",\n      \"department\": \"string\"\n    }\n  },\n  {\n    \"id\": \"string\",\n    \"name\": \"string\",\n    \"comments\": \"string\",\n    \"status\": \"string\",\n    \"assigned_at\": \"2007-11-20T16:41:28.793Z\",\n    \"completed_at\": \"2015-07-26T17:39:28.268Z\",\n    \"progress\": 800.9435710600088,\n    \"percdone\": 7613.047250342683,\n    \"employee\": {\n      \"code\": \"string\",\n      \"first_names\": \"string\",\n      \"last_name\": \"string\",\n      \"full_name\": \"string\",\n      \"department\": \"string\"\n    }\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.hrpartner.io",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "x-api-key"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "header"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "3a8fd1c1-3822-414f-bd59-c70c9af1f58f",
+    "name": "HR Partner REST Absences Checklists API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "HR Partner is a cloud-based human resources management SaaS platform from HR Partner Software Pty Ltd (Australia), aimed at organizations of roughly 20 to 500 employees. This OpenAPI describes the public HR Partner REST API exposed at https://api.hrpartner.io, covering company information, employee records and sub-modules (contacts, addresses, notes, education, skills, training, assets, benefits, dependents, grievances, positions, renewables, attachments), leave management (requests, balances, absences), timesheets and projects, expenses, recruitment (job listings, applicants, applications, application-stage tracking, interviews), performance (reviews, goals), checklists, reminders, document library, and lookups. Authentication is via API key passed in the x-api-key header.\n\nContact Support:\n Name: HR Partner Developer\n Email: developer@hrpartner.io",
+      "type": "text/plain"
+    }
+  }
+}

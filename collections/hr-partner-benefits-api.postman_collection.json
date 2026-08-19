@@ -1,0 +1,127 @@
+{
+  "item": [
+    {
+      "id": "6cb66603-78fb-420c-b2c6-810eff403514",
+      "name": "Benefits",
+      "description": {
+        "content": "Read employee benefit assignments.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "eae380f9-a402-47a3-aa99-58b34e071f23",
+          "name": "List Benefits",
+          "request": {
+            "name": "List Benefits",
+            "description": {
+              "content": "List employee benefit assignments.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "benefits"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "23700dce-2a09-42be-a5fd-bdac7f069a5f",
+              "name": "List of benefits.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "benefits"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"id\": \"string\",\n    \"description\": \"string\",\n    \"start_date\": \"1955-09-03\",\n    \"end_date\": \"1950-03-31\",\n    \"benefit_value\": 1224.6078858152841,\n    \"benefit_value_period\": \"string\",\n    \"benefit_type\": \"string\",\n    \"benefit_provider\": \"string\",\n    \"benefit_status\": \"string\",\n    \"employee\": {\n      \"code\": \"string\",\n      \"first_names\": \"string\",\n      \"last_name\": \"string\",\n      \"full_name\": \"string\",\n      \"department\": \"string\"\n    }\n  },\n  {\n    \"id\": \"string\",\n    \"description\": \"string\",\n    \"start_date\": \"2006-04-09\",\n    \"end_date\": \"1976-10-22\",\n    \"benefit_value\": 7266.224401192698,\n    \"benefit_value_period\": \"string\",\n    \"benefit_type\": \"string\",\n    \"benefit_provider\": \"string\",\n    \"benefit_status\": \"string\",\n    \"employee\": {\n      \"code\": \"string\",\n      \"first_names\": \"string\",\n      \"last_name\": \"string\",\n      \"full_name\": \"string\",\n      \"department\": \"string\"\n    }\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.hrpartner.io",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "x-api-key"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "header"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "dbc5f7db-f251-4ba4-91a4-2c568b10d186",
+    "name": "HR Partner REST Absences Benefits API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "HR Partner is a cloud-based human resources management SaaS platform from HR Partner Software Pty Ltd (Australia), aimed at organizations of roughly 20 to 500 employees. This OpenAPI describes the public HR Partner REST API exposed at https://api.hrpartner.io, covering company information, employee records and sub-modules (contacts, addresses, notes, education, skills, training, assets, benefits, dependents, grievances, positions, renewables, attachments), leave management (requests, balances, absences), timesheets and projects, expenses, recruitment (job listings, applicants, applications, application-stage tracking, interviews), performance (reviews, goals), checklists, reminders, document library, and lookups. Authentication is via API key passed in the x-api-key header.\n\nContact Support:\n Name: HR Partner Developer\n Email: developer@hrpartner.io",
+      "type": "text/plain"
+    }
+  }
+}

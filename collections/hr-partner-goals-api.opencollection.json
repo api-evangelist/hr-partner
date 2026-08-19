@@ -1,0 +1,64 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "HR Partner REST Absences Goals API",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "x-api-key",
+      "value": "{{x-api-key}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Goals",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List Goals",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.hrpartner.io/goals",
+            "params": [
+              {
+                "name": "employee",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "goal_scope",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "goal_type",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "goal_is_active",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "goal_is_completed",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "List performance and development goals."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

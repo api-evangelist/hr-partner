@@ -1,0 +1,174 @@
+{
+  "item": [
+    {
+      "id": "99881cdf-1999-4def-902c-c2c731d27467",
+      "name": "Training",
+      "description": {
+        "content": "Read employee training and course completion records.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "46812843-45ce-4302-8e6a-b53520fb6ec7",
+          "name": "List Training Records",
+          "request": {
+            "name": "List Training Records",
+            "description": {
+              "content": "List employee training and course records.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "training"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "employee",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "training_type",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "course_name",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "institution",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "training_status",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "60dbec71-d00d-49a4-b57c-36e73c4ed720",
+              "name": "List of training records.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "training"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "employee",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "training_type",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "course_name",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "institution",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "training_status",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"id\": \"string\",\n    \"training_type\": \"string\",\n    \"course_name\": \"string\",\n    \"institution\": \"string\",\n    \"commence_date\": \"2026-01-05\",\n    \"completion_date\": \"1973-10-06\",\n    \"training_status\": \"string\",\n    \"cost\": 1492.0964664094226,\n    \"reimbursement\": 3937.4153115893996,\n    \"comments\": \"string\",\n    \"employee\": {\n      \"code\": \"string\",\n      \"first_names\": \"string\",\n      \"last_name\": \"string\",\n      \"full_name\": \"string\",\n      \"department\": \"string\"\n    }\n  },\n  {\n    \"id\": \"string\",\n    \"training_type\": \"string\",\n    \"course_name\": \"string\",\n    \"institution\": \"string\",\n    \"commence_date\": \"1961-11-01\",\n    \"completion_date\": \"2012-05-15\",\n    \"training_status\": \"string\",\n    \"cost\": 8025.0391600684325,\n    \"reimbursement\": 6968.829843846499,\n    \"comments\": \"string\",\n    \"employee\": {\n      \"code\": \"string\",\n      \"first_names\": \"string\",\n      \"last_name\": \"string\",\n      \"full_name\": \"string\",\n      \"department\": \"string\"\n    }\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.hrpartner.io",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "x-api-key"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "header"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "e3f45c28-5c5f-49b6-8bd9-826c7579b538",
+    "name": "HR Partner REST Absences Training API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "HR Partner is a cloud-based human resources management SaaS platform from HR Partner Software Pty Ltd (Australia), aimed at organizations of roughly 20 to 500 employees. This OpenAPI describes the public HR Partner REST API exposed at https://api.hrpartner.io, covering company information, employee records and sub-modules (contacts, addresses, notes, education, skills, training, assets, benefits, dependents, grievances, positions, renewables, attachments), leave management (requests, balances, absences), timesheets and projects, expenses, recruitment (job listings, applicants, applications, application-stage tracking, interviews), performance (reviews, goals), checklists, reminders, document library, and lookups. Authentication is via API key passed in the x-api-key header.\n\nContact Support:\n Name: HR Partner Developer\n Email: developer@hrpartner.io",
+      "type": "text/plain"
+    }
+  }
+}

@@ -1,0 +1,129 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "HR Partner REST Absences Employees API",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "x-api-key",
+      "value": "{{x-api-key}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Employees",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List Employees",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.hrpartner.io/employees",
+            "params": [
+              {
+                "name": "search",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "department",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "location",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "group",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "position",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "employment_status",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "gender_identity",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "is_active",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "is_terminated",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "reports_to",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Returns all employees in the HR Partner account with optional filtering."
+        },
+        {
+          "info": {
+            "name": "Get Employee",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.hrpartner.io/employee/:employeeCode",
+            "params": [
+              {
+                "name": "employeeCode",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Retrieve a single employee by code."
+        },
+        {
+          "info": {
+            "name": "Create Or Update Employee",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.hrpartner.io/employee/:employeeCode",
+            "params": [
+              {
+                "name": "employeeCode",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create a new employee or update an existing one by code."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

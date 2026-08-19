@@ -1,0 +1,92 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "HR Partner REST Absences Timesheets API",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "x-api-key",
+      "value": "{{x-api-key}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Timesheets",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List Timesheets",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.hrpartner.io/timesheets",
+            "params": [
+              {
+                "name": "employee",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "department",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "week_commencing",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "timesheet_status",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "List employee timesheets."
+        },
+        {
+          "info": {
+            "name": "Get Timesheet",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.hrpartner.io/timesheet/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Retrieve a single timesheet by id."
+        },
+        {
+          "info": {
+            "name": "Create Timesheet Entry",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.hrpartner.io/timesheet",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Add a timesheet or timeclock entry for an employee."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

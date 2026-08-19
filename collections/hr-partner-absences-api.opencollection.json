@@ -1,0 +1,64 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "HR Partner REST Absences API",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "x-api-key",
+      "value": "{{x-api-key}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Absences",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List Absences",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.hrpartner.io/absences",
+            "params": [
+              {
+                "name": "employee",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "absence_reason",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "absence_status",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "absence_date_from",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "absence_date_to",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "List employee absence records."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

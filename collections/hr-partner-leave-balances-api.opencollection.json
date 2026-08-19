@@ -1,0 +1,54 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "HR Partner REST Absences Leave Balances API",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "x-api-key",
+      "value": "{{x-api-key}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Leave Balances",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List Leave Balances",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.hrpartner.io/leave-balances",
+            "params": [
+              {
+                "name": "employee",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "department",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "leave_type",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "List employee leave entitlement balances and accruals."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

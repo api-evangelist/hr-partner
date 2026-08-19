@@ -1,0 +1,360 @@
+{
+  "item": [
+    {
+      "id": "f243bf28-d55e-4e66-92b4-9465a1d493e8",
+      "name": "Timesheets",
+      "description": {
+        "content": "Read and create timesheets and timeclock entries.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "ae503b94-ff70-4677-adc0-3b4b3847bd01",
+          "name": "List Timesheets",
+          "request": {
+            "name": "List Timesheets",
+            "description": {
+              "content": "List employee timesheets.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "timesheets"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "employee",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "department",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "week_commencing",
+                  "value": "<date>"
+                },
+                {
+                  "disabled": false,
+                  "key": "timesheet_status",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "238094be-09b7-4b27-a2bf-c6e107d91537",
+              "name": "List of timesheets.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "timesheets"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "employee",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "department",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "week_commencing",
+                      "value": "<date>"
+                    },
+                    {
+                      "key": "timesheet_status",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"id\": \"string\",\n    \"week_commencing\": \"1969-12-09\",\n    \"total_hours\": 3529.136794811666,\n    \"timesheet_status\": \"string\",\n    \"employee\": {\n      \"code\": \"string\",\n      \"first_names\": \"string\",\n      \"last_name\": \"string\",\n      \"full_name\": \"string\",\n      \"department\": \"string\"\n    }\n  },\n  {\n    \"id\": \"string\",\n    \"week_commencing\": \"1964-02-04\",\n    \"total_hours\": 8722.01417430429,\n    \"timesheet_status\": \"string\",\n    \"employee\": {\n      \"code\": \"string\",\n      \"first_names\": \"string\",\n      \"last_name\": \"string\",\n      \"full_name\": \"string\",\n      \"department\": \"string\"\n    }\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "8885206b-21c6-405f-8f9d-02639f92a911",
+          "name": "Get Timesheet",
+          "request": {
+            "name": "Get Timesheet",
+            "description": {
+              "content": "Retrieve a single timesheet by id.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "timesheet",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "907f4949-7bba-493a-83e8-ab31e2ad1fcc",
+              "name": "A single timesheet.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "timesheet",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"string\",\n  \"week_commencing\": \"1959-10-03\",\n  \"total_hours\": 930.1439912808462,\n  \"timesheet_status\": \"string\",\n  \"employee\": {\n    \"code\": \"string\",\n    \"first_names\": \"string\",\n    \"last_name\": \"string\",\n    \"full_name\": \"string\",\n    \"department\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "ac9e8a2e-0a12-4229-a462-f2a5a321445c",
+          "name": "Create Timesheet Entry",
+          "request": {
+            "name": "Create Timesheet Entry",
+            "description": {
+              "content": "Add a timesheet or timeclock entry for an employee.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "timesheet"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"employee_code\": \"<string>\",\n  \"entry_date\": \"<date>\",\n  \"hours\": \"<number>\",\n  \"project_code\": \"<string>\",\n  \"notes\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "4f2e2453-fba4-427f-8011-fd190dba0b56",
+              "name": "Created timesheet entry.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "timesheet"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"employee_code\": \"<string>\",\n  \"entry_date\": \"<date>\",\n  \"hours\": \"<number>\",\n  \"project_code\": \"<string>\",\n  \"notes\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"string\",\n  \"week_commencing\": \"1959-10-03\",\n  \"total_hours\": 930.1439912808462,\n  \"timesheet_status\": \"string\",\n  \"employee\": {\n    \"code\": \"string\",\n    \"first_names\": \"string\",\n    \"last_name\": \"string\",\n    \"full_name\": \"string\",\n    \"department\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.hrpartner.io",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "x-api-key"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "header"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "4d4bfbc0-bcc6-4517-bf4d-43241592054f",
+    "name": "HR Partner REST Absences Timesheets API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "HR Partner is a cloud-based human resources management SaaS platform from HR Partner Software Pty Ltd (Australia), aimed at organizations of roughly 20 to 500 employees. This OpenAPI describes the public HR Partner REST API exposed at https://api.hrpartner.io, covering company information, employee records and sub-modules (contacts, addresses, notes, education, skills, training, assets, benefits, dependents, grievances, positions, renewables, attachments), leave management (requests, balances, absences), timesheets and projects, expenses, recruitment (job listings, applicants, applications, application-stage tracking, interviews), performance (reviews, goals), checklists, reminders, document library, and lookups. Authentication is via API key passed in the x-api-key header.\n\nContact Support:\n Name: HR Partner Developer\n Email: developer@hrpartner.io",
+      "type": "text/plain"
+    }
+  }
+}

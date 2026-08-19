@@ -1,0 +1,270 @@
+{
+  "item": [
+    {
+      "id": "961313c9-0f27-403d-9bdf-227e3db6ec34",
+      "name": "Leave Requests",
+      "description": {
+        "content": "Read leave and PTO requests submitted by employees.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "9726a2c4-69ad-44df-99df-67fefb350f2a",
+          "name": "List Leave Requests",
+          "request": {
+            "name": "List Leave Requests",
+            "description": {
+              "content": "List employee leave and PTO requests.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "leave-requests"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "employee",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "leave_type",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "leave_status",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "start_date_from",
+                  "value": "<date>"
+                },
+                {
+                  "disabled": false,
+                  "key": "start_date_to",
+                  "value": "<date>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "0f604f69-5eec-480e-bbf6-e9280e64a43f",
+              "name": "List of leave requests.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "leave-requests"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "employee",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "leave_type",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "leave_status",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "start_date_from",
+                      "value": "<date>"
+                    },
+                    {
+                      "key": "start_date_to",
+                      "value": "<date>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"id\": \"string\",\n    \"leave_type\": \"string\",\n    \"description\": \"string\",\n    \"start_date\": \"2002-04-20\",\n    \"end_date\": \"1969-05-28\",\n    \"duration\": 2209.3824882595736,\n    \"leave_status\": \"string\",\n    \"comments\": \"string\",\n    \"employee\": {\n      \"code\": \"string\",\n      \"first_names\": \"string\",\n      \"last_name\": \"string\",\n      \"full_name\": \"string\",\n      \"department\": \"string\"\n    }\n  },\n  {\n    \"id\": \"string\",\n    \"leave_type\": \"string\",\n    \"description\": \"string\",\n    \"start_date\": \"2002-07-28\",\n    \"end_date\": \"2016-01-04\",\n    \"duration\": 8977.18316310756,\n    \"leave_status\": \"string\",\n    \"comments\": \"string\",\n    \"employee\": {\n      \"code\": \"string\",\n      \"first_names\": \"string\",\n      \"last_name\": \"string\",\n      \"full_name\": \"string\",\n      \"department\": \"string\"\n    }\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "fd0259e7-c147-45bb-954f-f749366a37f4",
+          "name": "Get Leave Request",
+          "request": {
+            "name": "Get Leave Request",
+            "description": {
+              "content": "Retrieve a single leave request by id.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "leave-request",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "77bb276c-7cd5-40ad-a6d3-38290a8136ab",
+              "name": "A single leave request.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "leave-request",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"string\",\n  \"leave_type\": \"string\",\n  \"description\": \"string\",\n  \"start_date\": \"1973-08-18\",\n  \"end_date\": \"1994-03-15\",\n  \"duration\": 4820.2662616073185,\n  \"leave_status\": \"string\",\n  \"comments\": \"string\",\n  \"employee\": {\n    \"code\": \"string\",\n    \"first_names\": \"string\",\n    \"last_name\": \"string\",\n    \"full_name\": \"string\",\n    \"department\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.hrpartner.io",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "x-api-key"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "header"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "325c52f3-8219-4385-9cec-55522b50140e",
+    "name": "HR Partner REST Absences Leave Requests API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "HR Partner is a cloud-based human resources management SaaS platform from HR Partner Software Pty Ltd (Australia), aimed at organizations of roughly 20 to 500 employees. This OpenAPI describes the public HR Partner REST API exposed at https://api.hrpartner.io, covering company information, employee records and sub-modules (contacts, addresses, notes, education, skills, training, assets, benefits, dependents, grievances, positions, renewables, attachments), leave management (requests, balances, absences), timesheets and projects, expenses, recruitment (job listings, applicants, applications, application-stage tracking, interviews), performance (reviews, goals), checklists, reminders, document library, and lookups. Authentication is via API key passed in the x-api-key header.\n\nContact Support:\n Name: HR Partner Developer\n Email: developer@hrpartner.io",
+      "type": "text/plain"
+    }
+  }
+}
