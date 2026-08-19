@@ -28,7 +28,7 @@ humanURL: https://hrpartner.io
 baseURL: https://api.hrpartner.io
 created: '2026-05-11'
 modified: '2026-05-23'
-specificationVersion: '0.19'
+specificationVersion: '0.23'
 type: Index
 access: 3rd-Party
 tags:
