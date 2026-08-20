@@ -44,6 +44,22 @@ tags:
   - Timesheets
   - Expense Management
   - Document Library
+  - E-Signature
+  - Software-as-a-Service
+  - Australia
+tags_raw:
+  - HR
+  - HRIS
+  - Human Resources
+  - Employee Records
+  - Leave Management
+  - Recruitment
+  - Applicant Tracking
+  - Onboarding
+  - Performance Management
+  - Timesheets
+  - Expense Management
+  - Document Library
   - eSignature
   - SaaS
   - Australia
@@ -134,6 +150,8 @@ apis:
   humanURL: https://developer.hrpartner.io/
   baseURL: https://api.hrpartner.io
   tags:
+  - Application
+  tags_raw:
   - Applications
   properties:
   - type: OpenAPI
@@ -534,6 +552,8 @@ apis:
   humanURL: https://developer.hrpartner.io/
   baseURL: https://api.hrpartner.io
   tags:
+  - Project
+  tags_raw:
   - Projects
   properties:
   - type: OpenAPI
