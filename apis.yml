@@ -9,6 +9,18 @@ description: >-
   authenticated via per-account API key (x-api-key header), with rate limits of 60 requests/second and a 900
   requests-per-minute burst ceiling. The API is read-mostly with selected write endpoints for employees, applicants,
   applications, timesheets, and reminders, and is described as being in an early release phase.
+deliveryModel:
+  model: saas
+  open_source: false
+  commercial: true
+  callable_host: true
+  label: Hosted service · you call their endpoint
+  confidence: high
+  source:
+  - openapi
+  - pricing
+  generated: '2026-08-28'
+  method: derived
 accessModel:
   pricing: paid
   onboarding: self-serve
