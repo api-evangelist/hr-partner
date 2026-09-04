@@ -23,16 +23,17 @@ deliveryModel:
   method: derived
 accessModel:
   pricing: paid
-  onboarding: self-serve
+  onboarding: unknown
   trial: false
   try_now: false
   public: false
-  label: Paid · Self-serve signup
-  confidence: high
+  label: Paid
+  confidence: medium
   source:
   - plans
   - authentication
-  generated: '2026-07-22'
+  - security
+  generated: '2026-09-03'
   method: derived
 image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/hr-partner.png
 url: https://raw.githubusercontent.com/api-evangelist/hr-partner/refs/heads/main/apis.yml
@@ -701,6 +702,9 @@ apis:
   - type: SpectralRules
     url: rules/hr-partner-rest-api-rules.yml
 common:
+  - type: CapabilityMap
+    url: capabilities/hr-partner-capability-edges.yml
+    name: HR Partner Business Capability Map
   - type: PostmanWorkspace
     url: https://www.postman.com/kinlaneapi/hr-partner/overview
   - type: AgenticAccess
