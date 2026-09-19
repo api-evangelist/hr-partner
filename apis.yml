@@ -45,9 +45,8 @@ specificationVersion: '0.23'
 type: Index
 access: 3rd-Party
 tags:
-  - HR
-  - HRIS
   - Human Resources
+  - HRIS
   - Employee Records
   - Leave Management
   - Recruitment
