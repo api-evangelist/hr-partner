@@ -98,6 +98,19 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/Attachment'
+    EmployeeRef:
+      type: object
+      properties:
+        code:
+          type: string
+        first_names:
+          type: string
+        last_name:
+          type: string
+        full_name:
+          type: string
+        department:
+          type: string
     Attachment:
       type: object
       properties:
@@ -116,19 +129,6 @@ components:
         uploaded_date:
           type: string
           format: date-time
-    EmployeeRef:
-      type: object
-      properties:
-        code:
-          type: string
-        first_names:
-          type: string
-        last_name:
-          type: string
-        full_name:
-          type: string
-        department:
-          type: string
   securitySchemes:
     apiKeyHeader:
       type: apiKey
