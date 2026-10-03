@@ -54,15 +54,6 @@ paths:
                   $ref: '#/components/schemas/LibraryCategory'
 components:
   schemas:
-    LibraryCategory:
-      type: object
-      properties:
-        id:
-          type: string
-        name:
-          type: string
-        description:
-          type: string
     LibraryDocument:
       type: object
       properties:
@@ -77,6 +68,15 @@ components:
         uploaded_at:
           type: string
           format: date-time
+    LibraryCategory:
+      type: object
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+        description:
+          type: string
   securitySchemes:
     apiKeyHeader:
       type: apiKey
