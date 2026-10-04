@@ -38,6 +38,19 @@ paths:
                   $ref: '#/components/schemas/Grievance'
 components:
   schemas:
+    EmployeeRef:
+      type: object
+      properties:
+        code:
+          type: string
+        first_names:
+          type: string
+        last_name:
+          type: string
+        full_name:
+          type: string
+        department:
+          type: string
     Grievance:
       type: object
       properties:
@@ -56,19 +69,6 @@ components:
           type: string
         employee:
           $ref: '#/components/schemas/EmployeeRef'
-    EmployeeRef:
-      type: object
-      properties:
-        code:
-          type: string
-        first_names:
-          type: string
-        last_name:
-          type: string
-        full_name:
-          type: string
-        department:
-          type: string
   securitySchemes:
     apiKeyHeader:
       type: apiKey

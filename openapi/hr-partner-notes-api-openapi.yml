@@ -79,25 +79,6 @@ paths:
                   $ref: '#/components/schemas/Note'
 components:
   schemas:
-    Note:
-      type: object
-      properties:
-        id:
-          type: string
-        note:
-          type: string
-        created_date:
-          type: string
-          format: date-time
-        updated_date:
-          type: string
-          format: date-time
-        employee:
-          $ref: '#/components/schemas/EmployeeRef'
-        attachments:
-          type: array
-          items:
-            $ref: '#/components/schemas/Attachment'
     EmployeeRef:
       type: object
       properties:
@@ -129,6 +110,25 @@ components:
         uploaded_date:
           type: string
           format: date-time
+    Note:
+      type: object
+      properties:
+        id:
+          type: string
+        note:
+          type: string
+        created_date:
+          type: string
+          format: date-time
+        updated_date:
+          type: string
+          format: date-time
+        employee:
+          $ref: '#/components/schemas/EmployeeRef'
+        attachments:
+          type: array
+          items:
+            $ref: '#/components/schemas/Attachment'
   securitySchemes:
     apiKeyHeader:
       type: apiKey

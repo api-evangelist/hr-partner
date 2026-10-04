@@ -96,20 +96,6 @@ paths:
                 $ref: '#/components/schemas/Timesheet'
 components:
   schemas:
-    TimesheetEntry:
-      type: object
-      properties:
-        employee_code:
-          type: string
-        entry_date:
-          type: string
-          format: date
-        hours:
-          type: number
-        project_code:
-          type: string
-        notes:
-          type: string
     EmployeeRef:
       type: object
       properties:
@@ -137,6 +123,20 @@ components:
           type: string
         employee:
           $ref: '#/components/schemas/EmployeeRef'
+    TimesheetEntry:
+      type: object
+      properties:
+        employee_code:
+          type: string
+        entry_date:
+          type: string
+          format: date
+        hours:
+          type: number
+        project_code:
+          type: string
+        notes:
+          type: string
   securitySchemes:
     apiKeyHeader:
       type: apiKey

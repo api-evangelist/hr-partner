@@ -63,19 +63,6 @@ paths:
                   $ref: '#/components/schemas/Skill'
 components:
   schemas:
-    Skill:
-      type: object
-      properties:
-        id:
-          type: string
-        skill_name:
-          type: string
-        skill_rating:
-          type: integer
-        comments:
-          type: string
-        employee:
-          $ref: '#/components/schemas/EmployeeRef'
     EmployeeRef:
       type: object
       properties:
@@ -89,6 +76,19 @@ components:
           type: string
         department:
           type: string
+    Skill:
+      type: object
+      properties:
+        id:
+          type: string
+        skill_name:
+          type: string
+        skill_rating:
+          type: integer
+        comments:
+          type: string
+        employee:
+          $ref: '#/components/schemas/EmployeeRef'
   securitySchemes:
     apiKeyHeader:
       type: apiKey
