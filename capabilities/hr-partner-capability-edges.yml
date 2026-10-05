@@ -1,0 +1,154 @@
+slug: hr-partner
+provider: HR Partner
+generated_by: planning/capability-mapping/scripts/classify_capabilities.py
+model: claude-opus-5
+frame:
+- Software & Technology
+min_confidence: 0.7
+capability_model:
+  source: https://github.com/vincentmakes/turbo-ea-capabilities
+  license: CC-BY-4.0
+  attribution: Turbo EA Capabilities by Vincent Verdet — Turbo EA, https://github.com/vincentmakes/turbo-ea-capabilities,
+    CC BY 4.0
+  notice: NOTICE
+edge_count: 15
+edges:
+- tag: Applicants
+  spec_file: hr-partner-applicants-api-openapi.yml
+  capability_id: BC-300.10
+  capability_id_l1: BC-300
+  capability_name: Talent Acquisition Management
+  confidence: 0.9
+  evidence: 'POST /applicants  createApplicant  Create Applicant; vendor: ''recruitment and applicant
+    tracking'''
+  reason: CRUD over job applicants in an applicant tracking system is squarely Talent Acquisition Management.
+- tag: Reviews
+  spec_file: hr-partner-reviews-api-openapi.yml
+  capability_id: BC-300.20
+  capability_id_l1: BC-300
+  capability_name: Talent Management
+  confidence: 0.88
+  evidence: GET /reviews listReviews List Performance Reviews; schemas Review, EmployeeRef
+  reason: Operation summary explicitly names performance reviews, which is Talent Management.
+- tag: Application Stage Tracking
+  spec_file: hr-partner-application-stage-tracking-api-openapi.yml
+  capability_id: BC-300.10
+  capability_id_l1: BC-300
+  capability_name: Talent Acquisition Management
+  confidence: 0.85
+  evidence: GET /application-stage-tracking  listApplicationStageTracking; schema ApplicationStageTracking
+  reason: Tracking of job application pipeline stages within the vendor's 'recruitment and applicant tracking'
+    module — recruiting/hiring process, i.e. Talent Acquisition.
+- tag: Applications
+  spec_file: hr-partner-applications-api-openapi.yml
+  capability_id: BC-300.10
+  capability_id_l1: BC-300
+  capability_name: Talent Acquisition Management
+  confidence: 0.85
+  evidence: 'POST /applications  createApplication  Create Application; vendor: ''recruitment and applicant
+    tracking'''
+  reason: Job applications in an ATS context (sibling to Applicants and Application Stage Tracking), realising
+    recruiting/hiring under Talent Acquisition Management.
+- tag: Benefits
+  spec_file: hr-partner-benefits-api-openapi.yml
+  capability_id: BC-300.30
+  capability_id_l1: BC-300
+  capability_name: Compensation & Benefits Management
+  confidence: 0.85
+  evidence: GET /benefits  listBenefits  List Benefits; schemas EmployeeRef, Benefit
+  reason: Employee benefit records in an HR platform map to Compensation & Benefits Management (benefits
+    administration).
+- tag: Employees
+  spec_file: hr-partner-employees-api-openapi.yml
+  capability_id: BC-300.70
+  capability_id_l1: BC-300
+  capability_name: HR Operations Management
+  confidence: 0.85
+  evidence: GET /employees listEmployees List Employees; POST /employee/{employeeCode} upsertEmployee
+    Create Or Update Employee; schema Employee — platform "covers employee records"
+  reason: Employee master record CRUD on an HR management platform realises HR Operations (employee records)
+    within Human Capital Management.
+- tag: Job Listings
+  spec_file: hr-partner-job-listings-api-openapi.yml
+  capability_id: BC-300.10
+  capability_id_l1: BC-300
+  capability_name: Talent Acquisition Management
+  confidence: 0.85
+  evidence: GET /job-listings listJobListings List Job Listings; vendor covers "recruitment and applicant
+    tracking"
+  reason: Job postings/vacancies on an ATS-containing HR platform realise Talent Acquisition Management.
+- tag: Training
+  spec_file: hr-partner-training-api-openapi.yml
+  capability_id: BC-300.40
+  capability_id_l1: BC-300
+  capability_name: Learning & Development Management
+  confidence: 0.85
+  evidence: GET /training listTraining List Training Records; vendor covers "onboarding and training checklists"
+  reason: Employee training records realise Learning & Development Management.
+- tag: Grievances
+  spec_file: hr-partner-grievances-api-openapi.yml
+  capability_id: BC-300.80
+  capability_id_l1: BC-300
+  capability_name: Employee & Labour Relations
+  confidence: 0.82
+  evidence: GET /grievances listGrievances List Grievances; schemas Grievance, EmployeeRef
+  reason: Employee grievance records map directly to Employee & Labour Relations (grievances).
+- tag: Goals
+  spec_file: hr-partner-goals-api-openapi.yml
+  capability_id: BC-300.20
+  capability_id_l1: BC-300
+  capability_name: Talent Management
+  confidence: 0.8
+  evidence: GET /goals listGoals List Goals; schemas EmployeeRef, Goal; vendor covers "performance reviews
+    and goals"
+  reason: Employee-linked goals are performance/career development data, i.e. Talent Management.
+- tag: Absences
+  spec_file: hr-partner-absences-api-openapi.yml
+  capability_id: BC-300.70
+  capability_id_l1: BC-300
+  capability_name: HR Operations Management
+  confidence: 0.75
+  evidence: GET /absences  listAbsences  List Absences; schemas Absence, EmployeeRef
+  reason: Absence/leave records tied to employees in an HR management SaaS ('leave requests and accruals'),
+    which is employee record and HR service administration under HR Operations Management.
+- tag: Addresses
+  spec_file: hr-partner-addresses-api-openapi.yml
+  capability_id: BC-300.70
+  capability_id_l1: BC-300
+  capability_name: HR Operations Management
+  confidence: 0.7
+  evidence: GET /addresses  listAddresses  List Addresses; schemas Address, EmployeeRef
+  reason: Address records keyed to EmployeeRef within an HR platform whose scope is 'employee records'
+    — employee master data administration, i.e. HR Operations. Low-moderate confidence as the tag alone
+    is generic.
+- tag: Checklists
+  spec_file: hr-partner-checklists-api-openapi.yml
+  capability_id: BC-300
+  capability_id_l1: BC-300
+  capability_name: Human Capital Management
+  confidence: 0.7
+  evidence: 'GET /checklist  listChecklists; schemas EmployeeRef, Checklist; vendor: ''onboarding and
+    training checklists'''
+  reason: Employee-linked checklists used for onboarding and training in an HRMS — clearly within the
+    employee lifecycle, but the operations do not disambiguate onboarding (BC-300.10) from L&D (BC-300.40)
+    or HR ops, so only the L1 is asserted.
+- tag: Leave Balances
+  spec_file: hr-partner-leave-balances-api-openapi.yml
+  capability_id: BC-300.70
+  capability_id_l1: BC-300
+  capability_name: HR Operations Management
+  confidence: 0.7
+  evidence: GET /leave-balances listLeaveBalances List Leave Balances; vendor covers "leave requests and
+    accruals"
+  reason: Leave accrual balances are HR administrative service delivery; could alternatively sit under
+    benefits administration, hence moderate confidence on the L2.
+- tag: Leave Requests
+  spec_file: hr-partner-leave-requests-api-openapi.yml
+  capability_id: BC-300.70
+  capability_id_l1: BC-300
+  capability_name: HR Operations Management
+  confidence: 0.7
+  evidence: GET /leave-requests listLeaveRequests List Leave Requests; vendor covers "leave requests and
+    accruals, an employee self-service portal"
+  reason: Absence request handling is HR operations/service delivery within HCM; L2 choice has some ambiguity
+    versus benefits administration.
