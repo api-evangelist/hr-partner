@@ -132,3 +132,42 @@ notes:
     publishing invented or stale numbers.
   - The HR Partner REST API itself is not metered as a separate paid product;
     rate limits (60 req/sec, 900 req/min burst) apply across all tiers.
+x-canonical:
+  generated: '2026-10-08'
+  vocabulary: all/0-working/economics/plans-canonical.yml
+  models:
+  - subscription
+  units:
+  - object
+  - seat
+  plans:
+  - name: Core
+    access: other
+    model: subscription
+    model_how: stated
+    units:
+    - object
+    - seat
+    periods:
+    - one-time
+    - term
+  - name: Premium
+    access: other
+    model: subscription
+    model_how: stated
+    units:
+    - object
+    - seat
+    periods:
+    - one-time
+    - term
+  - name: VIP
+    access: other
+    model: subscription
+    model_how: stated
+    units:
+    - object
+    - seat
+    periods:
+    - one-time
+    - term
